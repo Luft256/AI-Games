@@ -35,6 +35,7 @@ Node.js 22以上（CIは24）。外部パッケージのインストールは不
 
 ```sh
 npm run dev      # http://127.0.0.1:4173/AI-Games/
+npm run catalog  # 各ゲームのmetadata.jsonからホームを同期
 npm test         # ゲームルール、検索、記録保存のテスト
 npm run check    # 構文、ローカルリンク、全ゲームのルートを検証
 npm run build    # dist/ に公開ファイルを生成
@@ -63,8 +64,12 @@ tests/                  共通ロジックのテスト
 1. `site/games/<game-id>/` に `index.html`、`game.css`、`game.js` を作成します。HTMLから `../../shared/base.css` を読み込み、`#game-shell` とゲーム用の `main.game-layout` を置きます。
 2. ESモジュールの `game.js` から `../../shared/game-shell.js` の `mountShell` を呼びます。`title`、`english`、`description`、`accent`、`controls` を渡してください。記録には `loadBest` / `saveBest` が使えます。
 3. `mountShell` の後に `../../shared/session-limit.js` の `createGameSession` を呼び、開始・自然終了・リセット・時間切れの処理を接続します。上限は最大30分にしてください。
-4. `site/assets/catalog.js` の `games` に登録し、ゲームのディレクトリに `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。既存6ゲームのイラストは `site/assets/home.js` の `artwork` で管理しています。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
+4. ゲームのディレクトリに `metadata.json`（id、title、english、genre、label、description、color、time、number）と `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。numberは重複しない2桁以上の文字列、genreは action / puzzle / memory / reflex です。統合担当が `npm run catalog` でカタログ、ホーム件数、JavaScript無効時の直リンクを同期します。元の6ゲームの情報とイラストは既存のカタログ・home.jsに保持します。
 5. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
+
+## プレイ評価と改善
+
+新作は実装担当とは別の評価チャットで実際に操作し、分かりやすさ、判断、上達、手応え、再挑戦する理由を確認します。具体的な指摘を修正してから統合します。AIによる評価は人間の楽しさの実証とは区別します。手順は [ゲーム品質の方針](docs/game-quality.md)、評価・修正の記録は `docs/playtests/` に残します。毎日9時（日本時間）のCodex自動実行で1〜3本を目安に制作し、重大な問題があれば追加本数より修正を優先します。
 
 ## ブランチ運用
 

@@ -16,3 +16,9 @@
 - New games must be created using subagents with model `gpt-6.1-sol` and reasoning effort `high`, as requested by the user.
 - Every game round must end within 30 minutes of starting, including pauses and hidden tabs. Use the shared session limit, stop simulation and pending callbacks on expiry, and never save an unfinished puzzle as a clear record.
 - Before integration, run `npm test`, `npm run check`, and `npm run build` as appropriate, and verify changed game behavior in a browser.
+
+## Game quality
+
+- Follow `docs/game-quality.md`: an independent reviewer must actually play new games, record specific observations, and feed actionable issues back for improvement before integration. AI ratings are diagnostic, not evidence of human enjoyment.
+- Give each game a clear short-round goal, meaningful decisions or learnable skill, understandable feedback, and a quick retry. Avoid reskinned duplicates just to increase the count.
+- Preserve review findings and verified fixes in `docs/playtests/`. Fix blockers before adding more games.
