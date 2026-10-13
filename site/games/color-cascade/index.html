@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f5f0">
+<title>カラーカスケード | AI Games</title><link rel="stylesheet" href="../../shared/base.css"><link rel="stylesheet" href="./game.css">
+</head>
+<body>
+<div id="game-shell"></div>
+<main class="game-layout cascade-layout">
+<section class="game-panel cascade-panel" aria-label="カラーカスケードの盤面">
+<div class="game-toolbar">
+<div class="stat"><span class="stat-label">スコア / 目標 6,000</span><strong class="stat-value" id="score">0</strong></div>
+<div class="stat"><span class="stat-label">残りの手</span><strong class="stat-value" id="moves">20</strong></div>
+<div class="stat"><span class="stat-label">最大連鎖</span><strong class="stat-value"><span id="combo">0</span><small> CHAIN</small></strong></div>
+</div>
+<div class="goal-track" role="progressbar" aria-label="目標6,000点への進捗" aria-valuemin="0" aria-valuemax="6000" aria-valuenow="0"><span id="goal-fill"></span></div>
+<div class="forecast-caption"><span>↓ 次に落ちる色 <small>上の記号から</small></span><span id="bonus-label"></span></div>
+<div id="forecast" class="forecast" aria-label="列ごとの次の補充、上から順に落ちます"></div>
+<div id="board" class="cascade-board" role="group" aria-label="6行6列。隣り合う2つを選んで交換。" aria-describedby="status"></div>
+<div class="feedback-line"><strong id="burst">20手の連鎖チャレンジ</strong><span id="gain"></span></div>
+<p class="status-text" id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+<div class="game-actions"><button class="button" id="hint" type="button">ヒント <span aria-hidden="true">◇</span></button><button class="button" id="restart" type="button">同じ盤面 ↺</button><button class="button button-primary" id="new-board" type="button">新しい盤面 ↗</button></div>
+<div class="result" id="result" hidden><span class="aside-eyebrow" id="result-label">ROUND COMPLETE</span><h2 id="result-title"></h2><p id="result-detail"></p><button class="button button-primary" id="play-again" type="button">もう一度あそぶ ↗</button></div>
+</section>
+<aside class="cascade-aside">
+<section class="best-card"><span class="aside-eyebrow">PERSONAL BEST</span><p class="best-value"><strong id="best">—</strong><span> pts</span></p><p>20手を終えたラウンドの記録。</p></section>
+<section class="instructions"><span class="aside-eyebrow">HOW TO PLAY</span><h2>そろえる。落ちる。<br>また、そろう。</h2>
+<div class="example" aria-hidden="true"><span class="tile c0">●</span><span class="tile c0">●</span><span class="tile c2">▲</span><span class="example-arrow">↕</span><span class="tile c0 example-last">●</span></div>
+<p><b>隣り合う2つを交換</b>して、同じ記号を縦か横に3つ以上。消えた場所に上から色が落ち、またそろうと<b>連鎖</b>！</p>
+<p>1個30点。2連鎖は2倍、3連鎖は3倍。<b>ボーナス記号はさらに2倍</b>で、5手ごとに変わります。</p>
+<p>上の3色は次の補充。<b>先頭の色は、空いた列の一番下へ。</b>落ちたあとの並びを読んで、大連鎖を狙おう。</p>
+<p>20手で6,000点を目指そう。目標達成後も20手まで得点を伸ばせます。そろわない交換は手数を使いません。</p>
+<p class="keyboard-note"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> 選択<br><kbd>Enter</kbd> / <kbd>Space</kbd> 決定<br><kbd>Esc</kbd> 選択解除 · <kbd>H</kbd> ヒント</p>
+<p class="hint-note">点線で結ばれた2つを選ぶと最初の3つがそろいます。ヒントは何度でも、手数を使わず見られます。</p>
+</section></aside>
+</main><script type="module" src="./game.js"></script>
+</body></html>
