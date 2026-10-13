@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>ライツアウト | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout lights-layout">
+    <section class="game-panel lights-panel" aria-label="ライツアウトのゲーム盤">
+      <div class="game-toolbar lights-toolbar">
+        <div class="stat"><span class="stat-label">手数</span><strong class="stat-value" id="moves">0</strong></div>
+        <div class="stat"><span class="stat-label">タイム</span><strong class="stat-value" id="time">0:00</strong></div>
+        <div class="stat"><span class="stat-label">点灯中</span><strong class="stat-value"><span id="remaining">0</span><span class="stat-unit"> / 25</span></strong></div>
+      </div>
+      <div class="board-caption"><span><i aria-hidden="true"></i> SWITCH OFF, THINK ON.</span><span>5 × 5</span></div>
+      <div class="light-grid" id="board" role="group" aria-label="5行5列のライト。矢印キーで選択、EnterまたはSpaceで反転。" aria-describedby="status"></div>
+      <p class="status-text lights-status" id="status" role="status" aria-live="polite" aria-atomic="true"></p>
+      <div class="light-actions">
+        <button class="button panel-button" id="restart" type="button"><span aria-hidden="true">↺</span> リスタート</button>
+        <button class="button button-primary" id="new-board" type="button">新しい盤面 <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="result" id="result" hidden>
+        <span class="aside-eyebrow">ALL LIGHTS OFF</span>
+        <h2>すべてのライトが消えました。</h2>
+        <p id="result-detail"></p>
+        <button class="button button-primary" id="play-again" type="button">次の盤面へ <span aria-hidden="true">↗</span></button>
+      </div>
+    </section>
+    <aside class="lights-aside">
+      <section class="best-card" aria-label="自己ベスト">
+        <span class="aside-eyebrow">PERSONAL BEST</span>
+        <p class="best-value"><strong id="best">—</strong><span>手</span></p>
+        <p>クリアしたときの最少手数。<br>ひらめきを、少ない手で。</p>
+      </section>
+      <section class="instructions lights-instructions">
+        <span class="aside-eyebrow">HOW TO PLAY</span>
+        <h2>ひと押しで、<br>景色が変わる。</h2>
+        <div class="rule-diagram" aria-hidden="true"><span></span><span class="affected"></span><span></span><span class="affected"></span><span class="affected center">＋</span><span class="affected"></span><span></span><span class="affected"></span><span></span></div>
+        <p>押したマスと上下左右のライトが、点灯・消灯を入れ替えます。</p>
+        <p>25個すべて消せたらクリア。どの盤面にも、必ず解き方があります。</p>
+        <p class="keyboard-note"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> 選択<br><kbd>Enter</kbd> / <kbd>Space</kbd> 反転</p>
+        <p class="hint">最初の1手から計時します。<br>リスタートで、同じ盤面に再挑戦。</p>
+      </section>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
