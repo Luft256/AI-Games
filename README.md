@@ -23,6 +23,12 @@ AIと一緒につくる、無料のブラウザゲーム集。ホームと全ゲ
 
 ホームには検索、ジャンル、お気に入り、おまかせ起動があります。最高記録とお気に入りは `localStorage` にブラウザ単位で保存します。保存を禁止した環境でもゲームは動作します。
 
+## プレイ時間
+
+全ゲームは1プレイ最大30分です。開始ボタンや最初の有効な操作から残り時間を計測し、一時停止・別タブの間も時間が進みます。30分で進行と入力を止め、結果と再挑戦を表示します。中断後に戻った場合も、次の操作前に時間切れを確認します。
+
+途中終了したパズルのクリア時間・手数や、5回未完了の反応測定は自己ベストとして保存しません。獲得済みスコアと完了した記憶ゲームの段階は記録します。2048の達成後に続ける場合も、同じ30分の上限内です。新しいプレイを始めると上限をリセットします。
+
 ## 開発
 
 Node.js 22以上（CIは24）。外部パッケージのインストールは不要です。
@@ -56,8 +62,9 @@ tests/                  共通ロジックのテスト
 
 1. `site/games/<game-id>/` に `index.html`、`game.css`、`game.js` を作成します。HTMLから `../../shared/base.css` を読み込み、`#game-shell` とゲーム用の `main.game-layout` を置きます。
 2. ESモジュールの `game.js` から `../../shared/game-shell.js` の `mountShell` を呼びます。`title`、`english`、`description`、`accent`、`controls` を渡してください。記録には `loadBest` / `saveBest` が使えます。
-3. `site/assets/catalog.js` の `games` に登録し、ゲームのディレクトリに `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。既存6ゲームのイラストは `site/assets/home.js` の `artwork` で管理しています。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
-4. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
+3. `mountShell` の後に `../../shared/session-limit.js` の `createGameSession` を呼び、開始・自然終了・リセット・時間切れの処理を接続します。上限は最大30分にしてください。
+4. `site/assets/catalog.js` の `games` に登録し、ゲームのディレクトリに `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。既存6ゲームのイラストは `site/assets/home.js` の `artwork` で管理しています。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
+5. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
 
 ## ブランチ運用
 

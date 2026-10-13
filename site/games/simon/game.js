@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { createGame, startGame, finishPlayback, pressPad, nextRound, pauseGame, resumeGame } from './logic.js';
 
 mountShell({
@@ -31,7 +32,7 @@ function later(callback, delay) {
   const token = generation;
   const timer = setTimeout(() => {
     timers.delete(timer);
-    if (token === generation) callback();
+    if (token === generation && session.check()) callback();
   }, delay);
   timers.add(timer);
 }
@@ -54,13 +55,13 @@ function render() {
   $('#best').textContent = best || '—';
   $('#length').textContent = state.sequence.length ? `${state.sequence.length}つの光を、順番どおりに。` : '1つの光から、はじめよう。';
   pads.forEach(pad => pad.setAttribute('aria-disabled', String(state.phase !== 'input')));
-  const phases = { idle: 'READY', playback: 'WATCH', input: 'YOUR TURN', success: 'CORRECT', over: 'FINISH', paused: 'PAUSED' };
+  const phases = { idle: 'READY', playback: 'WATCH', input: 'YOUR TURN', success: 'CORRECT', over: 'FINISH', timeout: 'TIME UP', paused: 'PAUSED' };
   $('#phase').textContent = phases[state.phase];
   start.disabled = ['playback', 'input', 'success'].includes(state.phase);
-  const labels = { idle: 'スタート ↗', playback: '再生中…', input: 'あなたの番', success: '正解！', over: 'もう一度あそぶ ↗', paused: state.suspendedPhase === 'success' ? '次の段階を再生 ↗' : 'この段階を再生 ↗' };
+  const labels = { idle: 'スタート ↗', playback: '再生中…', input: 'あなたの番', success: '正解！', over: 'もう一度あそぶ ↗', timeout: 'もう一度あそぶ ↗', paused: state.suspendedPhase === 'success' ? '次の段階を再生 ↗' : 'この段階を再生 ↗' };
   start.textContent = labels[state.phase];
   $('#reset').disabled = state.phase === 'idle';
-  $('#result').hidden = state.phase !== 'over';
+  $('#result').hidden = state.phase !== 'over' && state.phase !== 'timeout';
   if (state.phase === 'idle') {
     status.textContent = 'スタートを押して、光る順番を覚えよう。';
     setProgress(0, 0, '準備できたら、スタート');
@@ -76,6 +77,11 @@ function render() {
   } else if (state.phase === 'paused') {
     status.textContent = '一時停止中。ボタンを押して、光の再生から続けよう。';
     setProgress(0, state.sequence.length, '戻ったら、もう一度覚えよう');
+  } else if (state.phase === 'timeout') {
+    status.textContent = '時間切れ。30分になったため、このプレイは終了しました。';
+    setProgress(state.inputIndex, state.sequence.length, 'プレイ終了');
+    $('#result-title').textContent = '時間切れ。よく覚えました！';
+    $('#result-detail').textContent = `${state.score}段階クリア。途中の段階は記録に加えません。`;
   } else {
     status.textContent = `おしい！ ${state.inputIndex + 1}つ目は「${names[state.expected]}」でした。`;
     setProgress(state.inputIndex, state.sequence.length, 'ここまで正解');
@@ -84,6 +90,7 @@ function render() {
   }
 }
 function playSequence() {
+  if (!session.check()) return;
   cancelTimers();
   playbackStep = 0;
   render();
@@ -110,11 +117,13 @@ function playSequence() {
 function begin() {
   if (document.hidden) return;
   if (state.phase === 'paused') state = resumeGame(state);
-  else if (state.phase === 'idle' || state.phase === 'over') { state = startGame(); improved = false; }
+  else if (state.phase === 'idle' || state.phase === 'over' || state.phase === 'timeout') { session.reset(); state = startGame(); improved = false; }
   else return;
+  if (!session.start()) return;
   playSequence();
 }
 function enterPad(index) {
+  if (!session.check()) return;
   if (document.hidden || !document.hasFocus()) { pause(); return; }
   const previous = state;
   state = pressPad(state, index);
@@ -123,6 +132,7 @@ function enterPad(index) {
   cancelTimers();
   lightPad(index, 180);
   if (state.phase === 'over') {
+    if (!session.finish()) return;
     pads[index].classList.add('is-wrong');
     pads[state.expected].classList.add('is-expected');
   }
@@ -133,6 +143,7 @@ function enterPad(index) {
   render();
 }
 function pause() {
+  if (!session.check()) return;
   const paused = pauseGame(state);
   if (paused === state) return;
   cancelTimers();
@@ -140,6 +151,7 @@ function pause() {
   render();
 }
 function reset() {
+  session.reset();
   cancelTimers();
   state = createGame(); improved = false; playbackStep = 0;
   render();
@@ -157,4 +169,8 @@ document.addEventListener('keydown', (event) => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) pause(); });
 window.addEventListener('blur', pause);
 window.addEventListener('pagehide', pause);
+const session = createGameSession({ onExpire() {
+  cancelTimers(); state = { ...state, phase: 'timeout' }; render();
+} });
+
 render();

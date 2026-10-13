@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { TOTAL_ROUNDS, randomDelay, averageTime, reactionTime } from './logic.js';
 
 mountShell({ title: 'リアクションラボ', english: 'REACTION LAB', description: '緑の合図を待って、ひと押し。あなたの反応を測ろう。', accent: '#f4a3ba', controls: ['クリック / タップ / Spaceで反応', '緑色の「いま！」が合図。5回の平均で勝負'] });
@@ -21,6 +22,7 @@ const copy = {
   early: ['TOO SOON', 'フライング！', '大丈夫。このラウンドをもう一度', '押して再チャレンジ'],
   between: ['ROUND COMPLETE', '', '次も、自分のペースで', '押して次のラウンドへ'],
   paused: ['ROUND PAUSED', '測定を一時停止', 'ページを離れたため、この回は再試行', '押して再チャレンジ'],
+  timeout: ['TIME UP', '時間切れ', '30分になったため、測定終了', '押して最初からやり直す'],
   done: ['SESSION COMPLETE', '', '5ラウンドの平均タイム', '押してもう一度測定'],
 };
 function setPhase(next) {
@@ -53,22 +55,24 @@ function cancelCue() {
   cueAt = null;
 }
 function reset() {
+  session.reset();
   cancelCue(); times = []; falseStarts = 0; result.hidden = true;
   setPhase('idle'); updateStats();
   status.textContent = '緑色の「いま！」が出たら、すばやく反応しよう。';
 }
 function startRound() {
-  if (document.hidden) return;
+  if (document.hidden || !session.start()) return;
   cancelCue(); setPhase('waiting');
   status.textContent = `ラウンド${times.length + 1}。合図が出るまで待ってください。`;
   cueTimer = setTimeout(() => {
-    if (document.hidden || phase !== 'waiting') return;
+    if (!session.check() || document.hidden || phase !== 'waiting') return;
     setPhase('ready');
     cueAt = performance.now();
     status.textContent = 'いま！ パネルを押すか、Spaceキーで反応！';
   }, randomDelay());
 }
 function finish() {
+  if (!session.finish()) return;
   const average = averageTime(times);
   const newBest = !best || average < best;
   if (newBest) { best = average; saveBest('reaction', best); }
@@ -80,6 +84,8 @@ function finish() {
 }
 function activate() {
   if (document.hidden) return;
+  if (phase === 'timeout') { reset(); startRound(); return; }
+  if (!session.check()) return;
   if (phase === 'waiting') {
     cancelCue(); falseStarts += 1; setPhase('early');
     status.textContent = 'フライング！ 記録には含めません。押すと同じラウンドをやり直せます。';
@@ -117,4 +123,11 @@ document.addEventListener('visibilitychange', () => {
 });
 document.querySelector('#restart').addEventListener('click', reset);
 document.querySelector('#play-again').addEventListener('click', () => { reset(); surface.focus({ preventScroll: true }); startRound(); });
+const session = createGameSession({ onExpire() {
+  cancelCue(); setPhase('timeout'); updateStats(); result.hidden = false;
+  document.querySelector('#result-title').textContent = '時間切れ。測定を終了しました。';
+  document.querySelector('#result-detail').textContent = `${times.length} / 5回測定。5回完了していないため、ベストは更新しません。`;
+  status.textContent = '時間切れ。30分になったため、この測定は終了しました。';
+} });
+
 reset();

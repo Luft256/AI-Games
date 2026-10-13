@@ -14,4 +14,5 @@
 - Keep the site static and compatible with GitHub Pages project subpaths. Use relative links and keep all games in this repository.
 - Give each new game its own feature branch and pull request. Use isolated worktrees when developing games concurrently.
 - New games must be created using subagents with model `gpt-6.1-sol` and reasoning effort `high`, as requested by the user.
+- Every game round must end within 30 minutes of starting, including pauses and hidden tabs. Use the shared session limit, stop simulation and pending callbacks on expiry, and never save an unfinished puzzle as a clear record.
 - Before integration, run `npm test`, `npm run check`, and `npm run build` as appropriate, and verify changed game behavior in a browser.

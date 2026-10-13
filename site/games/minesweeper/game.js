@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { createField, revealCells, hasWon } from './logic.js';
 mountShell({ title: 'マインフィールド', english: 'MINEFIELD', description: '手がかりをつなぎ、安全な道を見つけよう。', accent: '#f5cf67', controls: ['クリックで開く / 右クリックで旗', '最初の一手は必ず安全'] });
 const $ = id => document.getElementById(id);
@@ -29,7 +30,7 @@ for (let row = 0; row < SIZE; row++) {
 }
 function setTabStops() { buttons.forEach((button, index) => { button.tabIndex = index === focusIndex ? 0 : -1; }); }
 function displayTime() { $('time').textContent = String(elapsed).padStart(3, '0'); }
-function tick() { if (started && !ended) { elapsed = Math.floor((Date.now() - startedAt) / 1000); displayTime(); } }
+function tick() { if (session.check() && started && !ended) { elapsed = Math.floor((Date.now() - startedAt) / 1000); displayTime(); } }
 function render() {
   const flagged = cells.filter(cell => cell.flagged).length;
   $('remaining').textContent = MINE_COUNT - flagged;
@@ -48,8 +49,9 @@ function render() {
   setTabStops();
 }
 function finish(win) {
+  if (!session.finish()) return;
   tick();
-  ended = true; victory = win;
+  ended = true; victory = win; $('flag-mode').disabled = true;
   clearInterval(clock); clock = null;
   if (win) {
     elapsed = Math.max(1, Math.ceil((Date.now() - startedAt) / 1000));
@@ -65,7 +67,8 @@ function finish(win) {
   render();
 }
 function openCell(index) {
-  if (ended || cells[index].flagged || cells[index].revealed) return;
+  if (!session.check() || ended || cells[index].flagged || cells[index].revealed) return;
+  if (!session.start()) return;
   if (!started) {
     const flags = cells.map(cell => cell.flagged);
     cells = createField(SIZE, MINE_COUNT, index);
@@ -82,7 +85,8 @@ function openCell(index) {
   render();
 }
 function toggleFlag(index) {
-  if (ended || cells[index].revealed) return;
+  if (!session.check() || ended || cells[index].revealed) return;
+  if (!session.start()) return;
   if (!cells[index].flagged && cells.filter(cell => cell.flagged).length >= MINE_COUNT) {
     $('status').textContent = '旗は10本まで。ほかの旗を外すと、ここに置けます。'; return;
   }
@@ -104,9 +108,10 @@ function handleKey(event, index) {
   event.preventDefault(); focusIndex = next; setTabStops(); buttons[next].focus({ preventScroll: true });
 }
 function restart() {
+  session.reset();
   clearInterval(clock); clock = null;
   cells = Array.from({ length: SIZE * SIZE }, () => ({ mine: false, adjacent: 0, revealed: false, flagged: false }));
-  started = false; ended = false; victory = false; flagMode = false; elapsed = 0; focusIndex = 0;
+  started = false; ended = false; victory = false; $('flag-mode').disabled = false; flagMode = false; elapsed = 0; focusIndex = 0;
   $('flag-mode').setAttribute('aria-pressed', 'false');
   $('mode-label').textContent = '旗モード OFF';
   $('end-message').hidden = true;
@@ -115,9 +120,20 @@ function restart() {
 }
 $('restart').addEventListener('click', restart);
 $('flag-mode').addEventListener('click', () => {
+  if (!session.check() || ended) return;
   flagMode = !flagMode;
   $('flag-mode').setAttribute('aria-pressed', String(flagMode));
   $('mode-label').textContent = `旗モード ${flagMode ? 'ON' : 'OFF'}`;
   $('status').textContent = flagMode ? '旗モードON。マスを押すと旗を置いたり外したりできます。' : '旗モードOFF。マスを押すと開きます。';
 });
+const session = createGameSession({ onExpire() {
+  ended = true; victory = false; $('flag-mode').disabled = true; clearInterval(clock); clock = null;
+  elapsed = 1800; displayTime();
+  $('status').textContent = '時間切れ。30分になったため終了しました。';
+  $('end-title').textContent = '時間切れ。次の盤面へ。';
+  $('end-description').textContent = `${cells.filter(cell => cell.revealed && !cell.mine).length} / 71マスを開きました。未クリアの記録はベストに含めません。`;
+  $('end-symbol').textContent = '◷'; $('end-message').hidden = false;
+  $('end-message').classList.remove('success'); render();
+} });
+
 restart();

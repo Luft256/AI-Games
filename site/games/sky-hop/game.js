@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { WORLD, createGame, startGame, pauseGame, jump, stepGame, speedAt } from './logic.js';
 
 mountShell({ title: 'スカイホップ', english: 'SKY HOP', accent: '#9bcbea',
@@ -20,7 +21,7 @@ function updateUI(message) {
   $('pace').replaceChildren(document.createTextNode((speedAt(state.elapsed) / 260).toFixed(1)), Object.assign(document.createElement('span'), { textContent: '×' }));
   $('cleared').textContent = `${state.passed} OBSTACLES CLEARED`;
   $('start').disabled = state.status === 'running';
-  $('start').textContent = state.status === 'paused' ? '再開' : state.status === 'over' ? 'もう一度' : '開始';
+  $('start').textContent = state.status === 'paused' ? '再開' : (state.status === 'over' || state.status === 'timeout') ? 'もう一度' : '開始';
   $('pause').disabled = state.status !== 'running';
   $('jump').disabled = state.status !== 'running';
   $('overlay').hidden = state.status === 'running';
@@ -29,6 +30,8 @@ function updateUI(message) {
     $('overlay-eyebrow').textContent = 'READY TO HOP?'; $('overlay-title').textContent = '空へ、ひとっ跳び。'; $('overlay-message').textContent = '「開始」を押して、滑走路へ。';
   } else if (state.status === 'paused') {
     $('overlay-eyebrow').textContent = 'TAKE A BREATH'; $('overlay-title').textContent = 'ひと休み。'; $('overlay-message').textContent = '「再開」または P キーで続きを走ろう。';
+  } else if (state.status === 'timeout') {
+    $('overlay-eyebrow').textContent = 'TIME UP'; $('overlay-title').textContent = '時間切れ。'; $('overlay-message').textContent = `30分で終了。${state.score} 点。もう一度で新しい滑走路へ。`;
   } else if (state.status === 'over') {
     $('overlay-eyebrow').textContent = 'NICE RUN!'; $('overlay-title').textContent = `${state.score.toLocaleString('ja-JP')} 点`; $('overlay-message').textContent = '「もう一度」で、新しい滑走路へ。';
   }
@@ -36,7 +39,8 @@ function updateUI(message) {
 function clearLoop() { if (frame !== null) cancelAnimationFrame(frame); frame = null; lastTime = null; accumulator = 0; }
 function begin() {
   if (state.status === 'running') return;
-  if (state.status === 'over') state = createGame();
+  if (state.status === 'over' || state.status === 'timeout') { state = createGame(); session.reset(); }
+  if (!session.start()) return;
   startGame(state);
   updateUI('走行中。障害物の手前でジャンプ！');
   clearLoop();
@@ -44,17 +48,20 @@ function begin() {
   frame = requestAnimationFrame(tick);
 }
 function pause(message = '一時停止しました。「再開」で続けられます。') {
-  if (state.status !== 'running') return;
+  if (!session.check() || state.status !== 'running') return;
   pauseGame(state); clearLoop(); clearFeedback(); updateUI(message); draw();
 }
 function reset() {
+  session.reset();
   clearLoop(); clearFeedback(); state = createGame(); updateUI('準備できました。「開始」で走り出します。'); draw();
 }
 function hop() {
+  if (!session.check()) return;
   if (jump(state)) { feedbackUntil = state.elapsed + .16; $('jump').classList.add('is-active'); $('jump-feedback').classList.add('is-active'); }
 }
 function clearFeedback() { feedbackUntil = 0; $('jump').classList.remove('is-active'); $('jump-feedback').classList.remove('is-active'); }
 function finish() {
+  if (!session.finish()) return;
   clearLoop(); clearFeedback();
   const isBest = state.score > best;
   if (isBest) { best = state.score; saveBest('sky-hop', best); }
@@ -63,7 +70,7 @@ function finish() {
 }
 function tick(time) {
   frame = null;
-  if (state.status !== 'running') return;
+  if (!session.check() || state.status !== 'running') return;
   if (lastTime === null) lastTime = time;
   accumulator += Math.min(.05, Math.max(0, (time - lastTime) / 1000));
   lastTime = time;
@@ -137,4 +144,9 @@ document.addEventListener('keydown', event => {
 document.addEventListener('visibilitychange', () => { if (document.hidden) pause('画面を離れたため一時停止しました。「再開」で続けられます。'); });
 window.addEventListener('blur', () => pause('画面を離れたため一時停止しました。「再開」で続けられます。'));
 window.addEventListener('resize', resize);
+const session = createGameSession({ onExpire() {
+  clearLoop(); clearFeedback(); state.status = 'timeout';
+  if (state.score > best) { best = state.score; saveBest('sky-hop', best); }
+  updateUI('時間切れ。30分になったため、この走行は終了しました。'); draw();
+} });
 updateUI(); resize();
