@@ -48,9 +48,9 @@ function play(action){
   else showResult(`${medalNames[scores[index]]}メダルで脱出！`,`${state.moves}手・金貨${state.loot.length}枚。全回収＋${LEVELS[index].par}手以内で金メダル。`,'VAULT SECURED','次の金庫へ →');
   $('#status').textContent=complete?'全6金庫をクリアしました！':`金庫${index+1}から脱出。${medalNames[scores[index]]}メダル獲得。`;
  }else{const cell=tile(LEVELS[index],...state.player);$('#status').textContent=action==='noise'?'ノイズ起動。見張りの視界は、この先2手も止まります。':cell==='V'&&!state.key?'宝石には鍵が必要です。先に鍵を探そう。':cell==='E'&&(!state.key||!state.vault)?'鍵と宝石を集めてから出口へ。':`第${state.turn}手。${state.noise?`あと${state.noise}手は視界停止。接触に注意。`:'赤い斜線を避けて、次の一歩を。'}`;}
- render();
+ render();$('#board').focus({preventScroll:true});
 }
-function restart(){if(!session.check()||expired||complete)return;state=initialState(LEVELS[index]);hintMove=null;$('#status').textContent='同じ金庫から再挑戦。巡回も最初の位置に戻ります。';render();}
+function restart(){if(!session.check()||expired||complete)return;state=initialState(LEVELS[index]);hintMove=null;$('#status').textContent='同じ金庫から再挑戦。巡回も最初の位置に戻ります。';render();$('#board').focus({preventScroll:true});}
 function newCampaign(){session.reset();index=0;state=initialState(LEVELS[0]);scores=[];expired=false;complete=false;hintMove=null;$('#status').textContent='鍵を取り、宝石へ。まずは金貨も探してみよう。';render();}
 const session=createGameSession({onExpire(){expired=true;hintMove=null;showResult('時間切れ。今夜はここまで。','30分になったため終了。未完了のキャンペーンは自己ベストに保存しません。','TIME UP','新しい夜をはじめる ↺');$('#status').textContent='30分の制限時間になりました。新しい夜から再挑戦できます。';render();}});
 $('#restart').addEventListener('click',restart);$('#continue').addEventListener('click',()=>{if(expired||complete)newCampaign();else if(!session.check())return;else if(state.outcome==='caught')restart();else if(state.outcome==='clear'){index++;state=initialState(LEVELS[index]);hintMove=null;$('#status').textContent='新しい金庫。まず巡回と出口を確認しよう。';render();$('#board').focus({preventScroll:true});}});
