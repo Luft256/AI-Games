@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="360" height="200" viewBox="0 0 360 200" fill="none">
+  <defs>
+    <rect id="off" width="24" height="24" rx="5" fill="#394431" stroke="#637154"/>
+    <g id="on"><rect width="24" height="24" rx="5" fill="#E7D281"/><circle cx="12" cy="12" r="6" fill="#F8EDC8" stroke="#AC9344"/></g>
+  </defs>
+  <rect x="102" y="21" width="156" height="158" rx="19" fill="#232921"/>
+  <g transform="translate(114 33)">
+    <use href="#off" x="0" y="0"/><use href="#on" x="27" y="0"/><use href="#off" x="54" y="0"/><use href="#off" x="81" y="0"/><use href="#on" x="108" y="0"/>
+    <use href="#on" x="0" y="27"/><use href="#off" x="27" y="27"/><use href="#on" x="54" y="27"/><use href="#off" x="81" y="27"/><use href="#off" x="108" y="27"/>
+    <use href="#off" x="0" y="54"/><use href="#on" x="27" y="54"/><use href="#on" x="54" y="54"/><use href="#on" x="81" y="54"/><use href="#off" x="108" y="54"/>
+    <use href="#on" x="0" y="81"/><use href="#off" x="27" y="81"/><use href="#on" x="54" y="81"/><use href="#off" x="81" y="81"/><use href="#on" x="108" y="81"/>
+    <use href="#off" x="0" y="108"/><use href="#off" x="27" y="108"/><use href="#off" x="54" y="108"/><use href="#on" x="81" y="108"/><use href="#off" x="108" y="108"/>
+  </g>
+  <path d="M180 68v65M148 100h64" stroke="#232921" stroke-width="2" stroke-dasharray="3 4"/>
+  <circle cx="180" cy="100" r="19" stroke="#F6F5F0" stroke-width="2"/>
+  <path d="m275 74 12-5m-10 31h17m-19 26 12 5M82 74l-12-5m10 31H63m19 26-12 5" stroke="#8D7B40" stroke-width="2" stroke-linecap="round"/>
+</svg>
