@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#f6f5f0"><title>ダイス探検 | AI Games</title><link rel="stylesheet" href="../../shared/base.css"><link rel="stylesheet" href="./game.css"></head>
+<body><div id="game-shell"></div>
+<main class="game-layout expedition-layout">
+<section class="game-panel expedition-panel" aria-label="ダイス探検のゲーム盤">
+  <div class="stats"><div><span>遠征</span><strong id="expedition">1 / 8</strong></div><div><span>持ち帰り済み</span><strong id="score">0</strong></div><div><span>振り直し補給</span><strong id="supplies">5</strong></div></div>
+  <div class="map" id="map" aria-label="8回の遠征の進行"></div>
+  <div class="room-heading"><div><span class="eyebrow-light">YOUR EXPEDITION</span><h2 id="zone-name">8つの遺跡をめぐる旅</h2></div><span id="zone-icon" aria-hidden="true">◇</span></div>
+  <div class="depth-line"><span id="room">最初の遠征を始めよう</span><span>未確保の財宝 <strong id="haul">0</strong></span></div>
+  <div class="intro" id="intro"><h3>護衛を厚くする？<br>財宝を狙いにいく？</h3><p>4個のダイスを、護衛2個と財宝2個に分けよう。<br>成功率を見ながら進み、財宝を持ち帰る。<br>8遠征の合計で、探検家の腕を試そう。<br>まずは財宝50の「黄金」を目指そう。</p><button class="button button-primary" id="start">探検を始める →</button><p class="small">目安 3〜6分 · 慌てず判断するゲームです</p></div>
+  <div id="play-area" hidden>
+    <p class="assignment" id="assignment">① 護衛にするダイスを2個選ぶ</p>
+    <div class="dice-tray" id="dice-tray" aria-label="4個のダイスの配分"></div>
+    <p class="zone-rule" id="zone-rule"></p>
+    <fieldset id="routes"><legend>② 通り道を選ぶ</legend><div class="route-grid"><button type="button" id="careful" aria-pressed="true"><strong>慎重な道</strong><span>危険は低く · 財宝 ×1</span></button><button type="button" id="bold" aria-pressed="false"><strong>大胆な道</strong><span>危険 +2 · 財宝 ×2</span></button></div></fieldset>
+    <div class="forecast" id="forecast"><div class="odds-top"><span>この配分の成功率</span><strong id="odds">—</strong><span id="reward">財宝 +0</span></div><div id="chance-grid" class="chance-grid" aria-hidden="true"></div><p id="formula"></p><p id="expected" class="small"></p></div>
+    <button class="button button-primary primary-action" id="explore">③ この配分で探る →</button>
+    <div class="resolution" id="resolution" hidden><span class="eyebrow-light" id="outcome-label"></span><h3 id="outcome-title"></h3><p id="outcome-detail"></p></div>
+    <div class="decision-actions" id="decision-actions" hidden><button class="button button-primary" id="bank">財宝を持ち帰る</button><button class="button secondary-button" id="continue">次の部屋へ →</button></div>
+    <button class="button button-primary primary-action" id="next" hidden>次の遠征へ →</button>
+  </div>
+  <p id="status" class="status-text" role="status" aria-live="polite" aria-atomic="true">まずは探検を始めよう。ダイスの出目は見てから配分できます。</p>
+  <section class="result" id="result" hidden><span id="result-label" class="aside-eyebrow">EXPEDITION COMPLETE</span><h2 id="result-title"></h2><p id="result-detail"></p><div id="history" class="history"></div><button class="button button-dark" id="again">新しい旅に出る ↗</button></section>
+</section>
+<aside class="expedition-aside"><section class="best-card"><span class="aside-eyebrow">PERSONAL BEST</span><p><strong id="best">—</strong> <span>財宝</span></p><span>8遠征を終えた旅の最高記録。</span><div class="ranks"><span>一人前 <b>20</b></span><span>黄金 <b>50</b></span><span>伝説 <b>90</b></span></div></section>
+<section class="instructions"><span class="aside-eyebrow">RISK & REWARD</span><h2>持ち帰って、<br>はじめて財宝。</h2><ol><li><b>護衛2個</b>を選ぶ。残り2個が財宝になる。</li><li>危険ダイス2個の合計＋危険値が、護衛以下なら成功。同点も成功。</li><li>財宝は残り2個の合計。奥の部屋へ進むごとに<b>+6</b>。大胆な道なら2倍、遺跡ボーナスは最後に足す。</li><li>成功したら帰還か続行を選ぶ。奥ほど危険も増える。</li><li>失敗すると、この遠征の未確保財宝をすべて失う。持ち帰り済みは安全。</li></ol><p>1遠征は最大4部屋。振り直しは<b>旅全体で5回</b>。使いどころも腕の見せどころ。</p><p class="keyboard-note">Tab / Enter で操作<br>1〜4 配分 · C 慎重 · V 大胆<br>E 探る · B 帰還 · N 次へ</p></section></aside>
+</main><script type="module" src="./game.js"></script></body></html>
