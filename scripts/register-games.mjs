@@ -24,8 +24,8 @@ const htmlEscape=text=>text.replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>
 let home=await readFile(homePath,'utf8');
 home=home.replace(/\d+の無料ブラウザゲーム/,`${games.length}の無料ブラウザゲーム`)
  .replace(/\d+ GAMES & COUNTING/,`${games.length} GAMES & COUNTING`)
- .replace(/(<span class="count-badge">)\d+(<\/span>)/,`$1${games.length}$2`)
- .replace(/(data-genre="all"[^>]*>すべて <span>)\d+(<\/span>)/,`$1${games.length}$2`)
+ .replace(/(<span class="count-badge">)\d+(<\/span>)/,(_,before,after)=>before+games.length+after)
+ .replace(/(data-genre="all"[^>]*>すべて <span>)\d+(<\/span>)/,(_,before,after)=>before+games.length+after)
  .replace(/<noscript>[\s\S]*?<\/noscript>/,`<noscript><p>ゲーム一覧の検索にはJavaScriptが必要です。${games.map(game=>`<a href="./games/${game.id}/">${htmlEscape(game.title)}</a>`).join(' · ')}</p></noscript>`);
 await writeFile(catalogPath,`// Updated by npm run catalog from per-game metadata.\nexport const games = ${JSON.stringify(games,null,2)};\n${filter}`);
 await writeFile(homePath,home);
