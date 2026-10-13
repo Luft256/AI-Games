@@ -14,6 +14,12 @@ AIと一緒につくる、無料のブラウザゲーム集。ホームと全ゲ
 | ブロックブレイカー | `games/breakout/` | 左右キー、ポインター、タッチ |
 | マインフィールド | `games/minesweeper/` | クリック、右クリック、旗モード、矢印 + F |
 | リアクションラボ | `games/reaction/` | タップ、クリック、Space |
+| スタックタワー | `games/stack-tower/` | タップ、クリック、Space |
+| スカイホップ | `games/sky-hop/` | タップ、Space、上キー |
+| オービットドッジ | `games/orbit-dodge/` | 左右キー / A D、タッチ、ドラッグ |
+| ライツアウト | `games/lights-out/` | タップ、クリック、矢印 + Enter |
+| スライド15 | `games/slide-puzzle/` | タップ、クリック、矢印 |
+| シーケンスメモリー | `games/simon/` | タップ、クリック、1〜4キー |
 
 ホームには検索、ジャンル、お気に入り、おまかせ起動があります。最高記録とお気に入りは `localStorage` にブラウザ単位で保存します。保存を禁止した環境でもゲームは動作します。
 
@@ -24,7 +30,7 @@ Node.js 22以上（CIは24）。外部パッケージのインストールは不
 ```sh
 npm run dev      # http://127.0.0.1:4173/AI-Games/
 npm test         # ゲームルール、検索、記録保存のテスト
-npm run check    # 構文、ローカルリンク、6つのルートを検証
+npm run check    # 構文、ローカルリンク、全ゲームのルートを検証
 npm run build    # dist/ に公開ファイルを生成
 npm run preview  # ビルド後のサイトを確認
 ```
@@ -50,7 +56,7 @@ tests/                  共通ロジックのテスト
 
 1. `site/games/<game-id>/` に `index.html`、`game.css`、`game.js` を作成します。HTMLから `../../shared/base.css` を読み込み、`#game-shell` とゲーム用の `main.game-layout` を置きます。
 2. ESモジュールの `game.js` から `../../shared/game-shell.js` の `mountShell` を呼びます。`title`、`english`、`description`、`accent`、`controls` を渡してください。記録には `loadBest` / `saveBest` が使えます。
-3. `site/assets/catalog.js` の `games` に登録し、`site/assets/home.js` の `artwork` にカードのSVGを追加します。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
+3. `site/assets/catalog.js` の `games` に登録し、ゲームのディレクトリに `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。既存6ゲームのイラストは `site/assets/home.js` の `artwork` で管理しています。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
 4. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
 
 ## ブランチ運用
@@ -58,7 +64,7 @@ tests/                  共通ロジックのテスト
 `作業ブランチ → dev → ユーザー確認 → main → GitHub Pages公開` の順に進めます。
 
 - `dev` は開発内容を集める統合ブランチです。新しい作業ブランチは最新の `dev` から `codex/<作業名>` として作成します。
-- 通常のPRは `dev` をマージ先にします。必要な検証が成功した変更は、エージェントが `dev` まで統合できます。
+- 通常のPRは `dev` をマージ先にします。必要な検証が成功した変更は、エージェントが `dev` まで統合できます。ゲームを追加する際は、ゲームごとに独立したブランチとPRを作成します。
 - `dev` の内容をユーザーが確認し、その内容を `main` に反映する明示的な承認をした後に、`dev` → `main` のPRをマージします。承認前の自動マージ・直接pushは行いません。
 - `main` は公開用です。`dev` やPRではテストとビルドだけを実行し、GitHub Pagesの本番公開は `main` からだけ行います。
 

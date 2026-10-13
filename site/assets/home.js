@@ -20,7 +20,7 @@ const artwork = {
   reaction: '<circle cx="185" cy="103" r="64" stroke="#743449" stroke-width="1.5" fill="none"/><circle cx="185" cy="103" r="47" stroke="#743449" stroke-opacity=".35" fill="none"/><path d="m194 47-43 64h30l-8 45 46-65h-31z" fill="#743449"/><path d="M100 61l-13-7m182 111 13 7m-178-15-11 9m177-94 11-9" stroke="#fff2f3" stroke-width="5" stroke-linecap="round"/>'
 };
 function art(game) {
-  return `<svg class="card-art" viewBox="0 0 360 200" aria-hidden="true"><defs><pattern id="grid-${game.id}" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#232921" stroke-opacity=".07" stroke-width=".7"/></pattern></defs><rect width="360" height="200" fill="url(#grid-${game.id})"/>${artwork[game.id] || ''}</svg>`;
+  return `<svg class="card-art" viewBox="0 0 360 200" aria-hidden="true"><defs><pattern id="grid-${game.id}" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#232921" stroke-opacity=".07" stroke-width=".7"/></pattern></defs><rect width="360" height="200" fill="url(#grid-${game.id})"/>${artwork[game.id] || `<image href="./games/${game.id}/thumbnail.svg" width="360" height="200"/>`}</svg>`;
 }
 function render() {
   const visible = filterGames(games, { query: search.value, genre, favoritesOnly, favorites });
