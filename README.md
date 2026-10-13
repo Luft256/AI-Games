@@ -53,8 +53,19 @@ tests/                  共通ロジックのテスト
 3. `site/assets/catalog.js` の `games` に登録し、`site/assets/home.js` の `artwork` にカードのSVGを追加します。ホームの件数はカタログから自動更新されます。新しいジャンルの場合はホームのフィルターボタンも追加します。
 4. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
 
+## ブランチ運用
+
+`作業ブランチ → dev → ユーザー確認 → main → GitHub Pages公開` の順に進めます。
+
+- `dev` は開発内容を集める統合ブランチです。新しい作業ブランチは最新の `dev` から `codex/<作業名>` として作成します。
+- 通常のPRは `dev` をマージ先にします。必要な検証が成功した変更は、エージェントが `dev` まで統合できます。
+- `dev` の内容をユーザーが確認し、その内容を `main` に反映する明示的な承認をした後に、`dev` → `main` のPRをマージします。承認前の自動マージ・直接pushは行いません。
+- `main` は公開用です。`dev` やPRではテストとビルドだけを実行し、GitHub Pagesの本番公開は `main` からだけ行います。
+
+エージェント向けの継続ルールは [AGENTS.md](AGENTS.md) に保存しています。
+
 ## GitHub Pages
 
-Repository Settings → Pages → Source に **GitHub Actions** を指定します。`main` へのpushでテスト・リンク検証・ビルドを実行し、`dist/` を公開します。PRでは検証のみを行います。
+Repository Settings → Pages → Source に **GitHub Actions** を指定します。`main` へのpushでテスト・リンク検証・ビルドを実行し、`dist/` を公開します。`dev` へのpushと `dev` / `main` 宛てのPRでは検証のみを行います。手動実行でも公開は `main` に限定されます。
 
 ワークフローはGitHub公式の [custom workflows](https://docs.github.com/en/pages/getting-started-with-github-pages/using-custom-workflows-with-github-pages) に沿い、公開ジョブだけに `pages: write` と `id-token: write` を付与しています。
