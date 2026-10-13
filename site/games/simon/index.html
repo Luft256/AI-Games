@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>シーケンスメモリー | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout sequence-layout">
+    <section class="game-panel sequence-panel" aria-label="シーケンスメモリーのゲーム盤">
+      <div class="board-heading"><span class="board-eyebrow">WATCH. REMEMBER. REPEAT.</span><span class="phase-badge" id="phase">READY</span></div>
+      <div class="round-heading"><span>段階 <strong id="round">01</strong></span><span class="length-label" id="length">1つの光から、はじめよう。</span></div>
+      <p class="status-text sequence-status" id="status" role="status" aria-live="polite">スタートを押して、光る順番を覚えよう。</p>
+      <div class="pad-grid" id="pads" role="group" aria-label="4つのパッド。キー1から4でも操作できます">
+        <button type="button" class="pad pad-1" data-pad="0" aria-label="1、円" aria-disabled="true"><span class="pad-number" aria-hidden="true">1</span><svg viewBox="0 0 64 64" aria-hidden="true"><circle cx="32" cy="32" r="22"/></svg><span class="pad-name" aria-hidden="true">円 / CIRCLE</span></button>
+        <button type="button" class="pad pad-2" data-pad="1" aria-label="2、三角" aria-disabled="true"><span class="pad-number" aria-hidden="true">2</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M32 8 58 54H6Z"/></svg><span class="pad-name" aria-hidden="true">三角 / TRIANGLE</span></button>
+        <button type="button" class="pad pad-3" data-pad="2" aria-label="3、ダイヤ" aria-disabled="true"><span class="pad-number" aria-hidden="true">3</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="m32 5 27 27-27 27L5 32Z"/></svg><span class="pad-name" aria-hidden="true">ダイヤ / DIAMOND</span></button>
+        <button type="button" class="pad pad-4" data-pad="3" aria-label="4、十字" aria-disabled="true"><span class="pad-number" aria-hidden="true">4</span><svg viewBox="0 0 64 64" aria-hidden="true"><path d="M23 7h18v16h16v18H41v16H23V41H7V23h16Z"/></svg><span class="pad-name" aria-hidden="true">十字 / CROSS</span></button>
+      </div>
+      <div class="sequence-meter"><span id="progress-label">準備できたら、スタート</span><span id="progress-value">—</span></div>
+      <div class="progress-track" role="progressbar" id="progress" aria-label="入力の進み具合" aria-valuemin="0" aria-valuemax="1" aria-valuenow="0"><span id="progress-fill"></span></div>
+      <div class="result" id="result" hidden><span class="result-eyebrow">NICE MEMORY</span><h2 id="result-title">ここまで覚えられた！</h2><p id="result-detail"></p></div>
+      <div class="touch-controls sequence-controls"><button class="button button-primary" id="start" type="button">スタート <span aria-hidden="true">↗</span></button><button class="button reset-button" id="reset" type="button">リセット <span aria-hidden="true">↻</span></button></div>
+      <div class="board-footer"><span><i aria-hidden="true"></i> FOUR PADS, ONE MEMORY</span><span>KEYS 1 – 4</span></div>
+    </section>
+    <aside class="sequence-aside">
+      <section class="score-card" aria-label="スコアと自己ベスト"><span class="aside-eyebrow">YOUR MEMORY</span><div class="score-row"><div class="stat"><span class="stat-label">クリアした段階</span><strong class="stat-value" id="score">0</strong></div><span class="score-unit">STAGES</span></div><div class="best-row"><span>自己ベスト</span><strong><span id="best">—</span><span class="best-unit">段階</span></strong></div><p>ひとつずつ、<br>記憶をのばしていこう。</p></section>
+      <section class="instructions sequence-instructions"><span class="aside-eyebrow">HOW TO PLAY</span><h2>見て、覚えて、<br>同じ順番で。</h2><ol><li><strong>見る番</strong>：光る順番を覚える。</li><li><strong>押す番</strong>：同じ順番でパッドを押す。</li><li>正解すると、光が1つ増える。</li></ol><p class="keyboard-note"><kbd>1</kbd> <kbd>2</kbd> <kbd>3</kbd> <kbd>4</kbd> キー / タップで操作</p><p class="hint">時間制限はありません。<br>別のタブへ移ると一時停止。戻ったら、その段階を再生して続けられます。</p></section>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
