@@ -1,0 +1,11 @@
+{
+  "id": "slide-puzzle",
+  "title": "スライド15",
+  "english": "SLIDE FIFTEEN",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "ひとつの空白を動かして、15の数字を順番に。余白が道になるスライドパズル。",
+  "color": "#c3aff0",
+  "time": "3–10 分",
+  "number": "11"
+}

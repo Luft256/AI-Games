@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>スライド15 | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout puzzle-layout">
+    <section class="game-panel puzzle-panel" aria-label="スライド15のゲーム盤">
+      <div class="game-toolbar">
+        <div class="stat"><span class="stat-label">MOVES / 手数</span><strong class="stat-value" id="moves">0</strong></div>
+        <div class="stat"><span class="stat-label">TIME / 時間</span><strong class="stat-value" id="time">0:00</strong></div>
+        <div class="board-tag">4 × 4<br><span>FIFTEEN PIECES</span></div>
+      </div>
+      <p class="status-text" id="status" role="status" aria-live="polite"></p>
+      <div class="puzzle-board" id="board" tabindex="0" role="group" aria-label="4行4列のパズル。矢印キーで空白を動かします" aria-describedby="keyboard-help"></div>
+      <div class="board-footer"><span>IN ORDER, AT YOUR PACE.</span><span id="progress">0 / 15</span></div>
+      <section class="win-message" id="result" hidden aria-label="クリア結果">
+        <span class="eyebrow">PERFECTLY IN PLACE</span><h2>ぴたり、そろった！</h2>
+        <p id="result-detail"></p>
+        <button type="button" class="button button-primary" id="play-again">次のパズルへ ↗</button>
+      </section>
+    </section>
+    <aside class="puzzle-aside">
+      <section class="best-card"><span class="eyebrow">PERSONAL BEST / 最少手数</span><p><strong id="best">—</strong><span>手</span></p><small>クリアしたときの手数を記録。<br>自分のペースで、ひとつずつ。</small></section>
+      <section class="instructions"><span class="eyebrow">HOW TO PLAY</span><h2>余白が、道になる。</h2><p>空白のとなりの数字をタップ。<br>上の段から <strong>1 → 15</strong> の順に<br>並べて、右下を空白にしよう。</p><div class="target-board" aria-label="完成形：1から15までを行ごとに並べ、右下を空白にする"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span><span>6</span><span>7</span><span>8</span><span>9</span><span>10</span><span>11</span><span>12</span><span>13</span><span>14</span><span>15</span><span class="target-blank"></span></div></section>
+      <div class="direction-section"><p id="keyboard-help">矢印キー / ボタンで<strong>空白</strong>を動かす</p><div class="direction-controls" aria-label="空白を動かすボタン"><button type="button" class="direction up" data-direction="up" aria-label="空白を上へ">↑</button><button type="button" class="direction left" data-direction="left" aria-label="空白を左へ">←</button><span class="blank-mark" aria-hidden="true">□</span><button type="button" class="direction right" data-direction="right" aria-label="空白を右へ">→</button><button type="button" class="direction down" data-direction="down" aria-label="空白を下へ">↓</button></div><p class="keyboard-note">盤面を選んでから矢印キー。<br>数字は Tab ＋ Enter / Space でも動かせます。</p></div>
+      <div class="actions"><button type="button" class="button button-primary" id="new-game">新しい盤面 ↗</button><button type="button" class="button" id="restart">同じ盤面をやり直す ↻</button></div>
+      <p class="timer-note">最初の一手から計時。必ず解ける盤面です。</p>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
