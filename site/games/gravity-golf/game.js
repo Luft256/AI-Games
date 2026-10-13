@@ -98,13 +98,13 @@ function setupHole(index) {
 function startRound() { stopLoop(); session.reset(); results = []; if (!session.start()) return; setupHole(0); }
 function pause() {
   if (!session.check()) return;
-  if (mode === 'paused') { mode = resumeMode; $('overlay').hidden = true; $('status').textContent = hole.hint; update(); draw(); if (mode === 'flying') frame = requestAnimationFrame(tick); return; }
+  if (mode === 'paused') { mode = resumeMode; $('overlay').hidden = true; $('status').textContent = hole.hint; update(); draw(); canvas.focus({ preventScroll: true }); if (mode === 'flying') frame = requestAnimationFrame(tick); return; }
   if (!['aim', 'flying'].includes(mode)) return;
   resumeMode = mode; mode = 'paused'; stopLoop(); show('PAUSED', '星も、ひと休み。', 'ボールは止まっています。制限時間は一時停止中も進みます。', '再開する →'); $('status').textContent = '一時停止中。再開して同じショットを続けられます。'; update(); draw();
 }
 function changeAim(deltaAngle = 0, deltaPower = 0) {
   if (!session.check() || mode !== 'aim') return;
-  angle = Math.atan2(Math.sin(angle + deltaAngle), Math.cos(angle + deltaAngle)); power = Math.max(0, Math.min(100, power + deltaPower)); aimPreview(); update(); draw();
+  angle = Math.atan2(Math.sin(angle + deltaAngle), Math.cos(angle + deltaAngle)); power = Math.max(0, Math.min(100, power + deltaPower)); aimPreview(); update(); draw(); canvas.focus({ preventScroll: true });
 }
 $('continue').addEventListener('click', () => { if (mode === 'paused') pause(); else if (mode === 'hole') { if (session.check()) setupHole(holeIndex + 1); } else startRound(); });
 $('shoot').addEventListener('click', shoot); $('pause').addEventListener('click', pause);
@@ -115,7 +115,7 @@ $('rescue').addEventListener('click', () => {
   if (!session.check() || !['aim', 'flying'].includes(mode) || !previous || strokes >= 6) return;
   stopLoop(); strokes++; ball = { ...createBall(hole), x: previous.x, y: previous.y }; previous = null;
   if (strokes >= 6) { lose(); return; }
-  mode = 'aim'; $('status').textContent = `＋1打で打つ前の位置へ。あと${6 - strokes}打。`; aimPreview(); update(); draw();
+  mode = 'aim'; $('status').textContent = `＋1打で打つ前の位置へ。あと${6 - strokes}打。`; aimPreview(); update(); draw(); canvas.focus({ preventScroll: true });
 });
 function aimAt(event) {
   const bounds = canvas.getBoundingClientRect(), x = (event.clientX - bounds.left) / bounds.width * WIDTH, y = (event.clientY - bounds.top) / bounds.height * HEIGHT;
