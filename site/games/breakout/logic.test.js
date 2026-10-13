@@ -1,0 +1,9 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import {WIDTH,HEIGHT,createGame,movePaddle,launch,advance} from './logic.js';
+test('starts in serve state and launches upward without immediate loss',()=>{const s=createGame();assert.equal(s.serving,true);advance(s,.04);assert.equal(s.ball.y,464);launch(s);assert.ok(s.ball.vy<0);for(let i=0;i<60;i++)advance(s,1/60);assert.equal(s.lives,3);});
+test('paddle clamps within side walls and carries the waiting ball',()=>{const s=createGame();movePaddle(s,-1000);assert.equal(s.paddle.x,12);assert.equal(s.ball.x,68);movePaddle(s,WIDTH+1000);assert.equal(s.paddle.x,WIDTH-12-s.paddle.w);assert.equal(s.ball.x,s.paddle.x+s.paddle.w/2);});
+test('side wall resolves overlap and reverses velocity',()=>{const s=createGame();launch(s);s.ball.x=20;s.ball.y=300;s.ball.vx=-300;s.ball.vy=0;advance(s,.01);assert.ok(s.ball.vx>0);assert.ok(s.ball.x>=20);});
+test('paddle edge changes the angle and always sends a falling ball upward',()=>{const s=createGame();launch(s);s.ball.x=s.paddle.x+s.paddle.w*.9;s.ball.y=463;s.ball.vx=0;s.ball.vy=325;advance(s,.02);assert.ok(s.ball.vx>0);assert.ok(s.ball.vy<0);assert.ok(s.ball.y+s.ball.r<s.paddle.y);});
+test('substeps prevent passing through bricks and final brick wins',()=>{const s=createGame();s.bricks.forEach(b=>b.alive=false);s.bricks[0].alive=true;launch(s);s.ball.x=80;s.ball.y=115;s.ball.vx=0;s.ball.vy=-560;const events=advance(s,.05);assert.equal(s.score,50);assert.equal(s.result,'win');assert.ok(s.ball.vy>0);assert.ok(events.some(e=>e.type==='brick'));});
+test('miss consumes one life, waits for launch, and third miss ends the game',()=>{const s=createGame();for(let i=0;i<3;i++){launch(s);s.ball.x=40;s.ball.y=HEIGHT+s.ball.r+1;s.ball.vy=100;advance(s,.01);assert.equal(s.lives,2-i);if(i<2){assert.equal(s.serving,true);assert.equal(s.result,null);assert.equal(s.ball.y,464);}}assert.equal(s.result,'over');});

@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0"><title>マインフィールド | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css"><link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout mines-layout">
+    <section class="game-panel mines-panel" aria-label="マインフィールドゲーム">
+      <div class="game-toolbar">
+        <div class="stat"><span class="stat-label">MINES LEFT</span><strong class="stat-value"><span class="mine-icon" aria-hidden="true">✳</span> <span id="remaining">10</span></strong></div>
+        <div class="stat"><span class="stat-label">TIME</span><strong class="stat-value" id="time">000</strong></div>
+        <button class="button" id="restart" type="button" aria-label="新しい盤面ではじめる"><span aria-hidden="true">↻</span> リスタート</button>
+      </div>
+      <div class="field-heading"><span>FIELD 01</span><span>9 × 9 <b aria-hidden="true">·</b> 10 MINES</span></div>
+      <div id="board" class="mine-board" role="grid" aria-label="9行9列のマインフィールド。矢印キーでマスを選び、Enterで開く、Fで旗を切り替えます。"></div>
+      <div class="game-toolbar bottom-toolbar">
+        <button class="button mode-button" id="flag-mode" type="button" aria-pressed="false"><span aria-hidden="true">⚑</span> <span id="mode-label">旗モード OFF</span></button>
+        <span class="best-time">BEST <strong id="best">—</strong><small>sec</small></span>
+      </div>
+      <p class="status-text" id="status" role="status" aria-live="polite">好きなマスを開こう。最初の一手は安全です。</p>
+      <div class="end-message" id="end-message" hidden><span aria-hidden="true" id="end-symbol">✦</span><h2 id="end-title"></h2><p id="end-description"></p></div>
+    </section>
+    <aside class="mines-notes">
+      <span class="eyebrow">READ BETWEEN THE MINES</span>
+      <h2>数字が教える、<br>安全な道。</h2>
+      <p class="instructions">数字は、周り8マスに隠れた地雷の数。手がかりをつなぎ、地雷以外のすべてのマスを開こう。</p>
+      <div class="mini-field" aria-hidden="true"><span></span><span>1</span><span></span><span>1</span><span class="mini-mine">✳</span><span>1</span><span></span><span>1</span><span></span></div>
+      <p class="tip"><span aria-hidden="true">⚑</span> 地雷だと思ったら旗を。右クリック、または旗モードをONにしてマスを押します。</p>
+      <div class="legend"><span><i class="legend-dot"></i> 未確認</span><span><i class="legend-dot safe"></i> 安全</span><span><i class="legend-flag">⚑</i> 旗</span></div>
+      <p class="keyboard-note">矢印キーで選択 / Enter・Spaceで開く<br>Fで旗を切り替え / 最初の周囲も安全</p>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

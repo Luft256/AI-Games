@@ -1,0 +1,67 @@
+.reaction-layout { display: grid; grid-template-columns: minmax(0, 1fr) 260px; gap: 28px; align-items: start; }
+.reaction-panel { background: #232921; color: #f6f5f0; padding: 30px; border-radius: 28px; overflow: hidden; }
+.reaction-toolbar { justify-content: space-between; gap: 18px; }
+.stats { display: flex; gap: 34px; }
+.reaction-panel .stat-label { color: #b8c1b3; font-size: 11px; letter-spacing: .1em; display: block; margin-bottom: 5px; }
+.reaction-panel .stat-value { color: #f6f5f0; font-size: 27px; font-variant-numeric: tabular-nums; }
+.stat-unit { font-size: 14px; color: #a6b3a3; }
+.reaction-panel .restart { background: #343e31; border: 1px solid #506149; color: #f6f5f0; font-size: 12px; }
+.restart span { margin-left: 10px; font-size: 18px; }
+.reaction-status { min-height: 24px; color: #c9d6c4; font-size: 13px; margin: 24px 0 18px; }
+.reaction-surface { display: flex; flex-direction: column; align-items: center; justify-content: center; width: 100%; min-height: 370px; border: 1px solid #586550; padding: 27px 15px 24px; border-radius: 20px; background: #374332; color: #f6f5f0; cursor: pointer; position: relative; overflow: hidden; touch-action: manipulation; user-select: none; -webkit-tap-highlight-color: transparent; }
+.reaction-surface::before, .reaction-surface::after { content: ''; position: absolute; width: 210px; height: 210px; border: 1px solid currentColor; border-radius: 50%; opacity: .08; right: -130px; top: -80px; }
+.reaction-surface::after { left: -130px; right: auto; top: auto; bottom: -80px; }
+.reaction-surface:focus-visible { outline: 3px solid #f4a3ba; outline-offset: 5px; }
+.surface-tag { font-size: 10px; font-weight: 800; letter-spacing: .2em; }
+.cue-art { display: grid; place-items: center; position: relative; width: 100px; height: 100px; margin: 23px 0 20px; }
+.cue-ring { position: absolute; inset: 0; border-radius: 50%; border: 1px dashed #9ca993; }
+.cue-core { font-size: 63px; line-height: 1; color: #f4a3ba; }
+.cue-orbit { position: absolute; width: 12px; height: 12px; right: 5px; top: 12px; background: #f4a3ba; border-radius: 50%; box-shadow: 0 0 0 5px #374332; }
+.cue-title { font-size: clamp(26px, 4vw, 44px); font-weight: 800; letter-spacing: -.04em; line-height: 1.3; font-variant-numeric: tabular-nums; }
+.cue-subtitle { font-size: 13px; margin-top: 12px; opacity: .78; line-height: 1.8; }
+.surface-action { margin-top: 27px; border-top: 1px solid #ffffff25; padding-top: 15px; width: min(300px, 90%); font-size: 11px; font-weight: 700; letter-spacing: .04em; }
+.reaction-surface[data-phase="waiting"] { background: #494938; border-color: #7d7c60; }
+[data-phase="waiting"] .cue-core { color: #e8cd78; font-size: 0; width: 20px; height: 20px; background: #e8cd78; border-radius: 50%; }
+[data-phase="waiting"] .cue-orbit { background: #e8cd78; box-shadow: 0 0 0 5px #494938; }
+[data-phase="waiting"] .cue-ring { border-color: #b2af84; }
+.reaction-surface[data-phase="ready"] { background: #c0dfa2; color: #232921; border-color: #d9edc5; }
+[data-phase="ready"] .cue-core { color: #354a2d; font-size: 78px; }
+[data-phase="ready"] .cue-ring { border: 2px solid #75935b; }
+[data-phase="ready"] .cue-orbit { background: #354a2d; box-shadow: 0 0 0 5px #c0dfa2; }
+[data-phase="ready"] .cue-title { font-size: 58px; }
+[data-phase="ready"] .surface-action { border-color: #23292130; }
+.reaction-surface[data-phase="early"] { background: #e8a39e; color: #232921; border-color: #f2bfba; }
+[data-phase="early"] .cue-core { color: #9c443d; font-size: 0; }
+[data-phase="early"] .cue-core::after { content: '！'; font-size: 65px; font-weight: 800; }
+[data-phase="early"] .cue-ring { border-color: #ae5d53; }
+[data-phase="early"] .cue-orbit { background: #9c443d; box-shadow: 0 0 0 5px #e8a39e; }
+[data-phase="early"] .surface-action { border-color: #23292130; }
+[data-phase="between"] .cue-core, [data-phase="done"] .cue-core { color: #8dd1d3; }
+[data-phase="between"] .cue-orbit, [data-phase="done"] .cue-orbit { background: #8dd1d3; }
+.surface-help { color: #b4c0af; font-size: 11px; margin: 14px 2px 24px; line-height: 1.8; }
+.round-results { display: grid; grid-template-columns: repeat(5, 1fr); gap: 9px; }
+.round-item { padding: 14px 8px; text-align: center; border: 1px solid #46523f; border-radius: 12px; background: #2b3428; }
+.round-label { display: block; font-size: 8px; letter-spacing: .07em; color: #a6b3a3; margin-bottom: 8px; }
+.round-item strong { font-size: 20px; font-variant-numeric: tabular-nums; }
+.round-item strong span { font-size: 10px; font-weight: 400; color: #a6b3a3; }
+.round-item.is-current { border-color: #f4a3ba; }
+.round-item.is-done { border-color: #617b55; background: #374332; }
+.round-item.is-done strong { color: #c0dfa2; }
+.reaction-aside { display: grid; gap: 24px; }
+.best-card { border: 1px solid #e2ced6; border-radius: 22px; padding: 25px; background: #f3dde4; color: #232921; }
+.aside-eyebrow { font-size: 10px; font-weight: 800; letter-spacing: .16em; }
+.best-value { display: flex; align-items: baseline; gap: 8px; margin: 12px 0; }
+.best-value strong { font-size: 60px; line-height: 1; letter-spacing: -.06em; font-variant-numeric: tabular-nums; }
+.best-card p:last-child { font-size: 12px; margin: 14px 0 0; line-height: 1.8; }
+.reaction-instructions { padding: 5px 6px; color: #232921; }
+.reaction-instructions h2 { font-size: 22px; margin: 12px 0 20px; }
+.reaction-instructions ol { padding-left: 22px; font-size: 13px; line-height: 2.3; }
+.hint { margin-top: 28px; color: #667160; font-size: 13px; line-height: 1.9; }
+.keyboard-note { font-size: 11px; line-height: 2.1; color: #667160; margin-top: 26px; }
+kbd { font: inherit; border: 1px solid #cfd5c8; padding: 2px 5px; border-radius: 4px; white-space: nowrap; }
+.result-message { padding: 26px; margin-top: 22px; text-align: center; border-radius: 18px; background: #f3dde4; color: #232921; }
+.result-message h2 { font-size: 24px; margin: 12px 0; }
+.result-message p { font-size: 14px; line-height: 1.8; }
+.result-message[hidden] { display: none; }
+@media (max-width: 900px) { .reaction-layout { grid-template-columns: minmax(0, 1fr); } .reaction-aside { grid-template-columns: 1fr 1.6fr; } .reaction-instructions { padding: 15px; } }
+@media (max-width: 560px) { .reaction-layout { width: calc(100% - 24px); gap: 20px; } .reaction-panel { padding: 20px 16px; border-radius: 22px; } .stats { gap: 28px; } .reaction-panel .stat-value { font-size: 24px; } .reaction-toolbar { align-items: flex-start; } .reaction-panel .restart { width: 100%; } .reaction-status { font-size: 12px; margin: 20px 0 16px; min-height: 40px; line-height: 1.7; } .reaction-surface { min-height: 350px; padding: 24px 10px; border-radius: 16px; } .cue-title { font-size: 32px; } .cue-subtitle { font-size: 12px; } .round-results { gap: 5px; } .round-item { padding: 12px 3px; border-radius: 8px; } .round-label { font-size: 7px; letter-spacing: 0; } .round-item strong { font-size: 17px; } .round-item strong span { display: block; margin-top: 3px; font-size: 9px; } .reaction-aside { grid-template-columns: 1fr; gap: 18px; } .best-card { padding: 20px; } .best-value strong { font-size: 54px; } .reaction-instructions { padding: 0 8px; } .result-message { padding: 22px 12px; } .result-message h2 { font-size: 20px; } }

@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>リアクションラボ | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout reaction-layout">
+    <section class="game-panel reaction-panel" aria-label="リアクションチャレンジ">
+      <div class="game-toolbar reaction-toolbar">
+        <div class="stats">
+          <div class="stat"><span class="stat-label">ラウンド</span><strong class="stat-value"><span id="round">1</span><span class="stat-unit"> / 5</span></strong></div>
+          <div class="stat"><span class="stat-label">平均</span><strong class="stat-value"><span id="average">—</span><span class="stat-unit"> ms</span></strong></div>
+        </div>
+        <button class="button restart" id="restart" type="button">最初からやり直す <span aria-hidden="true">↻</span></button>
+      </div>
+      <p class="status-text reaction-status" id="status" role="status" aria-live="polite">緑色の「いま！」が出たら、すばやく反応しよう。</p>
+      <button class="reaction-surface" id="surface" type="button" data-phase="idle" aria-describedby="surface-help">
+        <span class="surface-tag" id="surface-tag">TEST YOUR REFLEXES</span>
+        <span class="cue-art" aria-hidden="true"><span class="cue-ring"></span><span class="cue-core">✦</span><span class="cue-orbit"></span></span>
+        <span class="cue-title" id="cue-title">準備はいい？</span>
+        <span class="cue-subtitle" id="cue-subtitle">ここを押して、測定スタート</span>
+        <span class="surface-action" id="surface-action">クリック / タップ / Space <span aria-hidden="true">↗</span></span>
+      </button>
+      <p id="surface-help" class="surface-help">合図までは待って、緑になったら押す。フライングは同じラウンドから再試行。</p>
+      <div class="round-results" id="round-results" aria-label="各ラウンドの記録"></div>
+      <div class="result-message" id="result" hidden><span class="aside-eyebrow">SESSION COMPLETE</span><h2 id="result-title">測定完了！</h2><p id="result-detail"></p><button class="button button-primary" id="play-again" type="button">もう一度測定する <span aria-hidden="true">↗</span></button></div>
+    </section>
+    <aside class="reaction-aside">
+      <section class="best-card" aria-label="自己ベスト"><span class="aside-eyebrow">PERSONAL BEST</span><p class="best-value"><strong id="best">—</strong><span>ms</span></p><p>5ラウンドの平均タイム。<br>小さな数字を目指そう。</p></section>
+      <section class="instructions reaction-instructions"><span class="aside-eyebrow">HOW TO PLAY</span><h2>緑を、待とう。</h2><ol><li>大きなパネルを押して開始。</li><li>「そのまま待って…」は待機中。</li><li>緑色の「いま！」で押す！</li></ol><p class="hint">5回の平均が、今回の記録。<br>次のラウンドも自分のペースで。</p><p class="keyboard-note"><kbd>Space</kbd> / クリック / タップ<br>ページを離れると測定を一時停止します。</p></section>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
