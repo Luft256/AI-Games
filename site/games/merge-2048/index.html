@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0"><title>マージ2048 | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css"><link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout merge-layout">
+    <section class="game-panel merge-panel" aria-label="2048ゲーム">
+      <div class="game-toolbar">
+        <div class="stat"><span class="stat-label">SCORE</span><strong class="stat-value" id="score">0</strong></div>
+        <div class="stat"><span class="stat-label">BEST</span><strong class="stat-value" id="best">0</strong></div>
+        <button class="button button-primary" id="restart" type="button">新しくはじめる <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="board-wrap">
+        <div id="board" class="merge-board" role="group" aria-label="4行4列の2048盤面。矢印キーまたは方向ボタンで動かします。" tabindex="0"></div>
+        <div class="result-card" id="result" hidden>
+          <span class="result-symbol" id="result-symbol" aria-hidden="true">✦</span>
+          <h2 id="result-title"></h2><p id="result-message"></p>
+          <button class="button button-primary" id="result-action" type="button">続けて遊ぶ</button>
+        </div>
+      </div>
+      <p class="status-text" id="status" role="status" aria-live="polite">同じ数字を重ねて、2048を目指そう。</p>
+      <div class="touch-controls direction-controls" aria-label="移動ボタン">
+        <button class="button direction up" data-direction="up" type="button" aria-label="上に動かす">↑</button>
+        <button class="button direction left" data-direction="left" type="button" aria-label="左に動かす">←</button>
+        <button class="button direction down" data-direction="down" type="button" aria-label="下に動かす">↓</button>
+        <button class="button direction right" data-direction="right" type="button" aria-label="右に動かす">→</button>
+      </div>
+    </section>
+    <aside class="merge-notes">
+      <span class="eyebrow">A LITTLE STRATEGY</span>
+      <h2>ひとつに重ねる。<br>大きく育てる。</h2>
+      <p class="instructions">同じ数字のタイルをぶつけると、ひとつになって数字が2倍に。動かすたびに、新しいタイルが現れます。</p>
+      <div class="example" aria-label="2と2を重ねると4になる"><span>2</span><b aria-hidden="true">+</b><span>2</span><b aria-hidden="true">→</b><span class="four">4</span></div>
+      <p class="tip"><span aria-hidden="true">✦</span> 大きな数字を隅に集めると、次の一手が見えやすくなります。</p>
+      <p class="keyboard-note">矢印キー / スワイプ / 方向ボタン</p>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

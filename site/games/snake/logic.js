@@ -1,0 +1,6 @@
+export const SIZE=20;
+export const DIRECTIONS={up:{x:0,y:-1},down:{x:0,y:1},left:{x:-1,y:0},right:{x:1,y:0}};
+export function createSnake(random=Math.random){const s={snake:[{x:9,y:10},{x:8,y:10},{x:7,y:10}],direction:'right',queued:null,food:null,score:0,result:null};placeFood(s,random);return s;}
+export function placeFood(s,random=Math.random){const free=[];for(let y=0;y<SIZE;y++)for(let x=0;x<SIZE;x++)if(!s.snake.some(p=>p.x===x&&p.y===y))free.push({x,y});s.food=free.length?free[Math.min(free.length-1,Math.floor(random()*free.length))]:null;if(!s.food)s.result='win';}
+export function turn(s,direction){if(!DIRECTIONS[direction]||s.queued||s.result)return false;const a=DIRECTIONS[s.direction],b=DIRECTIONS[direction];if(a.x+b.x===0&&a.y+b.y===0||s.direction===direction)return false;s.queued=direction;return true;}
+export function step(s,random=Math.random){if(s.result)return s.result;if(s.queued){s.direction=s.queued;s.queued=null;}const d=DIRECTIONS[s.direction],h={x:s.snake[0].x+d.x,y:s.snake[0].y+d.y};const eating=s.food&&h.x===s.food.x&&h.y===s.food.y;const body=eating?s.snake:s.snake.slice(0,-1);if(h.x<0||h.x>=SIZE||h.y<0||h.y>=SIZE||body.some(p=>p.x===h.x&&p.y===h.y))return s.result='over';s.snake.unshift(h);if(eating){s.score+=10;placeFood(s,random);}else s.snake.pop();return s.result;}

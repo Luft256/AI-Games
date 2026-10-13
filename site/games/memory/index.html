@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>メモリーマッチ | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout memory-layout">
+    <section class="game-panel memory-panel" aria-label="メモリーマッチのゲーム盤">
+      <div class="game-toolbar memory-toolbar">
+        <div class="stats">
+          <div class="stat"><span class="stat-label">手数</span><strong class="stat-value" id="moves">0</strong></div>
+          <div class="stat"><span class="stat-label">ペア</span><strong class="stat-value"><span id="pairs">0</span><span class="stat-unit"> / 8</span></strong></div>
+          <div class="stat"><span class="stat-label">タイム</span><strong class="stat-value" id="time">0:00</strong></div>
+        </div>
+        <button class="button restart" id="restart" type="button">シャッフルして再開 <span aria-hidden="true">↻</span></button>
+      </div>
+      <p class="status-text memory-status" id="status" role="status" aria-live="polite">カードを2枚めくって、同じ形を見つけよう。</p>
+      <div class="card-grid" id="board" aria-label="16枚のカード"></div>
+      <div class="win-message" id="result" hidden>
+        <span class="win-eyebrow">ALL PAIRS FOUND</span>
+        <h2>すべてのペアを発見！</h2>
+        <p id="result-detail"></p>
+        <button class="button button-primary" id="play-again" type="button">もう一度あそぶ <span aria-hidden="true">↗</span></button>
+      </div>
+      <div class="board-footer"><span><span class="live-dot" aria-hidden="true"></span> MATCH THE SHAPES</span><span>4 × 4 / 8 PAIRS</span></div>
+    </section>
+    <aside class="memory-aside">
+      <section class="best-card" aria-label="自己ベスト"><span class="aside-eyebrow">PERSONAL BEST</span><p class="best-value"><strong id="best">—</strong><span>手</span></p><p>少ない手数で、もっとスマートに。</p></section>
+      <section class="instructions memory-instructions"><span class="aside-eyebrow">HOW TO PLAY</span><h2>記憶を、つなごう。</h2><ol><li>カードを2枚選んでめくる。</li><li>同じ形ならペアが完成。</li><li>8組すべてをそろえたらクリア！</li></ol><p class="hint">急がなくて大丈夫。<br>形と場所を、ひとつずつ覚えよう。</p><p class="keyboard-note"><kbd>Tab</kbd> で移動 · <kbd>Enter</kbd> / <kbd>Space</kbd> でめくる</p></section>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>
