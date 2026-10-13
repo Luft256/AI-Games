@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { moveBoard, spawnTile, canMove } from './logic.js';
 mountShell({ title: 'マージ2048', english: 'MERGE 2048', description: '数字を重ねる、小さなひらめき。', accent: '#b8a0f7', controls: ['矢印キーで移動', 'スワイプでも遊べます'] });
 const $ = id => document.getElementById(id);
@@ -33,6 +34,7 @@ function showResult(type) {
   $('result').hidden = false;
 }
 function restart() {
+  session.reset();
   board = spawnTile(spawnTile(Array(16).fill(0)));
   score = 0; won = false; lost = false;
   $('result').hidden = true;
@@ -40,12 +42,13 @@ function restart() {
   render();
 }
 function move(direction) {
-  if (lost || !$('result').hidden) return;
+  if (!session.check() || lost || !$('result').hidden) return;
   const result = moveBoard(board, direction);
   if (!result.changed) {
     $('status').textContent = 'その方向には動かせません。別の方向を試そう。';
     return;
   }
+  if (!session.start()) return;
   board = spawnTile(result.board);
   score += result.score;
   if (score > best) { best = score; saveBest('merge-2048', best); }
@@ -55,12 +58,12 @@ function move(direction) {
   boardElement.classList.add('moved');
   $('status').textContent = result.score ? `${result.score}ポイント！ いちばん大きなタイルは ${Math.max(...board)}。` : '次のタイルが現れました。';
   if (!won && board.some(value => value >= 2048)) { won = true; showResult('win'); $('status').textContent = '2048達成！ 続けて遊ぶこともできます。'; }
-  else if (!canMove(board)) { lost = true; showResult('lose'); $('status').textContent = '動かせるタイルがなくなりました。'; }
+  else if (!canMove(board) && session.finish()) { lost = true; showResult('lose'); $('status').textContent = '動かせるタイルがなくなりました。'; }
 }
 $('restart').addEventListener('click', restart);
 $('result-action').addEventListener('click', () => {
   if ($('result-action').dataset.action === 'restart') restart();
-  else { $('result').hidden = true; if (!canMove(board)) { lost = true; showResult('lose'); } }
+  else { if (!session.check()) return; $('result').hidden = true; if (!canMove(board) && session.finish()) { lost = true; showResult('lose'); } }
   boardElement.focus({ preventScroll: true });
 });
 document.querySelectorAll('[data-direction]').forEach(button => button.addEventListener('click', () => move(button.dataset.direction)));
@@ -83,4 +86,12 @@ boardElement.addEventListener('pointerup', event => {
   move(Math.abs(dx) > Math.abs(dy) ? dx > 0 ? 'right' : 'left' : dy > 0 ? 'down' : 'up');
 });
 boardElement.addEventListener('pointercancel', () => { pointerStart = null; });
+const session = createGameSession({ onExpire() {
+  lost = true; pointerStart = null;
+  $('result-symbol').textContent = '◷'; $('result-title').textContent = '時間切れ。';
+  $('result-message').textContent = `30分で終了。スコア ${score.toLocaleString('ja-JP')} · 最大タイル ${Math.max(...board)}。`;
+  $('result-action').textContent = 'もう一度'; $('result-action').dataset.action = 'restart';
+  $('result').hidden = false; $('status').textContent = '時間切れ。30分になったため終了しました。';
+} });
+
 restart();

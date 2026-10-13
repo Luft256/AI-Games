@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f5f0">
+  <title>スタックタワー | AI Games</title>
+  <link rel="stylesheet" href="../../shared/base.css">
+  <link rel="stylesheet" href="./game.css">
+</head>
+<body>
+  <div id="game-shell"></div>
+  <main class="game-layout">
+    <section class="game-panel" aria-label="スタックタワーのゲーム">
+      <div class="game-toolbar">
+        <div class="stat"><span class="stat-label">HEIGHT / 高さ</span><strong class="stat-value" id="score">0</strong><span class="stat-unit">段</span></div>
+        <div class="stat"><span class="stat-label">BEST / ベスト</span><strong class="stat-value" id="best">0</strong><span class="stat-unit">段</span></div>
+        <div class="stat width-stat"><span class="stat-label">WIDTH / 幅</span><strong class="stat-value" id="width">100</strong><span class="stat-unit">%</span></div>
+      </div>
+      <div class="board-wrap">
+        <canvas id="board" width="480" height="560" tabindex="0" aria-label="スタックタワーの盤面。クリック、Enter、Spaceでブロックを置く。Pで一時停止。" aria-describedby="status"></canvas>
+        <div class="board-overlay" id="overlay">
+          <span class="overlay-kicker">ONE BLOCK AT A TIME</span>
+          <h2 id="overlay-title">ひとつずつ、空へ。</h2>
+          <p id="overlay-copy">動くブロックを、タワーの真上に。<br>タイミングを合わせて置こう。</p>
+          <button class="button button-primary" id="overlay-start">プレイする →</button>
+        </div>
+        <span class="board-badge" aria-hidden="true">07 / STACK TOWER</span>
+      </div>
+      <div class="touch-controls"><button class="button button-primary place-button" id="place" disabled><span>ブロックを置く</span><span class="button-key" aria-hidden="true">SPACE ↓</span></button></div>
+      <p class="status-text" id="status" role="status" aria-live="polite">スタートを押して、最初の1段を積もう。</p>
+      <div class="toolbar-actions"><button class="button" id="start">スタート</button><button class="button" id="reset">リセット</button><span class="shortcuts">P : 一時停止 · R : リセット</span></div>
+    </section>
+    <aside class="instructions">
+      <span class="eyebrow">FIND YOUR BALANCE</span>
+      <h2>ちょうどいい、<br>その瞬間に。</h2>
+      <p>左右に動くブロックを、下のブロックに重ねて置きます。はみ出した部分が落ちて、残った幅で次の1段へ。</p>
+      <ol class="steps">
+        <li><span>01</span><div><strong>動きを見て</strong><p>クリック・Space・大きなボタンで配置。左右どちらからもブロックがやってきます。</p></div></li>
+        <li><span>02</span><div><strong>ぴったり重ねて</strong><p>わずかなずれは「ぴったり」に補正。連続で決めて、幅を守ろう。</p></div></li>
+        <li><span>03</span><div><strong>どこまで高く？</strong><p>重なりがなくなるとゲームオーバー。積んだ段数がスコアになります。</p></div></li>
+      </ol>
+      <div class="tower-art" aria-hidden="true"><span></span><span></span><span></span><span></span><i>↑</i></div>
+      <p class="small-note">急がず、ひと呼吸。<br>ベスト記録はこのブラウザに保存されます。画面を離れると自動で一時停止します。</p>
+    </aside>
+  </main>
+  <script type="module" src="./game.js"></script>
+</body>
+</html>

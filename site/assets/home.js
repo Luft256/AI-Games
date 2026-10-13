@@ -20,13 +20,23 @@ const artwork = {
   reaction: '<circle cx="185" cy="103" r="64" stroke="#743449" stroke-width="1.5" fill="none"/><circle cx="185" cy="103" r="47" stroke="#743449" stroke-opacity=".35" fill="none"/><path d="m194 47-43 64h30l-8 45 46-65h-31z" fill="#743449"/><path d="M100 61l-13-7m182 111 13 7m-178-15-11 9m177-94 11-9" stroke="#fff2f3" stroke-width="5" stroke-linecap="round"/>'
 };
 function art(game) {
-  return `<svg class="card-art" viewBox="0 0 360 200" aria-hidden="true"><defs><pattern id="grid-${game.id}" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#232921" stroke-opacity=".07" stroke-width=".7"/></pattern></defs><rect width="360" height="200" fill="url(#grid-${game.id})"/>${artwork[game.id] || ''}</svg>`;
+  return `<svg class="card-art" viewBox="0 0 360 200" aria-hidden="true"><defs><pattern id="grid-${game.id}" width="24" height="24" patternUnits="userSpaceOnUse"><path d="M24 0H0V24" fill="none" stroke="#232921" stroke-opacity=".07" stroke-width=".7"/></pattern></defs><rect width="360" height="200" fill="url(#grid-${game.id})"/>${artwork[game.id] || `<image href="./games/${game.id}/thumbnail.svg" width="360" height="200"/>`}</svg>`;
 }
 function render() {
   const visible = filterGames(games, { query: search.value, genre, favoritesOnly, favorites });
   grid.innerHTML = visible.map(game => {
     const saved = favorites.includes(game.id);
-    return `<article class="game-card" style="--card-color:${game.color}"><a class="card-art-link" href="./games/${game.id}/" aria-label="${game.title}をあそぶ"><span class="card-number">${game.number} / PLAY</span>${art(game)}</a><button class="favorite-button" data-favorite="${game.id}" aria-label="${game.title}をお気に入り${saved ? 'から外す' : 'に追加'}" aria-pressed="${saved}">${saved ? '★' : '☆'}</button><div class="card-body"><div class="card-meta"><span>${game.english}</span><span class="genre-tag">${game.label}</span></div><h3><a href="./games/${game.id}/">${game.title}</a></h3><p>${game.description}</p><div class="card-bottom"><span class="play-time">◷ ${game.time}</span><a class="play-link" href="./games/${game.id}/">あそぶ <span aria-hidden="true">↗</span></a></div></div></article>`;
+    return `<article class="game-card" style="--card-color:${game.color}">
+      <a class="game-card-link" href="./games/${game.id}/" aria-label="${game.title}をあそぶ">
+        <div class="card-art-link"><span class="card-number">${game.number} / PLAY</span>${art(game)}</div>
+        <div class="card-body">
+          <div class="card-meta"><span>${game.english}</span><span class="genre-tag">${game.label}</span></div>
+          <h3>${game.title}</h3><p>${game.description}</p>
+          <div class="card-bottom"><span class="play-time">◷ ${game.time}</span><span class="play-link">あそぶ <span aria-hidden="true">↗</span></span></div>
+        </div>
+      </a>
+      <button class="favorite-button" data-favorite="${game.id}" aria-label="${game.title}をお気に入り${saved ? 'から外す' : 'に追加'}" aria-pressed="${saved}">${saved ? '★' : '☆'}</button>
+    </article>`;
   }).join('');
   document.getElementById('empty-state').hidden = visible.length > 0;
   document.getElementById('result-status').textContent = search.value || genre !== 'all' || favoritesOnly ? `${visible.length} 件のゲーム` : '';

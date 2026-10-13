@@ -1,0 +1,11 @@
+{
+  "id": "lights-out",
+  "title": "ライツアウト",
+  "english": "LIGHTS OUT",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "押したマスと上下左右が反転。25個すべてのライトを消す、ひらめきパズル。",
+  "color": "#e7d281",
+  "time": "1–5 分",
+  "number": "10"
+}

@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#232921"><title>スカイホップ | AI Games</title><link rel="stylesheet" href="../../shared/base.css"><link rel="stylesheet" href="./game.css"></head>
+<body>
+<div id="game-shell"></div>
+<main class="game-layout">
+  <section class="game-panel" aria-label="スカイホップのゲーム">
+    <div class="game-toolbar">
+      <div class="stat"><span class="stat-label">SCORE / スコア</span><span id="score" class="stat-value">0</span></div>
+      <div class="stat"><span class="stat-label">BEST / ベスト</span><span id="best" class="stat-value">—</span></div>
+      <div class="stat pace-stat"><span class="stat-label">PACE / スピード</span><span id="pace" class="stat-value">1.0<span>×</span></span></div>
+      <div class="toolbar-actions"><button id="start" class="button button-primary">開始</button><button id="pause" class="button" disabled>一時停止</button><button id="reset" class="button">リセット</button></div>
+    </div>
+    <div class="runway">
+      <div class="scene-label" aria-hidden="true"><span>08 / SKY HOP</span><span>THE SKY IS YOUR RUNWAY</span></div>
+      <canvas id="game" width="900" height="420" tabindex="0" role="img" aria-label="横スクロールのランナー。開始後、Space・上キーまたはタップでジャンプ。Pキーで一時停止。">Canvas対応ブラウザで遊んでください。</canvas>
+      <div id="overlay" class="scene-overlay"><span id="overlay-eyebrow">READY TO HOP?</span><strong id="overlay-title">空へ、ひとっ跳び。</strong><p id="overlay-message">「開始」を押して、滑走路へ。</p></div>
+      <div class="scene-floor" aria-hidden="true"><span id="cleared">0 OBSTACLES CLEARED</span><span>ONE TAP, ONE HOP ↗</span></div>
+    </div>
+    <div class="below-scene"><p id="status" class="status-text" role="status" aria-live="polite">準備できました。「開始」で走り出します。</p><span id="jump-feedback" class="jump-feedback" aria-hidden="true">JUMP ↗</span></div>
+    <div class="touch-controls"><button id="jump" class="button button-primary jump-button" disabled aria-label="ジャンプ">ジャンプ <span aria-hidden="true">↗</span><small>SPACE / ↑ / TAP</small></button></div>
+    <p class="instructions">障害物の手前でジャンプ。着地したら、次のジャンプができます。走り続けるほどスコアとスピードが上がります。</p>
+  </section>
+</main>
+<script type="module" src="./game.js"></script>
+</body></html>

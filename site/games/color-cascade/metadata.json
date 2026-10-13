@@ -1,0 +1,5 @@
+{
+  "id": "color-cascade", "title": "カラーカスケード", "english": "COLOR CASCADE", "genre": "puzzle", "label": "パズル",
+  "description": "隣り合う色を交換して3つそろえよう。次の補充を読んで、20手で大連鎖を狙うパズル。",
+  "color": "#c8eb88", "time": "3–6 分", "number": "16"
+}
