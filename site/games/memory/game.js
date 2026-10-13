@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { createDeck, evaluatePair, formatTime } from './logic.js';
 
 mountShell({ title: 'メモリーマッチ', english: 'MEMORY MATCH', description: 'めくって、覚えて、つなぐ。小さな記憶のパズル。', accent: '#8dd1d3', controls: ['クリック / タップでカードをめくる', 'Tab + Enter / Space でも操作できます'] });
@@ -33,6 +34,7 @@ let best = Number(loadBest('memory', 0)) || 0;
 
 function showBest() { document.querySelector('#best').textContent = best || '—'; }
 function updateTime() {
+  if (!session.check()) return 1800;
   const elapsed = startedAt === null ? 0 : (performance.now() - startedAt) / 1000;
   timeLabel.textContent = formatTime(elapsed);
   return elapsed;
@@ -47,6 +49,9 @@ function renderCard(index) {
   element.setAttribute('aria-disabled', String(matched.has(index) || selected.includes(index)));
 }
 function finish() {
+  if (!session.finish()) return;
+  result.querySelector('h2').textContent = 'すべてのペアを発見！';
+  result.querySelector('.win-eyebrow').textContent = 'ALL PAIRS FOUND';
   clearInterval(tick);
   const elapsed = updateTime();
   const newBest = !best || moves < best;
@@ -56,7 +61,8 @@ function finish() {
   result.hidden = false;
 }
 function flip(index) {
-  if (locked || matched.has(index) || selected.includes(index) || pairs === 8) return;
+  if (!session.check() || locked || matched.has(index) || selected.includes(index) || pairs === 8) return;
+  if (!session.start()) return;
   if (startedAt === null) { startedAt = performance.now(); tick = setInterval(updateTime, 250); }
   selected.push(index);
   renderCard(index);
@@ -72,10 +78,12 @@ function flip(index) {
     renderCard(first); renderCard(second);
     status.textContent = `ペア完成！ ${symbols[cards[first].symbol].name}がそろいました。残り${8 - pairs}組。`;
     selected = [];
-    matchTimer = setTimeout(() => { locked = false; if (pairs === 8) finish(); }, 250);
+    if (pairs === 8) { finish(); return; }
+    matchTimer = setTimeout(() => { if (session.check()) locked = false; }, 250);
   } else {
     status.textContent = 'ちがう形でした。場所を覚えて、もう一度！';
     mismatchTimer = setTimeout(() => {
+      if (!session.check()) return;
       selected = [];
       renderCard(first); renderCard(second);
       locked = false;
@@ -84,6 +92,7 @@ function flip(index) {
   }
 }
 function restart() {
+  session.reset();
   clearTimeout(mismatchTimer); clearTimeout(matchTimer); clearInterval(tick);
   cards = createDeck(); selected = []; matched = new Set();
   moves = 0; pairs = 0; locked = false; startedAt = null;
@@ -112,4 +121,13 @@ board.addEventListener('keydown', (event) => {
   event.preventDefault();
   board.children[(index + offset + 16) % 16].focus();
 });
+const session = createGameSession({ onExpire() {
+  clearTimeout(mismatchTimer); clearTimeout(matchTimer); clearInterval(tick);
+  locked = true; timeLabel.textContent = '30:00';
+  status.textContent = `時間切れ。30分になったため終了しました。${pairs} / 8ペア発見。`;
+  result.querySelector('h2').textContent = '時間切れ。もう一度挑戦しよう。';
+  result.querySelector('.win-eyebrow').textContent = 'TIME UP';
+  document.querySelector('#result-detail').textContent = `${pairs} / 8ペア · ${moves}手 · 30:00。未クリアの記録はベストに含めません。`;
+  result.hidden = false;
+} });
 showBest(); restart();

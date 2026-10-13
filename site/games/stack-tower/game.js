@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { createGame, advanceGame, placeBlock, BLOCK_HEIGHT, FLOOR_Y, WORLD_WIDTH } from './logic.js';
 
 mountShell({
@@ -42,17 +43,19 @@ function stopLoop() {
   lastTime = null;
 }
 function setMode(next) {
+  if (next === 'over' && !session.finish()) return;
   stopLoop();
   mode = next;
   $('overlay').hidden = next === 'running';
   $('place').disabled = next !== 'running';
   $('place').classList.remove('pressed');
-  $('start').textContent = next === 'running' ? '一時停止' : next === 'paused' ? '再開' : next === 'over' ? 'もう一度' : 'スタート';
-  $('overlay-start').textContent = next === 'paused' ? '続きから再開 →' : next === 'over' ? 'もう一度 →' : 'プレイする →';
+  $('start').textContent = next === 'running' ? '一時停止' : next === 'paused' ? '再開' : (next === 'over' || next === 'timeout') ? 'もう一度' : 'スタート';
+  $('overlay-start').textContent = next === 'paused' ? '続きから再開 →' : (next === 'over' || next === 'timeout') ? 'もう一度 →' : 'プレイする →';
   const copy = {
     ready: ['ひとつずつ、空へ。', '動くブロックを、タワーの真上に。タイミングを合わせて置こう。', 'スタートを押して、最初の1段を積もう。'],
     running: ['', '', 'クリック・Space・下のボタンで置こう。Pで一時停止。'],
     paused: ['ここで、ひと呼吸。', 'タワーもブロックも、このまま。準備ができたら続きをどうぞ。', '一時停止中。再開ボタン・Space・Pで続けられます。'],
+    timeout: ['時間切れ。ひと呼吸、休もう。', `30分で終了。高さ ${game.score} 段、ぴったり ${game.perfects} 回。`, '時間切れ。30分になったため終了しました。'],
     over: ['空へ、もう一度。', `今回の高さは ${game.score} 段。ぴったりは ${game.perfects} 回。ベストは ${best} 段です。`, `ゲームオーバー。ブロックが重なりませんでした。記録：${game.score} 段。`],
   }[next];
   $('overlay-title').textContent = copy[0];
@@ -62,6 +65,7 @@ function setMode(next) {
   if (mode === 'running') frameId = requestAnimationFrame(frame);
 }
 function freshGame() {
+  session.reset();
   game = createGame();
   camera = 0;
   debris = [];
@@ -74,13 +78,14 @@ function reset() {
   setMode('ready');
 }
 function toggle() {
-  if (mode === 'running') { setMode('paused'); return; }
-  if (mode === 'ready' || mode === 'over') freshGame();
+  if (mode === 'running') { if (session.check()) setMode('paused'); return; }
+  if (mode === 'ready' || mode === 'over' || mode === 'timeout') freshGame();
+  if (!session.start()) return;
   setMode('running');
   canvas.focus({ preventScroll: true });
 }
 function place() {
-  if (mode !== 'running') return;
+  if (!session.check() || mode !== 'running') return;
   const next = placeBlock(game);
   if (next === game) return;
   game = next;
@@ -206,7 +211,7 @@ function draw() {
 }
 function frame(now) {
   frameId = null;
-  if (mode !== 'running') return;
+  if (!session.check() || mode !== 'running') return;
   const elapsed = lastTime === null ? 0 : Math.min(0.05, Math.max(0, (now - lastTime) / 1000));
   lastTime = now;
   game = advanceGame(game, elapsed);
@@ -235,5 +240,8 @@ function resize() {
   draw();
 }
 new ResizeObserver(resize).observe(canvas);
+const session = createGameSession({ onExpire() {
+  game.status = 'timeout'; updateStats(); setMode('timeout');
+} });
 updateStats();
 setMode('ready');

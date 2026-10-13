@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest, formatTime } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { SIZE, CELL_COUNT, affectedCells, toggleLight, countLights, isSolved, createPuzzle, nextCell } from './logic.js';
 
 mountShell({
@@ -27,6 +28,7 @@ const cells = [];
 
 function showBest() { bestElement.textContent = best || '—'; }
 function updateTime() {
+  if (!session.check()) return 1800;
   const elapsed = startedAt === null ? 0 : (performance.now() - startedAt) / 1000;
   timeElement.textContent = formatTime(elapsed);
   return elapsed;
@@ -55,6 +57,9 @@ function render() {
   highlight(highlightedCell);
 }
 function finish() {
+  if (!session.finish()) return;
+  resultElement.querySelector('h2').textContent = 'すべてのライトが消えました。';
+  resultElement.querySelector('.aside-eyebrow').textContent = 'ALL LIGHTS OFF';
   finished = true;
   clearInterval(timer);
   timer = null;
@@ -66,8 +71,9 @@ function finish() {
   resultElement.hidden = false;
 }
 function play(index) {
-  if (finished) return;
+  if (!session.check() || finished) return;
   selectCell(index);
+  if (!session.start()) return;
   if (startedAt === null) { startedAt = performance.now(); timer = setInterval(updateTime, 250); }
   board = toggleLight(board, index);
   moves += 1;
@@ -76,6 +82,7 @@ function play(index) {
   render();
 }
 function reset() {
+  session.reset();
   clearInterval(timer);
   timer = null;
   board = [...initialBoard];
@@ -129,6 +136,15 @@ boardElement.addEventListener('keydown', (event) => {
 document.querySelector('#restart').addEventListener('click', reset);
 document.querySelector('#new-board').addEventListener('click', () => newBoard());
 document.querySelector('#play-again').addEventListener('click', () => newBoard(true));
+const session = createGameSession({ onExpire() {
+  finished = true; clearInterval(timer); timer = null;
+  timeElement.textContent = '30:00';
+  statusElement.textContent = `時間切れ。30分になったため終了しました。残り${countLights(board)}個。`;
+  resultElement.querySelector('h2').textContent = '時間切れ。もう一度挑戦しよう。';
+  resultElement.querySelector('.aside-eyebrow').textContent = 'TIME UP';
+  document.querySelector('#result-detail').textContent = `${moves}手 · 残り${countLights(board)}個。未クリアの記録はベストに含めません。`;
+  resultElement.hidden = false; render();
+} });
 showBest();
 selectCell(selectedCell);
 reset();

@@ -1,4 +1,5 @@
 import { mountShell, loadBest, saveBest } from '../../shared/game-shell.js';
+import { createGameSession } from '../../shared/session-limit.js';
 import { createGame, advance, ORBIT_RADIUS, OUTER_RADIUS, PLAYER_RADIUS, WARNING_TIME, TAU } from './logic.js';
 mountShell({ title: 'オービットドッジ', english: 'ORBIT DODGE', description: '円軌道をめぐり、飛び込む隕石をかわそう。予告を読んで生き残るサバイバル。', accent: '#f2a78d', controls: ['← / → または A / D を押し続けて、円軌道の上を移動。左右ボタンでも操作できます。', '盤面を押したままドラッグすると、ポインターの方向へ移動します。', '外周のマーカーと点線は隕石の予告。白い円が隕石に触れるとゲームオーバー。', 'スペース / P で開始・一時停止・再開。リセットで最初から。'] });
 const $ = id => document.getElementById(id);
@@ -108,6 +109,7 @@ function showOverlay(eyebrow, title, copy, button) {
   $('overlay-eyebrow').textContent = eyebrow; $('overlay-title').textContent = title; $('overlay-copy').textContent = copy; $('overlay-start').textContent = button; $('overlay').hidden = false;
 }
 function finish() {
+  if (!session.finish()) return;
   mode = 'over'; stopLoop(); clearInput();
   const newBest = game.score > best;
   if (newBest) { best = game.score; saveBest('orbit-dodge', best); $('best').textContent = String(best); }
@@ -117,7 +119,7 @@ function finish() {
 }
 function tick(timestamp) {
   frameId = null;
-  if (mode !== 'running') return;
+  if (!session.check() || mode !== 'running') return;
   if (lastFrame !== null) advance(game, Math.min(.05, (timestamp - lastFrame) / 1000), { direction: direction(), target });
   lastFrame = timestamp;
   updateStats(); draw();
@@ -126,21 +128,23 @@ function tick(timestamp) {
 }
 function play() {
   if (mode === 'running') return;
-  if (mode !== 'paused') game = createGame();
+  if (mode !== 'paused') { game = createGame(); session.reset(); }
+  if (!session.start()) return;
   mode = 'running'; stopLoop(); clearInput(); $('overlay').hidden = true; $('start').textContent = '一時停止';
   $('status').textContent = '白い点を動かして隕石を回避。点線の位置から離れよう。';
   canvas.focus({ preventScroll: true }); updateStats(); draw(); frameId = requestAnimationFrame(tick);
 }
 function pause(automatic = false) {
-  if (mode !== 'running') return;
+  if (!session.check() || mode !== 'running') return;
   mode = 'paused'; stopLoop(); clearInput(); $('start').textContent = '再開';
-  showOverlay('PAUSED', 'ひと息、軌道の上で。', '時間と隕石は止まっています。再開すると、同じ場所から続きます。', '再開する →');
+  showOverlay('PAUSED', 'ひと息、軌道の上で。', '隕石と移動は止まっています。残り時間は進みます。再開すると、同じ場所から続きます。', '再開する →');
   $('status').textContent = automatic ? '画面を離れたため一時停止しました。再開ボタンで続けられます。' : '一時停止中。再開ボタンで続けられます。';
 }
 function toggle() { if (mode === 'running') pause(); else play(); }
 $('start').addEventListener('click', toggle);
 $('overlay-start').addEventListener('click', play);
 $('reset').addEventListener('click', () => {
+  session.reset();
   stopLoop(); mode = 'ready'; clearInput(); game = createGame(); updateStats(); draw(); $('start').textContent = 'スタート';
   showOverlay('STAY IN ORBIT', '軌道をめぐって、隕石をかわそう。', '外周の予告を見て、飛来ルートの外へ。あなたは白い点。動き続けて生き残ろう。', 'プレイする →');
   $('status').textContent = 'リセットしました。スタートを押すと始まります。';
@@ -158,7 +162,7 @@ window.addEventListener('keyup', event => { keys.delete(event.key.length === 1 ?
 for (const button of controls) {
   button.setAttribute('aria-pressed', 'false');
   button.addEventListener('pointerdown', event => {
-    if (mode !== 'running') return; event.preventDefault(); button.setPointerCapture(event.pointerId);
+    if (!session.check() || mode !== 'running') return; event.preventDefault(); button.setPointerCapture(event.pointerId);
     touchDirections.set(event.pointerId, Number(button.dataset.direction)); target = null; updateControls();
   });
   const release = event => { touchDirections.delete(event.pointerId); updateControls(); };
@@ -184,4 +188,11 @@ canvas.addEventListener('pointermove', event => { if (event.pointerId === dragId
 for (const type of ['pointerup', 'pointercancel', 'lostpointercapture']) canvas.addEventListener(type, event => { if (event.pointerId === dragId) { dragId = null; target = null; } });
 window.addEventListener('blur', () => pause(true));
 document.addEventListener('visibilitychange', () => { if (document.hidden) pause(true); });
+const session = createGameSession({ onExpire() {
+  mode = 'timeout'; game.result = 'timeout'; stopLoop(); clearInput();
+  if (game.score > best) { best = game.score; saveBest('orbit-dodge', best); $('best').textContent = String(best); }
+  $('start').textContent = 'もう一度';
+  showOverlay('TIME UP', '時間切れ。次の軌道へ。', `30分で終了。${game.score}点 · ${game.dodged}個回避。`, 'もう一度プレイ →');
+  $('status').textContent = '時間切れ。30分になったため、この飛行は終了しました。'; draw();
+} });
 updateStats(); draw();
