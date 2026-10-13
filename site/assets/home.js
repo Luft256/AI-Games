@@ -26,7 +26,17 @@ function render() {
   const visible = filterGames(games, { query: search.value, genre, favoritesOnly, favorites });
   grid.innerHTML = visible.map(game => {
     const saved = favorites.includes(game.id);
-    return `<article class="game-card" style="--card-color:${game.color}"><a class="card-art-link" href="./games/${game.id}/" aria-label="${game.title}をあそぶ"><span class="card-number">${game.number} / PLAY</span>${art(game)}</a><button class="favorite-button" data-favorite="${game.id}" aria-label="${game.title}をお気に入り${saved ? 'から外す' : 'に追加'}" aria-pressed="${saved}">${saved ? '★' : '☆'}</button><div class="card-body"><div class="card-meta"><span>${game.english}</span><span class="genre-tag">${game.label}</span></div><h3><a href="./games/${game.id}/">${game.title}</a></h3><p>${game.description}</p><div class="card-bottom"><span class="play-time">◷ ${game.time}</span><a class="play-link" href="./games/${game.id}/">あそぶ <span aria-hidden="true">↗</span></a></div></div></article>`;
+    return `<article class="game-card" style="--card-color:${game.color}">
+      <a class="game-card-link" href="./games/${game.id}/" aria-label="${game.title}をあそぶ">
+        <div class="card-art-link"><span class="card-number">${game.number} / PLAY</span>${art(game)}</div>
+        <div class="card-body">
+          <div class="card-meta"><span>${game.english}</span><span class="genre-tag">${game.label}</span></div>
+          <h3>${game.title}</h3><p>${game.description}</p>
+          <div class="card-bottom"><span class="play-time">◷ ${game.time}</span><span class="play-link">あそぶ <span aria-hidden="true">↗</span></span></div>
+        </div>
+      </a>
+      <button class="favorite-button" data-favorite="${game.id}" aria-label="${game.title}をお気に入り${saved ? 'から外す' : 'に追加'}" aria-pressed="${saved}">${saved ? '★' : '☆'}</button>
+    </article>`;
   }).join('');
   document.getElementById('empty-state').hidden = visible.length > 0;
   document.getElementById('result-status').textContent = search.value || genre !== 'all' || favoritesOnly ? `${visible.length} 件のゲーム` : '';
