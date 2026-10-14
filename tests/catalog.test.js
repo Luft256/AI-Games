@@ -1,4 +1,5 @@
 import test from 'node:test';
+import { readFile } from 'node:fs/promises';
 import assert from 'node:assert/strict';
 import { games, filterGames } from '../site/assets/catalog.js';
 import { loadBest, saveBest } from '../site/shared/game-shell.js';
@@ -21,4 +22,23 @@ test('score storage tolerates blocked storage and invalid values', () => {
   globalThis.localStorage = {getItem(){throw Error('blocked')},setItem(){throw Error('blocked')}};
   assert.equal(loadBest('snake',5),5); assert.doesNotThrow(()=>saveBest('snake',12));
   delete globalThis.localStorage;
+});
+
+test('registered metadata, thumbnails, home counts and fallback routes stay synchronized', async () => {
+  const home = await readFile(new URL('../site/index.html', import.meta.url), 'utf8');
+  assert.match(home, new RegExp(`${games.length} GAMES & COUNTING`));
+  assert.match(home, new RegExp(`<span class="count-badge">${games.length}</span>`));
+  const fallback = home.match(/<noscript>([\s\S]*?)<\/noscript>/)?.[1];
+  assert.ok(fallback, 'direct navigation is available without JavaScript');
+  let previous = 0;
+  for (const game of games) {
+    assert.ok(Number(game.number) > previous, 'catalog remains in numeric order');
+    previous = Number(game.number);
+    assert.ok(fallback.includes(`href="./games/${game.id}/"`), `${game.id} fallback link`);
+    if (Number(game.number) <= 6) continue;
+    const metadata = JSON.parse(await readFile(new URL(`../site/games/${game.id}/metadata.json`, import.meta.url), 'utf8'));
+    assert.deepEqual(game, metadata, `${game.id} published description matches its metadata`);
+    const thumbnail = await readFile(new URL(`../site/games/${game.id}/thumbnail.svg`, import.meta.url), 'utf8');
+    assert.match(thumbnail, /viewBox=["']0 0 [1-9]\d* [1-9]\d*["']/);
+  }
 });
