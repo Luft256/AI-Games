@@ -1,0 +1,11 @@
+{
+  "id": "loop-tracer",
+  "title": "ループトレーサー",
+  "english": "LOOP TRACER",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "数字の周りに必要な本数の線を引く。枝分かれも途切れもない、たった1つの輪を見つけよう。",
+  "color": "#b8a9e4",
+  "time": "2–8 分",
+  "number": "22"
+}
