@@ -22,3 +22,9 @@
 - Follow `docs/game-quality.md`: an independent reviewer must actually play new games, record specific observations, and feed actionable issues back for improvement before integration. AI ratings are diagnostic, not evidence of human enjoyment.
 - Give each game a clear short-round goal, meaningful decisions or learnable skill, understandable feedback, and a quick retry. Avoid reskinned duplicates just to increase the count.
 - Preserve review findings and verified fixes in `docs/playtests/`. Fix blockers before adding more games.
+
+## Work tracking
+
+- Do not create scheduled runs, recurring automations, or daily production jobs. Continue work in the current chat when requested.
+- Create GitHub issues for remaining fixes and improvements only when the affected game or page has already been merged. Include the merged PR and observed behavior.
+- For unmerged work in progress, fix findings directly in its feature branch instead of creating an issue. Check existing issues first to avoid duplicates.
