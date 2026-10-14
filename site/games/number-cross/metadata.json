@@ -1,0 +1,11 @@
+{
+  "id": "number-cross",
+  "title": "ナンバークロス",
+  "english": "NUMBER CROSS",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "縦と横の合計を両方満たそう。同じ列のかたまりに数字は重ねない、小さな数字クロスワード。",
+  "color": "#dccb8d",
+  "time": "2–8 分",
+  "number": "24"
+}
