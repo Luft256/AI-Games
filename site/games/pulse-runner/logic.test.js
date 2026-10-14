@@ -1,3 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,safeLane,beatTime} from './purelogic.js';
 test('safe lane and precise boost reward; early boost damages once per beat',()=>{const s=create();s.t=3;s.lane=safeLane(0);input(s,2);assert.equal(s.score,25);input(s,2);assert.equal(s.score,25);step(s,.01);assert.equal(s.score,35);input(s,2);assert.equal(s.hp,5);});
 test('planned lane changes can complete entire course; misses end naturally',()=>{const s=create();for(let i=0;i<98;i++){s.lane=safeLane(i);step(s,beatTime(i)-s.t+.001);}assert.equal(s.done,true);assert.ok(s.score>=900);const f=create();f.lane=0;for(let i=0;i<25&&!f.done;i++)step(f,1);assert.equal(f.done,true);});
+
+test('boost feedback distinguishes wrong lane and early timing and survives ending',()=>{const s=create();s.lane=1;input(s,2);assert.match(s.message,/早押し/);s.boosted=-1;s.t=3;s.lane=0;s.hp=1;input(s,2);assert.match(s.message,/最後のミス：レーン違い/);});
