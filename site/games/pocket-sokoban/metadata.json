@@ -1,0 +1,11 @@
+{
+  "id": "pocket-sokoban",
+  "title": "ポケット倉庫",
+  "english": "POCKET SOKOBAN",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "箱は押せても引けない。順番と立ち位置を考えて、すべての箱を金色の置き場へ。",
+  "color": "#edbf85",
+  "time": "2–8 分",
+  "number": "20"
+}
