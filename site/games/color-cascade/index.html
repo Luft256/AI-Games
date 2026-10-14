@@ -14,8 +14,8 @@
 <div class="stat"><span class="stat-label">最大連鎖</span><strong class="stat-value"><span id="combo">0</span><small> CHAIN</small></strong></div>
 </div>
 <div class="goal-track" role="progressbar" aria-label="目標6,000点への進捗" aria-valuemin="0" aria-valuemax="6000" aria-valuenow="0"><span id="goal-fill"></span></div>
-<div class="forecast-caption"><span>↓ 次に落ちる色 <small>上の記号から</small></span><span id="bonus-label"></span></div>
-<div id="forecast" class="forecast" aria-label="列ごとの次の補充、上から順に落ちます"></div>
+<div class="forecast-caption"><span>↓ 補充予告 1 → 2 → 3</span><span id="bonus-label"></span></div>
+<div id="forecast" class="forecast" role="group" aria-label="各列の補充予告。番号1、2、3の順に補充されます"></div>
 <div id="board" class="cascade-board" role="group" aria-label="6行6列。隣り合う2つを選んで交換。" aria-describedby="status"></div>
 <div class="feedback-line"><strong id="burst">20手の連鎖チャレンジ</strong><span id="gain"></span></div>
 <p class="status-text" id="status" role="status" aria-live="polite" aria-atomic="true"></p>
@@ -28,7 +28,7 @@
 <div class="example" aria-hidden="true"><span class="tile c0">●</span><span class="tile c0">●</span><span class="tile c2">▲</span><span class="example-arrow">↕</span><span class="tile c0 example-last">●</span></div>
 <p><b>隣り合う2つを交換</b>して、同じ記号を縦か横に3つ以上。消えた場所に上から色が落ち、またそろうと<b>連鎖</b>！</p>
 <p>1個30点。2連鎖は2倍、3連鎖は3倍。<b>ボーナス記号はさらに2倍</b>で、5手ごとに変わります。</p>
-<p>上の3色は次の補充。<b>先頭の色は、空いた列の一番下へ。</b>落ちたあとの並びを読んで、大連鎖を狙おう。</p>
+<p>各列の1 → 2 → 3は次の補充順。<b>先頭の色は、空いた列の一番下へ。</b>落ちたあとの並びを読んで、大連鎖を狙おう。</p>
 <p>20手で6,000点を目指そう。目標達成後も20手まで得点を伸ばせます。そろわない交換は手数を使いません。</p>
 <p class="keyboard-note"><kbd>↑</kbd><kbd>↓</kbd><kbd>←</kbd><kbd>→</kbd> 選択<br><kbd>Enter</kbd> / <kbd>Space</kbd> 決定<br><kbd>Esc</kbd> 選択解除 · <kbd>H</kbd> ヒント</p>
 <p class="hint-note">点線で結ばれた2つを選ぶと最初の3つがそろいます。ヒントは何度でも、手数を使わず見られます。</p>
