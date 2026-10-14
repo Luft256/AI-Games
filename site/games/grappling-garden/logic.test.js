@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,position,input,step,anchors} from './purelogic.js';
+test('out of reach hook cannot teleport; reachable hook preserves position',()=>{const s=create(),before=position(s);input(s,2);assert.equal(s.hook,0);s.angle=.5;const p=position(s);input(s,2);assert.equal(s.hook,1);assert.ok(Math.hypot(p.x-position(s).x,p.y-position(s).y)<.001);});
+test('pumping changes swing and last hook can clear checkpoint',()=>{const a=create(),b=create();for(let i=0;i<60;i++){step(a,1/60,new Set([1]));step(b,1/60);}assert.ok(position(a).x>position(b).x);const s=create();s.hook=2;s.angle=.6;s.length=240;step(s,0);assert.equal(s.stage,1);s.t=180;step(s,0);assert.equal(s.done,true);});
