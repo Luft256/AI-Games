@@ -4,14 +4,14 @@ mountShell({title:"橋のアトリエ",english:"BRIDGE WEAVER",description:"橋�
 const $=s=>document.querySelector(s),board=$('#board'),status=$('#status');
 let room=0,moves=0,efforts=0,finished=false,paused=false,history=[];
 let cleared=loadBest('bridge-weaver',0);
-const session=createGameSession({onExpire(){finished=true;paused=false;board.classList.remove('paused');status.textContent='時間切れ。30分になったため終了しました。やり直して再挑戦できます。';render();}});
+const session=createGameSession({onExpire(){finished=true;paused=false;$('#pause').disabled=true;$('#pause').textContent='終了';board.classList.remove('paused');status.textContent='時間切れ。30分になったため終了しました。やり直して再挑戦できます。';render();}});
 for(let i=0;i<5;i++){const o=document.createElement('option');o.value=i;o.textContent=`${i+1} / 5`;$('#level').append(o);}
 $('#best').textContent=cleared.toString(2).replaceAll('0','').length;
 function begin(){return !finished&&!paused&&session.check()&&session.start();}
 function checkpoint(){history.push(structuredClone(state));moves++;efforts++;}
 function message(text){if(!finished&&!paused)status.textContent=text;}
-function win(){if(!session.finish())return;finished=true;const key=`bridge-weaver-room-${room}`,old=loadBest(key,0);if(old===0||efforts<old)saveBest(key,efforts);cleared|=1<<room;saveBest('bridge-weaver',cleared);$('#best').textContent=cleared.toString(2).replaceAll('0','').length;status.textContent=`クリア！ ${moves}手で部屋${room+1}を解きました。${(cleared&31)===31?'全室終了、お見事！':room===4?'ほかの部屋も選んで挑戦できます。':'次の部屋へ進めます。'}`;$('#next').hidden=room===4;}
-function reset(){session.reset();finished=false;paused=false;history=[];moves=0;efforts=0;$('#next').hidden=true;$('#pause').textContent='一時停止';board.classList.remove('paused');state=initial(room);status.textContent=instruction;render();}
+function win(){if(!session.finish())return;finished=true;$('#pause').disabled=true;$('#pause').textContent='終了';const key=`bridge-weaver-room-${room}`,old=loadBest(key,0);if(old===0||efforts<old)saveBest(key,efforts);cleared|=1<<room;saveBest('bridge-weaver',cleared);$('#best').textContent=cleared.toString(2).replaceAll('0','').length;status.textContent=`クリア！ ${moves}手で部屋${room+1}を解きました。${(cleared&31)===31?'全室終了、お見事！':room===4?'ほかの部屋も選んで挑戦できます。':'次の部屋へ進めます。'}`;$('#next').hidden=room===4;}
+function reset(){session.reset();finished=false;paused=false;history=[];moves=0;efforts=0;$('#next').hidden=true;$('#pause').disabled=false;$('#pause').textContent='一時停止';board.classList.remove('paused');state=initial(room);status.textContent=instruction;render();}
 $('#restart').onclick=reset;
 $('#level').onchange=()=>{room=Number($('#level').value);reset();};
 $('#next').onclick=()=>{room=(room+1)%5;$('#level').value=room;reset();};
