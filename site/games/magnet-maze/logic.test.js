@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {levels,pulse,solved,solve} from './logic.js';
+test('all six magnetic rooms can be solved deterministically',()=>{for(const [i,l]of levels.entries()){const path=solve(l);assert.ok(path,`room ${i+1}`);let t=l.tokens;for(const[a,p]of path)t=pulse(l,t,a,p);assert.ok(solved(l,t));assert.ok(path.length>=2);}});
+test('opposite poles attract and matching poles repel',()=>{const l={walls:[],goals:[[4,4]]},t=[{x:2,y:2,sign:1}];assert.equal(pulse(l,t,0,-1)[0].x,1);assert.equal(pulse(l,t,0,1)[0].x,3);assert.equal(t[0].x,2);});
+test('arrived tokens lock and walls prevent movement',()=>{const l={walls:[[1,2]],goals:[[4,4]]},t=[{x:2,y:2,sign:1}];assert.deepEqual(pulse(l,t,0,-1),t);const goal=[{x:4,y:4,sign:1}];assert.deepEqual(pulse(l,goal,0,1),goal);});

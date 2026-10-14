@@ -1,0 +1,11 @@
+{
+  "id": "magnet-maze",
+  "title": "マグネット迷路",
+  "english": "MAGNET MAZE",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "同じ極は反発、違う極は吸着。磁石の位置と極を選び、磁力パルスで駒をゴールへ導こう。",
+  "color": "#ed9ba5",
+  "time": "2–8 分",
+  "number": "23"
+}
