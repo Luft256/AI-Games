@@ -47,9 +47,13 @@ function render() {
   });
   forecastElement.replaceChildren();
   queues.forEach((queue, col) => {
-    const column = document.createElement('div'); column.className = 'forecast-column';
+    const column = document.createElement('div'); column.className = 'forecast-column'; column.setAttribute('role', 'group');
     column.setAttribute('aria-label', `${col + 1}列の補充順 ${queue.slice(0, 3).map(n => names[n]).join('、')}`);
-    queue.slice(0, 3).forEach(n => { const chip = document.createElement('span'); chip.textContent = symbols[n]; chip.setAttribute('aria-hidden', 'true'); column.append(chip); });
+    queue.slice(0, 3).forEach((n, order) => {
+      const chip = document.createElement('span'); chip.className = 'forecast-chip'; chip.setAttribute('aria-hidden', 'true');
+      const label = document.createElement('small'); label.className = 'forecast-order'; label.textContent = String(order + 1);
+      const symbol = document.createElement('b'); symbol.textContent = symbols[n]; chip.append(label, symbol); column.append(chip);
+    });
     forecastElement.append(column);
   });
   $('#hint').disabled = busy || finished;
