@@ -1,0 +1,5 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{createState,offers,cells,canPlace,place,skip,won}from'./purelogic.js';
+test('shape rotation normalizes and forbids edge wrapping',()=>{assert.deepEqual(cells(0,1,0),[[0,0],[0,1]]);const s=createState();assert(!canPlace(s,offers(s)[0],0,4));assert(canPlace(s,offers(s)[0],1,4));});
+test('scoring counts same-color edges against existing stalls only',()=>{let s=createState();s.board[0]=0;s.board[1]=0;let n=place(s,0,0,5);assert.equal(n.score,6);assert.equal(s.board[5],-1);assert.equal(place(n,0,0,5),n);});
+test('full row earns its bonus only once',()=>{let s=createState();s.board[0]=1;s.board[1]=2;s.board[2]=1;let n=place(s,0,0,3);assert.equal(n.score,6);assert.deepEqual(n.rows,[0]);n=skip(n);assert.equal(n.score,6);});
+test('twelve drafts always finish, reject late input, and threshold is explicit',()=>{let s=createState();for(let n=0;n<12;n++)s=skip(s);assert(s.ended);assert(!won(s));assert.equal(skip(s),s);s.score=45;assert(won(s));});
