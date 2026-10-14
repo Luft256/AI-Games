@@ -1,0 +1,7 @@
+export const config={id:'pulse-runner',title:'パルスランナー',english:'PULSE RUNNER',accent:'#ecabdb',description:'予告レーンを選び、拍に合わせてブースト。90秒の光路を走ろう。',help:'←→でレーン変更。緑の予告レーンへ移動。拍の円が重なる瞬間にSpaceでブースト。ミス6回で終了。',keys:{ArrowLeft:0,ArrowRight:1,Space:2}};
+export function safeLane(beat){return [1,0,2,1,2,0,1,1][beat%8];}
+export function beatTime(beat){return 3+beat*.9;}
+export function create(){return {t:0,score:0,lane:1,beat:0,hp:6,boosted:-1,done:false,complete:false,message:'最初の拍は3秒後。緑のレーンへ！'};}
+export function input(s,a,x,y,release){if(s.done||release)return;if(a==='pointer'){s.lane=Math.min(2,Math.floor(x/240));return;}if(a===0)s.lane=Math.max(0,s.lane-1);if(a===1)s.lane=Math.min(2,s.lane+1);if(a===2&&s.boosted!==s.beat){s.boosted=s.beat;const delta=Math.abs(s.t-beatTime(s.beat));if(delta<=.17&&s.lane===safeLane(s.beat)){s.score+=25;s.message='JUST BOOST! +25';}else{s.hp--;s.message='拍の重なる瞬間、緑レーンで押そう。';}if(s.hp<=0)end(s,false);}}
+function end(s,clear){s.done=true;s.complete=true;s.message=clear?`90秒完走！ ${s.score}点。`:`シールド切れ。${s.score}点。緑レーンの予告を見て再挑戦。`;}
+export function step(s,dt){if(s.done)return;s.t+=dt;if(s.t>=beatTime(s.beat)){if(s.lane===safeLane(s.beat)){s.score+=10;s.message='安全レーン通過 +10';}else{s.hp--;s.message=`レーン${safeLane(s.beat)+1}が安全でした。残りシールド ${s.hp}`;}s.beat++;if(s.hp<=0)end(s,false);}if(s.t>=90&&!s.done)end(s,true);s.meter=`残り ${Math.ceil(90-s.t)}秒 / シールド ${s.hp} / 次の拍 ${Math.max(0,beatTime(s.beat)-s.t).toFixed(1)}秒`;}
