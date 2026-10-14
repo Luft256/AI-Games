@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,thermal} from './purelogic.js';
+test('lift consumes stamina; thermal restores altitude and stamina',()=>{const s=create();step(s,1,new Set([1]));assert.equal(s.stamina,73);s.x=230;s.stamina=50;const y=s.y;step(s,1);assert.ok(s.stamina>50&&s.y<y);assert.equal(thermal(590),true);});
+test('altitude strategy reaches finish; idle glide lands naturally',()=>{const s=create();for(let i=0;i<10000&&!s.done;i++)step(s,.02,s.y>270?new Set([1]):new Set());assert.ok(s.x>=1350);assert.match(s.message,/滑空成功/);const f=create();for(let i=0;i<2000&&!f.done;i++)step(f,.02);assert.equal(f.done,true);assert.match(f.message,/着地/);});
