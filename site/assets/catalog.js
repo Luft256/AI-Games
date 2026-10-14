@@ -1,16 +1,203 @@
+// Updated by npm run catalog from per-game metadata.
 export const games = [
-  { id:'snake', title:'ネオンスネーク', english:'NEON SNAKE', genre:'action', label:'アクション', description:'伸びる、曲がる、また伸びる。ひと口からはじまるスコアアタック。', color:'#b5f36e', time:'1–3 分', number:'01' },
-  { id:'merge-2048', title:'マージ2048', english:'MERGE 2048', genre:'puzzle', label:'パズル', description:'同じ数字を重ねて、2048へ。次の一手がクセになる。', color:'#b8a0f7', time:'3–10 分', number:'02' },
-  { id:'memory', title:'メモリーマッチ', english:'MEMORY MATCH', genre:'memory', label:'記憶', description:'めくって、覚えて、見つけよう。16枚に隠れた8つのペア。', color:'#8dd1d3', time:'1–3 分', number:'03' },
-  { id:'breakout', title:'ブロックブレイカー', english:'BLOCK BREAKER', genre:'action', label:'アクション', description:'跳ねるボールを追いかけて。気持ちよく、全部こわそう。', color:'#ff9d6c', time:'2–5 分', number:'04' },
-  { id:'minesweeper', title:'マインフィールド', english:'MINE FIELD', genre:'puzzle', label:'パズル', description:'数字をヒントに、安全な道を。小さな盤面、大きな推理。', color:'#f5cf67', time:'2–5 分', number:'05' },
-  { id:'reaction', title:'リアクションラボ', english:'REACTION LAB', genre:'reflex', label:'反射神経', description:'合図は一瞬。5回のチャレンジで、あなたの反応速度を測ろう。', color:'#f4a3ba', time:'1 分', number:'06' },
-  {"id": "stack-tower", "title": "スタックタワー", "english": "STACK TOWER", "genre": "action", "label": "アクション", "description": "動くブロックをぴったり重ねよう。はみ出すほど小さくなるタワーを、どこまで高く積める？", "color": "#a8d5a2", "time": "1–3 分", "number": "07"},
-  {"id": "sky-hop", "title": "スカイホップ", "english": "SKY HOP", "genre": "action", "label": "アクション", "description": "空の滑走路を駆け抜ける、ワンタップのランナー。障害物を跳び越えて、どこまで行ける？", "color": "#9bcbea", "time": "1–3 分", "number": "08"},
-  {"id": "orbit-dodge", "title": "オービットドッジ", "english": "ORBIT DODGE", "genre": "action", "label": "アクション", "description": "円軌道をめぐり、飛び込む隕石をかわそう。予告を読んで生き残るサバイバル。", "color": "#f2a78d", "time": "1–3 分", "number": "09"},
-  {"id": "lights-out", "title": "ライツアウト", "english": "LIGHTS OUT", "genre": "puzzle", "label": "パズル", "description": "押したマスと上下左右が反転。25個すべてのライトを消す、ひらめきパズル。", "color": "#e7d281", "time": "1–5 分", "number": "10"},
-  {"id": "slide-puzzle", "title": "スライド15", "english": "SLIDE FIFTEEN", "genre": "puzzle", "label": "パズル", "description": "ひとつの空白を動かして、15の数字を順番に。余白が道になるスライドパズル。", "color": "#c3aff0", "time": "3–10 分", "number": "11"},
-  {"id": "simon", "title": "シーケンスメモリー", "english": "SEQUENCE MEMORY", "genre": "memory", "label": "記憶", "description": "光るパッドの順番を覚えて、同じ順番で。ひとつずつ、記憶をのばそう。", "color": "#e8a6c6", "time": "1–3 分", "number": "12"}
+  {
+    "id": "snake",
+    "title": "ネオンスネーク",
+    "english": "NEON SNAKE",
+    "genre": "action",
+    "label": "アクション",
+    "description": "伸びる、曲がる、また伸びる。ひと口からはじまるスコアアタック。",
+    "color": "#b5f36e",
+    "time": "1–3 分",
+    "number": "01"
+  },
+  {
+    "id": "merge-2048",
+    "title": "マージ2048",
+    "english": "MERGE 2048",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "同じ数字を重ねて、2048へ。次の一手がクセになる。",
+    "color": "#b8a0f7",
+    "time": "3–10 分",
+    "number": "02"
+  },
+  {
+    "id": "memory",
+    "title": "メモリーマッチ",
+    "english": "MEMORY MATCH",
+    "genre": "memory",
+    "label": "記憶",
+    "description": "めくって、覚えて、見つけよう。16枚に隠れた8つのペア。",
+    "color": "#8dd1d3",
+    "time": "1–3 分",
+    "number": "03"
+  },
+  {
+    "id": "breakout",
+    "title": "ブロックブレイカー",
+    "english": "BLOCK BREAKER",
+    "genre": "action",
+    "label": "アクション",
+    "description": "跳ねるボールを追いかけて。気持ちよく、全部こわそう。",
+    "color": "#ff9d6c",
+    "time": "2–5 分",
+    "number": "04"
+  },
+  {
+    "id": "minesweeper",
+    "title": "マインフィールド",
+    "english": "MINE FIELD",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "数字をヒントに、安全な道を。小さな盤面、大きな推理。",
+    "color": "#f5cf67",
+    "time": "2–5 分",
+    "number": "05"
+  },
+  {
+    "id": "reaction",
+    "title": "リアクションラボ",
+    "english": "REACTION LAB",
+    "genre": "reflex",
+    "label": "反射神経",
+    "description": "合図は一瞬。5回のチャレンジで、あなたの反応速度を測ろう。",
+    "color": "#f4a3ba",
+    "time": "1 分",
+    "number": "06"
+  },
+  {
+    "id": "stack-tower",
+    "title": "スタックタワー",
+    "english": "STACK TOWER",
+    "genre": "action",
+    "label": "アクション",
+    "description": "動くブロックをぴったり重ねよう。はみ出すほど小さくなるタワーを、どこまで高く積める？",
+    "color": "#a8d5a2",
+    "time": "1–3 分",
+    "number": "07"
+  },
+  {
+    "id": "sky-hop",
+    "title": "スカイホップ",
+    "english": "SKY HOP",
+    "genre": "action",
+    "label": "アクション",
+    "description": "空の滑走路を駆け抜ける、ワンタップのランナー。障害物を跳び越えて、どこまで行ける？",
+    "color": "#9bcbea",
+    "time": "1–3 分",
+    "number": "08"
+  },
+  {
+    "id": "orbit-dodge",
+    "title": "オービットドッジ",
+    "english": "ORBIT DODGE",
+    "genre": "action",
+    "label": "アクション",
+    "description": "円軌道をめぐり、飛び込む隕石をかわそう。予告を読んで生き残るサバイバル。",
+    "color": "#f2a78d",
+    "time": "1–3 分",
+    "number": "09"
+  },
+  {
+    "id": "lights-out",
+    "title": "ライツアウト",
+    "english": "LIGHTS OUT",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "押したマスと上下左右が反転。25個すべてのライトを消す、ひらめきパズル。",
+    "color": "#e7d281",
+    "time": "1–5 分",
+    "number": "10"
+  },
+  {
+    "id": "slide-puzzle",
+    "title": "スライド15",
+    "english": "SLIDE FIFTEEN",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "ひとつの空白を動かして、15の数字を順番に。余白が道になるスライドパズル。",
+    "color": "#c3aff0",
+    "time": "3–10 分",
+    "number": "11"
+  },
+  {
+    "id": "simon",
+    "title": "シーケンスメモリー",
+    "english": "SEQUENCE MEMORY",
+    "genre": "memory",
+    "label": "記憶",
+    "description": "光るパッドの順番を覚えて、同じ順番で。ひとつずつ、記憶をのばそう。",
+    "color": "#e8a6c6",
+    "time": "1–3 分",
+    "number": "12"
+  },
+  {
+    "id": "dice-expedition",
+    "title": "ダイス探検",
+    "english": "DICE EXPEDITION",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "ダイスを護衛と財宝に配分。成功率を読み、持ち帰る勇気と進む決断で8つの遺跡に挑む。",
+    "color": "#edbd72",
+    "time": "3–6 分",
+    "number": "13"
+  },
+  {
+    "id": "gravity-golf",
+    "title": "グラビティゴルフ",
+    "english": "GRAVITY GOLF",
+    "genre": "action",
+    "label": "アクション",
+    "description": "星の引力でショットが曲がる、6ホールの宇宙ゴルフ。点線の軌道を読んで、少ない打数でカップへ。",
+    "color": "#b5f36e",
+    "time": "3–8 分",
+    "number": "14"
+  },
+  {
+    "id": "echo-vault",
+    "title": "エコーヴォールト",
+    "english": "ECHO VAULT",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "次の視線を読み、ノイズで切り抜ける。6つの金庫に挑むターン制ステルス。",
+    "color": "#65d7cd",
+    "time": "3–10 分",
+    "number": "15"
+  },
+  {
+    "id": "color-cascade",
+    "title": "カラーカスケード",
+    "english": "COLOR CASCADE",
+    "genre": "puzzle",
+    "label": "パズル",
+    "description": "隣り合う色を交換して3つそろえよう。次の補充を読んで、20手で大連鎖を狙うパズル。",
+    "color": "#c8eb88",
+    "time": "3–6 分",
+    "number": "16"
+  },
+  {
+    "id": "cargo-switch",
+    "title": "カーゴスイッチ",
+    "english": "CARGO SWITCH",
+    "genre": "reflex",
+    "label": "反射神経",
+    "description": "2本のベルトから届く荷物。到着順を読んで分岐を切り替え、30個を正しい倉庫へ。",
+    "color": "#8dddc5",
+    "time": "1–2 分",
+    "number": "17"
+  },
+  {
+    "id": "ricochet-relay",
+    "title": "リコシェリレー",
+    "english": "RICOCHET RELAY",
+    "genre": "action",
+    "label": "アクション",
+    "description": "壁と鏡で光を折り返し、番号順にリレーを起動。6つの部屋をつなぐ反射パズル。",
+    "color": "#89ddd0",
+    "time": "3–6 分",
+    "number": "18"
+  }
 ];
 export function filterGames(items, { query = '', genre = 'all', favoritesOnly = false, favorites = [] } = {}) {
   const needle = query.trim().normalize('NFKC').toLocaleLowerCase('ja');
