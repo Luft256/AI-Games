@@ -2,22 +2,22 @@ import {mountShell,loadBest,saveBest} from '../../shared/game-shell.js';
 import {createGameSession} from '../../shared/session-limit.js';
 mountShell({title:"橋のアトリエ",english:"BRIDGE WEAVER",description:"橋は2本まで、交差は禁止。数字の数だけ橋を架けて、すべての島をひと続きに。",accent:'#95cbdc',controls:["島を2つ選ぶと橋が0→1→2→0本。縦横のみ、途中の島を飛び越せません。数字を満たし全島を接続。"]});
 const $=s=>document.querySelector(s),board=$('#board'),status=$('#status');
-let room=0,moves=0,finished=false,paused=false,history=[];
+let room=0,moves=0,efforts=0,finished=false,paused=false,history=[];
 let cleared=loadBest('bridge-weaver',0);
 const session=createGameSession({onExpire(){finished=true;paused=false;board.classList.remove('paused');status.textContent='時間切れ。30分になったため終了しました。やり直して再挑戦できます。';render();}});
 for(let i=0;i<5;i++){const o=document.createElement('option');o.value=i;o.textContent=`${i+1} / 5`;$('#level').append(o);}
 $('#best').textContent=cleared.toString(2).replaceAll('0','').length;
 function begin(){return !finished&&!paused&&session.check()&&session.start();}
-function checkpoint(){history.push(structuredClone(state));moves++;}
+function checkpoint(){history.push(structuredClone(state));moves++;efforts++;}
 function message(text){if(!finished&&!paused)status.textContent=text;}
-function win(){if(!session.finish())return;finished=true;cleared|=1<<room;saveBest('bridge-weaver',cleared);$('#best').textContent=cleared.toString(2).replaceAll('0','').length;status.textContent=`クリア！ ${moves}手で部屋${room+1}を解きました。${room===4?'全室終了、お見事！':'次の部屋へ進めます。'}`;$('#next').hidden=room===4;}
-function reset(){session.reset();finished=false;paused=false;history=[];moves=0;$('#next').hidden=true;$('#pause').textContent='一時停止';board.classList.remove('paused');state=initial(room);status.textContent=instruction;render();}
+function win(){if(!session.finish())return;finished=true;const key=`bridge-weaver-room-${room}`,old=loadBest(key,0);if(old===0||efforts<old)saveBest(key,efforts);cleared|=1<<room;saveBest('bridge-weaver',cleared);$('#best').textContent=cleared.toString(2).replaceAll('0','').length;status.textContent=`クリア！ ${moves}手で部屋${room+1}を解きました。${(cleared&31)===31?'全室終了、お見事！':room===4?'ほかの部屋も選んで挑戦できます。':'次の部屋へ進めます。'}`;$('#next').hidden=room===4;}
+function reset(){session.reset();finished=false;paused=false;history=[];moves=0;efforts=0;$('#next').hidden=true;$('#pause').textContent='一時停止';board.classList.remove('paused');state=initial(room);status.textContent=instruction;render();}
 $('#restart').onclick=reset;
 $('#level').onchange=()=>{room=Number($('#level').value);reset();};
 $('#next').onclick=()=>{room=(room+1)%5;$('#level').value=room;reset();};
-$('#undo').onclick=()=>{if(!session.check()||finished||paused||!history.length)return;state=history.pop();moves=Math.max(0,moves-1);message('1手戻しました。');render();};
+$('#undo').onclick=()=>{if(!session.check()||finished||paused||!history.length)return;state=history.pop();moves=Math.max(0,moves-1);efforts++;message('1手戻しました。');render();};
 $('#pause').onclick=()=>{if(!session.check()||finished)return;paused=!paused;$('#pause').textContent=paused?'再開':'一時停止';board.classList.toggle('paused',paused);status.textContent=paused?'一時停止中。制限時間は進みます。':instruction;};
-function stats(){$('#moves').textContent=moves;$('#undo').disabled=finished||paused||!history.length;}
+const recordNote=document.createElement('p');recordNote.className='instructions';recordNote.id='record-note';$('#extra').after(recordNote);function stats(){const previous=loadBest(`bridge-weaver-room-${room}`,0);recordNote.textContent=`この部屋のベスト ${previous||'—'}操作 · 今回 ${efforts}操作（戻すも含む）。少ない操作で再挑戦！`;$('#moves').textContent=moves;$('#undo').disabled=finished||paused||!history.length;}
 function cellGrid(w,h,draw,play){const focused=document.activeElement?.dataset.cell;board.style.gridTemplateColumns=`repeat(${w},1fr)`;board.replaceChildren();for(let y=0;y<h;y++)for(let x=0;x<w;x++){const b=document.createElement('button');b.type='button';b.className='cell';b.dataset.cell=`${x},${y}`;b.setAttribute('aria-label',`${y+1}行${x+1}列`);draw(b,x,y);b.onclick=()=>play(x,y);b.onkeydown=e=>{const dirs={ArrowLeft:[-1,0],ArrowRight:[1,0],ArrowUp:[0,-1],ArrowDown:[0,1]};if(!dirs[e.key])return;e.preventDefault();const [dx,dy]=dirs[e.key];board.querySelector(`[data-cell="${Math.max(0,Math.min(w-1,x+dx))},${Math.max(0,Math.min(h-1,y+dy))}"]`)?.focus();};board.append(b);}stats();if(focused)board.querySelector(`[data-cell="${focused}"]`)?.focus();}
 import {puzzle,degrees,cycle,solved,connected} from './logic.js';
 const instruction='数字は必要な橋の本数。島を2つ選び、縦横につなごう。全島をひと続きに！';let state;function initial(n){return{bridges:puzzle(n).edges.map(()=>0),selected:null};}
