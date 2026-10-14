@@ -40,7 +40,7 @@ function draw() {
     ctx.fillStyle = '#d9e9ed'; ctx.font = 'bold 13px Arial'; ctx.textAlign = 'center'; ctx.fillText(String.fromCharCode(65 + i), mirror.x + mirror.size + 12, mirror.y - mirror.size - 5);
   });
   chamber().targets.forEach((target, i) => {
-    const active = i < displayedActivated, next = i === displayedActivated;
+    const active = i < displayedActivated, next = i === displayedActivated && mode !== 'timeout';
     circle(target.x, target.y, TARGET_RADIUS + (next ? 5 : 0), active ? '#89ddd0' : '#1e3339', active ? '#c8fff2' : next ? '#f3df9c' : '#8aabb0', next ? 2 : 1.5);
     ctx.fillStyle = active ? '#16312e' : next ? '#f3df9c' : '#bed3d6'; ctx.font = `bold ${smallCanvas ? 30 : 24}px Arial`; ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.fillText(active ? '✓' : String(i + 1), target.x, target.y + 1);
     const label = [target.bounces ? `${target.bounces}+` : '', target.mirror ? '鏡' : ''].filter(Boolean).join(' ');
@@ -52,7 +52,26 @@ function draw() {
   circle(source.x, source.y, 13, '#f6f5f0', '#89ddd0', 3); circle(source.x, source.y, 4, '#203b3d');
   ctx.fillStyle = '#9ab4ba'; ctx.font = '10px Arial'; ctx.textAlign = 'center'; ctx.fillText('SOURCE', source.x, source.y + 28);
 }
+let conditionsSignature = '';
+function syncConditions() {
+  const signature = `${room}:${displayedActivated}:${mode === 'timeout'}`;
+  if (signature === conditionsSignature) return;
+  conditionsSignature = signature;
+  const targets = chamber().targets;
+  $('next-condition').textContent = mode === 'timeout' ? '時間切れ。このプレイは終了しました。' : displayedActivated === targets.length ? 'この部屋のリレーはすべて起動しました。' : `次はリレー${displayedActivated + 1}。下の条件を満たす光を届けよう。`;
+  $('conditions-list').replaceChildren(...targets.map((target, i) => {
+    const li = document.createElement('li'), label = document.createElement('strong'), condition = document.createElement('span');
+    const active = i < displayedActivated, next = i === displayedActivated && mode !== 'timeout';
+    li.className = active ? 'is-active' : next ? 'is-next' : '';
+    if (next) li.setAttribute('aria-current', 'step');
+    label.textContent = `${i + 1}番${active ? ' 起動済み' : next ? ' 次' : ''}`;
+    const requirements = [target.bounces ? `反射${target.bounces}回以上` : '', target.mirror ? '鏡を通る' : ''].filter(Boolean);
+    condition.textContent = requirements.join(' ＋ ') || '反射条件なし';
+    li.append(label, condition); return li;
+  }));
+}
 function sync() {
+  syncConditions();
   $('room').textContent = `${String(room + 1).padStart(2, '0')} / 06`; $('room-name').textContent = chamber().name;
   $('shots').textContent = round.shots; $('relays').textContent = `${displayedActivated} / ${chamber().targets.length}`; $('angle').textContent = `${angle.toFixed(1)}°`; $('room-note').textContent = chamber().note;
   $('progress').replaceChildren(...CHAMBERS.map((_, i) => { const li = document.createElement('li'); li.textContent = medals[i] ? ['','銅','銀','金'][medals[i]] : i + 1; li.className = i === room ? 'current' : medals[i] ? 'complete' : ''; li.setAttribute('aria-label', `部屋${i + 1}${medals[i] ? 'クリア' : i === room ? '挑戦中' : '未クリア'}`); return li; }));
@@ -83,7 +102,7 @@ function tick(timestamp) {
   frameId = null; if (!session.check() || mode !== 'flying') return;
   if (lastTime !== null) flightProgress += Math.min(60, timestamp - lastTime) * (reducedMotion ? 4 : .75); lastTime = timestamp;
   displayedActivated = Math.max(displayedActivated, ...flight.hits.filter(h => h.kind === 'relay' && h.distance <= flightProgress).map(h => h.index + 1));
-  $('relays').textContent = `${displayedActivated} / ${chamber().targets.length}`; draw();
+  $('relays').textContent = `${displayedActivated} / ${chamber().targets.length}`; syncConditions(); draw();
   if (flightProgress >= flight.distance) { completeShot(); return; } frameId = requestAnimationFrame(tick);
 }
 function fire() { if (!session.check() || mode !== 'aiming') return; flight = shoot(chamber(), round, angle); flightProgress = 0; mode = 'flying'; $('status').textContent = 'パルス進行中…'; sync(); focusBoard(); lastTime = null; frameId = requestAnimationFrame(tick); }
