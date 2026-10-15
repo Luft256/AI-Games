@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,rings} from './purelogic.js';
+test('current changes acceleration, not instant position; boost has cost',()=>{const s=create();input(s,0);assert.equal(s.x,80);step(s,.1);assert.ok(s.vx>0);input(s,2);assert.equal(s.energy,2);assert.equal(s.boost,1);});
+test('planned current can pass all courses and deadline ends',()=>{const s=create();for(let i=0;i<10000&&!s.done;i++){const g=rings(s.stage)[s.ring];input(s,'pointer',g.x,g.y);step(s,.02);}assert.equal(s.stage,5);assert.equal(s.done,true);assert.ok(s.score>=900);const f=create();f.t=150;step(f,0);assert.equal(f.done,true);});
