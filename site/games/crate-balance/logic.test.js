@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {levels,put,solve,torque,solved} from './logic.js';
+test('six order puzzles have a balanced solution safe at every step',()=>{for(const[i,l]of levels.entries()){const path=solve(l);assert.ok(path,`room ${i+1}`);let p={};for(const[b,s]of path){const n=put(l,p,b,s);assert.ok(n.safe);p=n.placements;}assert.ok(solved(l,p));assert.equal(torque(l,p),0);}});
+test('weight times signed distance predicts unsafe torque',()=>{const n=put(levels[0],{},2,-3);assert.equal(n.torque,-6);assert.equal(n.safe,false);});
+test('occupied slot or reused box is rejected without mutation',()=>{const l=levels[0],p={0:-1};assert.equal(put(l,p,1,-1),null);assert.equal(put(l,p,0,1),null);assert.deepEqual(p,{0:-1});assert.equal(solved(l,p),false);});

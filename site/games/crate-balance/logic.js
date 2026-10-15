@@ -1,0 +1,6 @@
+export const slots=[-3,-2,-1,1,2,3];
+export const levels=[{weights:[1,1,2,2],limits:[2,3,3,0]},{weights:[1,2,3,4],limits:[3,4,4,0]},{weights:[2,2,3,3],limits:[3,4,4,0]},{weights:[1,2,2,3,4],limits:[2,4,3,4,0]},{weights:[1,1,2,2,3,3],limits:[3,4,5,4,3,0]},{weights:[1,2,3,4,5,5],limits:[3,5,6,5,4,0]}];
+export function torque(level,placements){return Object.entries(placements).reduce((n,[i,s])=>n+level.weights[i]*s,0);}
+export function put(level,placements,box,slot){if(placements[box]!==undefined||!slots.includes(slot)||Object.values(placements).includes(slot))return null;const next={...placements,[box]:slot},value=torque(level,next),limit=level.limits[Object.keys(next).length-1];return{placements:next,torque:value,limit,safe:Math.abs(value)<=limit};}
+export function solved(level,placements){return Object.keys(placements).length===level.weights.length&&torque(level,placements)===0;}
+export function solve(level){function visit(p,path){if(solved(level,p))return path;const seen=new Set();for(let i=0;i<level.weights.length;i++){if(p[i]!==undefined||seen.has(level.weights[i]))continue;seen.add(level.weights[i]);for(const s of slots){const n=put(level,p,i,s);if(!n?.safe)continue;const result=visit(n.placements,[...path,[i,s]]);if(result)return result;}}return null;}return visit({},[]);}
