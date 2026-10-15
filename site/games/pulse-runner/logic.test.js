@@ -6,3 +6,5 @@ test('boost feedback distinguishes wrong lane and early timing and survives endi
 
 test('symmetric window accepts 100ms before and after prior beat despite upcoming lane change',()=>{for(const t of [2.9,3.1]){const s=create();step(s,t);s.lane=safeLane(0);input(s,2);assert.ok(s.score>=25);assert.equal(s.hp,6);assert.equal(s.boosted,0);}});
 test('180ms late is late timing and 100ms late wrong lane reports prior safe lane',()=>{const late=create();step(late,3.18);late.lane=safeLane(0);input(late,2);assert.match(late.message,/遅押し.*180ms/);assert.equal(late.hp,5);const lane=create();step(lane,3.1);lane.lane=safeLane(1);input(lane,2);assert.match(lane.message,/レーン違い：安全は2、現在1/);assert.equal(lane.hp,5);});
+
+test('second boost on same beat explains one attempt and preserves health',()=>{const s=create();input(s,2);const hp=s.hp;input(s,2);assert.equal(s.hp,hp);assert.match(s.message,/入力済み.*次の拍.*1拍1回/);});
