@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,bounceSegment} from './purelogic.js';
+test('launch once and real segment bounce reverses fall',()=>{const s=create();input(s,2);assert.equal(s.waiting,false);step(s,.1);assert.ok(s.y<385);s.x=300;s.y=349;s.vx=0;s.vy=100;bounceSegment(s,{x:200,y:355},{x:400,y:355},190);assert.ok(s.vy<0);});
+test('three unreturned balls end naturally; target collision scores',()=>{const s=create();for(let i=0;i<30000&&!s.done;i++){if(s.waiting)input(s,2);step(s,.01);}assert.equal(s.done,true);const t=create();t.waiting=false;t.x=260;t.y=174;t.vy=-100;step(t,.01);assert.equal(t.target,1);assert.ok(t.score>=100);});
