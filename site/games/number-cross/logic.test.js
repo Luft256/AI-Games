@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {puzzle,runFeedback,solved,setDigit} from './logic.js';
+test('five authored solutions meet every sum and unique digits per run',()=>{for(let n=0;n<5;n++){const p=puzzle(n);assert.ok(solved(p,p.solution));assert.ok(p.runs.every(r=>r.cells.length>=2));assert.ok(!solved(p,p.solution.map(()=>0)));}});
+test('duplicate digits fail even when target sum matches',()=>{assert.equal(runFeedback({cells:[0,1],sum:6},[3,3]),'duplicate');assert.equal(runFeedback({cells:[0,1],sum:6},[1,5]),'complete');assert.equal(runFeedback({cells:[0,1],sum:6},[0,5]),'pending');});
+test('edits immutable; black cells and invalid digits cannot alter board',()=>{const p=puzzle(0),v=p.solution.map(()=>0),n=setDigit(p,v,4,7);assert.equal(n[4],7);assert.equal(v[4],0);assert.equal(setDigit(p,v,0,9),v);assert.equal(setDigit(p,v,4,10),v);});
