@@ -1,0 +1,13 @@
+export const ROOM_NAMES={combat:'戦闘',key:'鍵部屋',camp:'野営',chest:'宝箱',forge:'鍛冶',trap:'罠',guardian:'守護者',tunnel:'密道',trade:'取引'};
+export const OFFERS=[['combat','key','camp'],['chest','forge','trap'],['combat','trap','forge'],['forge','chest','camp'],['combat','key','trap'],['chest','combat','key'],['camp','key','forge'],['guardian','tunnel','trade']];
+export const initialResources=()=>({hp:6,keys:1,armor:0,loot:0});
+export const threat=(room,index)=>room==='guardian'?7:3+Math.floor(index/3);
+export function description(room,index){return{combat:`脅威${threat(room,index)}−防具のダメージ。宝+5。`,key:'鍵+1。',camp:'体力+4（最大8）。',chest:'鍵1が必要。宝+6。',forge:'宝3が必要。防具+2。',trap:'体力−2。宝+3。',guardian:'脅威7−防具のダメージ。宝+8。',tunnel:'鍵2と体力1を消費。宝+5。',trade:'宝6を支払い、安全に通過。'}[room];}
+export function resolve(resources,room,index){const r={...resources};let reason='';if(room==='key')r.keys++;else if(room==='camp')r.hp=Math.min(8,r.hp+4);else if(room==='chest'){if(r.keys<1)reason='宝箱の鍵が足りません';else{r.keys--;r.loot+=6;}}else if(room==='forge'){if(r.loot<3)reason='鍛冶に使う宝が足りません';else{r.loot-=3;r.armor+=2;}}else if(room==='trap'){r.hp-=2;r.loot+=3;}else if(room==='combat'||room==='guardian'){r.hp-=Math.max(0,threat(room,index)-r.armor);r.loot+=room==='guardian'?8:5;}else if(room==='tunnel'){if(r.keys<2)reason='密道の鍵2つが足りません';else{r.keys-=2;r.hp--;r.loot+=5;}}else if(room==='trade'){if(r.loot<6)reason='取引の宝6が足りません';else r.loot-=6;}else reason='未知の部屋';if(r.hp<=0)reason='体力が0になりました';return{resources:r,failed:Boolean(reason),reason};}
+export function simulate(route){let r=initialResources(),reason='',index=0;for(const room of route){let next=resolve(r,room,index);r=next.resources;index++;if(next.failed){reason=`${index}部屋目：${next.reason}`;break;}}return{...r,reason};}
+export function createState(){return{route:[],phase:'planning',index:0,resources:initialResources(),ended:false,reason:''};}
+export function choose(s,choice){if(s.ended||s.phase!=='planning'||s.route.length>=8||!Number.isInteger(choice)||choice<0||choice>2)return s;return{...s,route:[...s.route,OFFERS[s.route.length][choice]]};}
+export function undo(s){return s.phase==='planning'&&s.route.length&&!s.ended?{...s,route:s.route.slice(0,-1)}:s;}
+export function depart(s){return s.phase==='planning'&&s.route.length===8&&!s.ended?{...s,phase:'running'}:s;}
+export function step(s){if(s.ended||s.phase!=='running')return s;const next=resolve(s.resources,s.route[s.index],s.index),index=s.index+1,ended=next.failed||index===8;return{...s,index,resources:next.resources,reason:next.reason,ended,phase:ended?'finished':'running'};}
+export const won=s=>s.ended&&s.index===8&&!s.reason&&s.resources.hp>0&&s.resources.loot>=22;
