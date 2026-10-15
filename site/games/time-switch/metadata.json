@@ -1,0 +1,11 @@
+{
+  "id": "time-switch",
+  "title": "タイムスイッチ",
+  "english": "TIME SWITCH",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "先に影の動きを録り、次に自分を動かす。繰り返す影がスイッチを踏む瞬間に、扉を渡って出口へ。",
+  "color": "#8bcedb",
+  "time": "2–8 分",
+  "number": "29"
+}
