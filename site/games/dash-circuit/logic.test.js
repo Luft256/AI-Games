@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,safe,connected} from './purelogic.js';
+test('closed gate damages; cooldown prevents repeated damage',()=>{const s=create();input(s,2);assert.equal(s.hp,2);input(s,2);assert.equal(s.hp,2);assert.equal(connected(2,4,0),false);});
+test('all six alternating rooms have timed clear path',()=>{const s=create();for(let room=0;room<6;room++){for(const next of room%2?[1,3,2,4,5,7]:[2,3,5,4,6,7]){assert.equal(connected(s.node,next,room),true);s.selected=next;while(s.cooldown>0||!safe(s.t,s.node,next,room))step(s,.01);input(s,2);step(s,.24);}}assert.equal(s.room,6);assert.equal(s.done,true);assert.equal(s.hp,3);});
