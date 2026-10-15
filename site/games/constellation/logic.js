@@ -1,0 +1,7 @@
+const layouts=[{nodes:[[2,0],[0,2],[4,2],[1,4],[3,4]],trail:[0,1,3,4,2,0,3,2]},{nodes:[[1,0],[3,0],[0,2],[4,2],[2,4]],trail:[0,1,3,4,2,0,3,2,1]},{nodes:[[1,0],[3,0],[4,2],[3,4],[1,4],[0,2]],trail:[0,1,2,3,4,5,0,3,1,5,2]},{nodes:[[2,2],[1,0],[3,0],[4,2],[3,4],[1,4],[0,2]],trail:[1,2,0,3,4,0,5,6,0,1,3,5,1]},{nodes:[[0,0],[2,0],[4,0],[0,2],[2,2],[4,2],[1,4],[3,4]],trail:[0,1,2,5,4,3,0,4,1,5,7,6,3,2,7,4,6]},{nodes:[[0,0],[2,0],[4,0],[0,2],[2,2],[4,2],[0,4],[2,4],[4,4]],trail:[0,1,2,5,8,7,6,3,0,4,1,5,4,3,7,4,8]}];
+export function puzzle(n){const l=layouts[n];return{nodes:l.nodes,edges:l.trail.slice(1).map((v,i)=>[l.trail[i],v]),start:l.trail[0],goal:l.trail.at(-1),solution:l.trail};}
+export function available(p,s){return p.edges.map(([a,b],i)=>s.used.includes(i)?null:a===s.current?b:b===s.current?a:null).filter(v=>v!==null);}
+export function advance(p,s,node){const edge=p.edges.findIndex(([a,b],i)=>!s.used.includes(i)&&(a===s.current&&b===node||b===s.current&&a===node));if(edge<0)return null;return{current:node,used:[...s.used,edge],trail:[...s.trail,node]};}
+export function solved(p,s){return s.used.length===p.edges.length&&new Set(s.used).size===p.edges.length&&s.current===p.goal;}
+export function deadEnd(p,s){return s.used.length<p.edges.length&&available(p,s).length===0;}
+export function findLosingPath(p){function visit(s){if(deadEnd(p,s))return s.trail;if(solved(p,s))return null;for(const n of available(p,s)){const r=visit(advance(p,s,n));if(r)return r;}return null;}return visit({current:p.start,used:[],trail:[p.start]});}
