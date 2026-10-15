@@ -1,0 +1,5 @@
+import test from'node:test';import assert from'node:assert/strict';import{feedback,candidates,createState,probe,nextCase,secret,won}from'./purelogic.js';
+test('duplicate signals never count a secret symbol twice',()=>{assert.deepEqual(feedback([0,1,2],[0,0,0]),{exact:1,near:0});assert.deepEqual(feedback([0,0,1],[1,0,0]),{exact:1,near:2});});
+test('candidate filtering uses all prior constraints and preserves actual secret',()=>{let s=createState(7);s=probe(s,[0,0,0]);s=probe(s,[1,2,3]);const c=candidates(s.history);assert(c.length<64);assert(c.some(a=>a.join()===secret(s).join()));});
+test('five cases award points once only, and only solved case can advance',()=>{let s=createState(3);assert.equal(nextCase(s),s);for(let n=0;n<5;n++){s=probe(s,secret(s));assert.equal(probe(s,[0,0,0]),s);if(n<4)s=nextCase(s);}assert(won(s));assert.equal(s.score,250);});
+test('five wrong probes end and invalid probes do not consume attempts',()=>{let s=createState(1);assert.equal(probe(s,[8,0,0]),s);for(let i=0;i<5;i++)s=probe(s,[0,0,0]);assert(s.ended);assert(!won(s));assert.equal(probe(s,secret(s)),s);});
