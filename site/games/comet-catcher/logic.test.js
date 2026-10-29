@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,distanceToSegment} from './purelogic.js';
+test('collision uses segment not infinite line',()=>{assert.equal(distanceToSegment({x:5,y:3},{x:0,y:0},{x:10,y:0}),3);assert.equal(distanceToSegment({x:20,y:0},{x:0,y:0},{x:10,y:0}),10);});
+test('arc intercept, cost, expiration, natural loss',()=>{const s=create();input(s,2);assert.equal(s.energy,2);s.meteors.push({x:360,y:229,vx:0,vy:0,city:0});step(s,.01);assert.equal(s.score,25);step(s,2);assert.equal(s.arcs.length,0);const f=create();for(let i=0;i<4000&&!f.done;i++)step(f,.02);assert.equal(f.done,true);assert.deepEqual(f.cities,[0,0,0]);});
