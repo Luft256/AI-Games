@@ -1,0 +1,11 @@
+{
+  "id": "constellation",
+  "title": "コンステレーション",
+  "english": "CONSTELLATION",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "星をつなぐ線を一度ずつ渡り、星座を一筆で完成させよう。行き止まりを残さない順番が鍵。",
+  "color": "#b5b8eb",
+  "time": "2–8 分",
+  "number": "28"
+}
