@@ -1,0 +1,6 @@
+import test from 'node:test';import assert from 'node:assert/strict';import{createState,action,guard,endTurn,legal,distance,nextBattle,won}from'./purelogic.js';
+test('movement adjacency never wraps and actions are once per ally',()=>{assert.equal(distance(3,4),4);let s=createState();assert(!legal(s,0,13));let n=action(s,0,8);assert.equal(n.allies[0].pos,8);assert.equal(action(n,0,4),n);assert.equal(s.allies[0].pos,12);});
+test('guard and leaving telegraphed cell avoid attacks',()=>{let s=createState();s=guard(s,0);s=guard(s,1);s=action(s,2,11);s=endTurn(s);assert.equal(s.allies[0].hp,3);assert.equal(s.allies[2].hp,3);});
+test('dead enemy never delivers its announced attack',()=>{let s=createState();s.allies[0].pos=4;s.enemies[1].hp=2;s=action(s,0,0);s=guard(s,1);s=guard(s,2);s=endTurn(s);assert.equal(s.allies[2].hp,3);});
+test('six turns end a guarded stalemate and cannot advance again',()=>{let s=createState();for(let t=0;t<6;t++){for(let i=0;i<3;i++)s=guard(s,i);s=endTurn(s);}assert(s.ended);assert(!won(s));assert.equal(endTurn(s),s);});
+test('only a cleared battle can advance and fifth clear wins',()=>{let s=createState();assert.equal(nextBattle(s),s);s.cleared=true;assert.equal(nextBattle(s).battle,1);s=createState(4);s.allies[2].pos=6;s.enemies[1].hp=0;s.enemies[0].hp=2;s=action(s,2,2);assert(won(s));});
