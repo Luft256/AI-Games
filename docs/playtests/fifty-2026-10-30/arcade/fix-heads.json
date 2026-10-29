@@ -1,0 +1,5 @@
+[
+  {"id":"dash-circuit","pr":49,"head":"6d27f3be8ca89e10c0aa85bd7c87e519a0532e68","root":"/Users/kamimurasora/.codex/worktrees/resume-dash-circuit/AI-Games","testPass":137,"check":true,"build":true},
+  {"id":"paint-sprint","pr":53,"head":"e21569034212fe0a5a85ba4f3fc6a32a72b5a633","root":"/Users/kamimurasora/.codex/worktrees/game-paint-sprint/AI-Games","testPass":137,"check":true,"build":true},
+  {"id":"rhythm-forge","pr":64,"head":"9b282e1944dc70b0de5cca4a22a37dbe0eb9714d","root":"/Users/kamimurasora/.codex/worktrees/game-rhythm-forge/AI-Games","testPass":144,"check":true,"build":true}
+]

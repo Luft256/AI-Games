@@ -1,0 +1,145 @@
+{
+  "results": [
+    {
+      "slug": "gear-link",
+      "room": 1,
+      "status": "クリア！ 5手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "gear-link",
+      "room": 2,
+      "status": "クリア！ 7手で部屋2を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "gear-link",
+      "room": 3,
+      "status": "クリア！ 7手で部屋3を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "gear-link",
+      "room": 4,
+      "status": "クリア！ 9手で部屋4を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "gear-link",
+      "room": 5,
+      "status": "クリア！ 9手で部屋5を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "gear-link",
+      "room": 6,
+      "status": "クリア！ 11手で部屋6を解きました。全室終了、お見事！"
+    },
+    {
+      "slug": "tile-quilt",
+      "room": 1,
+      "status": "クリア！ 3手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "room": 2,
+      "status": "クリア！ 4手で部屋2を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "room": 3,
+      "status": "クリア！ 5手で部屋3を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "room": 4,
+      "status": "クリア！ 5手で部屋4を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "room": 5,
+      "status": "クリア！ 6手で部屋5を解きました。全室終了、お見事！"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 1,
+      "status": "クリア！ 4手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 2,
+      "status": "クリア！ 4手で部屋2を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 3,
+      "status": "クリア！ 4手で部屋3を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 4,
+      "status": "クリア！ 5手で部屋4を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 5,
+      "status": "クリア！ 6手で部屋5を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "room": 6,
+      "status": "クリア！ 6手で部屋6を解きました。全室終了、お見事！"
+    },
+    {
+      "slug": "constellation",
+      "room": 1,
+      "status": "クリア！ 7手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "room": 2,
+      "status": "クリア！ 8手で部屋2を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "room": 3,
+      "status": "クリア！ 10手で部屋3を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "room": 4,
+      "status": "クリア！ 12手で部屋4を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "room": 5,
+      "status": "クリア！ 16手で部屋5を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "room": 6,
+      "status": "クリア！ 16手で部屋6を解きました。全室終了、お見事！"
+    },
+    {
+      "slug": "time-switch",
+      "room": 1,
+      "status": "クリア！ 11手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "time-switch",
+      "room": 2,
+      "status": "クリア！ 15手で部屋2を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "time-switch",
+      "room": 3,
+      "status": "クリア！ 17手で部屋3を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "time-switch",
+      "room": 4,
+      "status": "クリア！ 13手で部屋4を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "time-switch",
+      "room": 5,
+      "status": "クリア！ 20手で部屋5を解きました。全室終了、お見事！"
+    }
+  ],
+  "errors": []
+}

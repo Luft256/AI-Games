@@ -1,0 +1,111 @@
+{
+  "log": [
+    {
+      "slug": "gear-link",
+      "touchMove": "1",
+      "overflow": {
+        "viewport": 320,
+        "doc": 320,
+        "main": 280,
+        "board": 254
+      },
+      "pause": "一時停止中。制限時間は進みます。",
+      "resume": "一時停止",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "session": "expired",
+      "expiredMove": "1",
+      "beforeExpiry": "1",
+      "saved": [],
+      "afterExpiredTap": "1",
+      "restart": "30:00",
+      "keyboard": "1",
+      "storageBlockedClear": "クリア！ 5手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "touchMove": "1",
+      "overflow": {
+        "viewport": 320,
+        "doc": 320,
+        "main": 280,
+        "board": 254
+      },
+      "pause": "一時停止中。制限時間は進みます。",
+      "resume": "一時停止",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "session": "expired",
+      "expiredMove": "1",
+      "beforeExpiry": "1",
+      "saved": [],
+      "afterExpiredTap": "1",
+      "restart": "30:00",
+      "keyboard": "1",
+      "storageBlockedClear": "クリア！ 3手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "crate-balance",
+      "touchMove": "1",
+      "overflow": {
+        "viewport": 320,
+        "doc": 320,
+        "main": 280,
+        "board": 254
+      },
+      "pause": "一時停止中。制限時間は進みます。",
+      "resume": "一時停止",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "session": "expired",
+      "expiredMove": "1",
+      "beforeExpiry": "1",
+      "saved": [],
+      "afterExpiredTap": "1",
+      "restart": "30:00",
+      "keyboard": "1",
+      "storageBlockedClear": "クリア！ 4手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "constellation",
+      "touchMove": "1",
+      "overflow": {
+        "viewport": 320,
+        "doc": 320,
+        "main": 280,
+        "board": 254
+      },
+      "pause": "一時停止中。制限時間は進みます。",
+      "resume": "一時停止",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "session": "expired",
+      "expiredMove": "1",
+      "beforeExpiry": "1",
+      "saved": [],
+      "afterExpiredTap": "1",
+      "restart": "30:00",
+      "keyboard": "1",
+      "storageBlockedClear": "クリア！ 7手で部屋1を解きました。次の部屋へ進めます。"
+    },
+    {
+      "slug": "time-switch",
+      "touchMove": "1",
+      "overflow": {
+        "viewport": 320,
+        "doc": 320,
+        "main": 280,
+        "board": 254
+      },
+      "pause": "一時停止中。制限時間は進みます。",
+      "resume": "一時停止",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "session": "expired",
+      "expiredMove": "1",
+      "beforeExpiry": "1",
+      "saved": [],
+      "afterExpiredTap": "1",
+      "restart": "30:00",
+      "keyboard": "1",
+      "phaseExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "storageBlockedClear": "クリア！ 11手で部屋1を解きました。次の部屋へ進めます。"
+    }
+  ],
+  "errors": []
+}

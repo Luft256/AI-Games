@@ -1,0 +1,57 @@
+{
+  "log": [
+    {
+      "slug": "gear-link",
+      "nextRoom": "1",
+      "nextMoves": "0",
+      "nextSession": "idle",
+      "visibilityWhileOtherTab": "visible",
+      "hiddenExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    },
+    {
+      "slug": "tile-quilt",
+      "nextRoom": "1",
+      "nextMoves": "0",
+      "nextSession": "idle",
+      "visibilityWhileOtherTab": "visible",
+      "hiddenExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    },
+    {
+      "slug": "crate-balance",
+      "nextRoom": "1",
+      "nextMoves": "0",
+      "nextSession": "idle",
+      "visibilityWhileOtherTab": "visible",
+      "hiddenExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    },
+    {
+      "slug": "constellation",
+      "nextRoom": "1",
+      "nextMoves": "0",
+      "nextSession": "idle",
+      "visibilityWhileOtherTab": "visible",
+      "hiddenExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    },
+    {
+      "slug": "time-switch",
+      "nextRoom": "1",
+      "nextMoves": "0",
+      "nextSession": "idle",
+      "visibilityWhileOtherTab": "visible",
+      "hiddenExpiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    },
+    {
+      "slug": "time-switch",
+      "mode": "40 waits on never-open route",
+      "status": "40手になったため再生終了。影をスイッチで待たせる記録に変え、もう一度挑戦しよう。",
+      "moves": "42",
+      "clear": "1"
+    },
+    {
+      "slug": "time-switch",
+      "phaseChangeRemaining": "10:00",
+      "expiry": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。"
+    }
+  ],
+  "errors": []
+}

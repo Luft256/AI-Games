@@ -1,0 +1,482 @@
+[
+  {
+    "game": "orchard-watch",
+    "day": 2,
+    "text": "日数\n3 / 12\n収穫 / 目標18\n0\nBEST\n0\n\n今日：猛暑 水−2 ／ 明日：晴れ 水−1\n\nA 果樹\n水分3 / 5\n成長2 / 4 · 上質 2日\nB 果樹\n水分3 / 5\n成長3 / 4 · 上質 1日\nC 果樹\n水分5 / 5\n成長1 / 4 · 普通の実\nD 果樹\n水分4 / 5\n成長2 / 4 · 上質 2日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n2日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 3,
+    "text": "日数\n4 / 12\n収穫 / 目標18\n3\nBEST\n0\n\n今日：晴れ 水−1 ／ 明日：くもり 変化なし\n\nA 果樹\n水分1 / 5\n成長3 / 4 · 上質 1日\nB 果樹\n水分1 / 5\n成長0 / 4 · 普通の実\nC 果樹\n水分3 / 5\n成長2 / 4 · 普通の実\nD 果樹\n水分2 / 5\n成長3 / 4 · 上質 1日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n3日目：B収穫+3。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 4,
+    "text": "日数\n5 / 12\n収穫 / 目標18\n6\nBEST\n0\n\n今日：くもり 変化なし ／ 明日：猛暑 水−2\n\nA 果樹\n水分0 / 5\n成長3 / 4 · 普通の実\nB 果樹\n水分0 / 5\n成長0 / 4 · 普通の実\nC 果樹\n水分2 / 5\n成長2 / 4 · 上質 2日\nD 果樹\n水分1 / 5\n成長0 / 4 · 普通の実\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n4日目：D収穫+3。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 5,
+    "text": "日数\n6 / 12\n収穫 / 目標18\n6\nBEST\n0\n\n今日：猛暑 水−2 ／ 明日：雨 水+2\n\nA 果樹\n水分0 / 5\n成長2 / 4 · 上質 2日\nB 果樹\n水分0 / 5\n成長0 / 4 · 普通の実\nC 果樹\n水分2 / 5\n成長3 / 4 · 上質 1日\nD 果樹\n水分1 / 5\n成長1 / 4 · 普通の実\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n5日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 6,
+    "text": "日数\n7 / 12\n収穫 / 目標18\n6\nBEST\n0\n\n今日：雨 水+2 ／ 明日：晴れ 水−1\n\nA 果樹\n水分0 / 5\n成長2 / 4 · 上質 1日\nB 果樹\n水分0 / 5\n成長0 / 4 · 普通の実\nC 果樹\n水分0 / 5\n成長3 / 4 · 普通の実\nD 果樹\n水分0 / 5\n成長1 / 4 · 普通の実\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n6日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 7,
+    "text": "日数\n8 / 12\n収穫 / 目標18\n6\nBEST\n0\n\n今日：晴れ 水−1 ／ 明日：猛暑 水−2\n\nA 果樹\n水分2 / 5\n成長3 / 4 · 普通の実\nB 果樹\n水分2 / 5\n成長1 / 4 · 普通の実\nC 果樹\n水分2 / 5\n成長3 / 4 · 上質 2日\nD 果樹\n水分2 / 5\n成長2 / 4 · 普通の実\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n7日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 8,
+    "text": "日数\n9 / 12\n収穫 / 目標18\n9\nBEST\n0\n\n今日：猛暑 水−2 ／ 明日：雨 水+2\n\nA 果樹\n水分1 / 5\n成長3 / 4 · 上質 2日\nB 果樹\n水分1 / 5\n成長2 / 4 · 普通の実\nC 果樹\n水分1 / 5\n成長0 / 4 · 上質 1日\nD 果樹\n水分1 / 5\n成長2 / 4 · 上質 2日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n8日目：C収穫+3。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 9,
+    "text": "日数\n10 / 12\n収穫 / 目標18\n9\nBEST\n0\n\n今日：雨 水+2 ／ 明日：晴れ 水−1\n\nA 果樹\n水分0 / 5\n成長3 / 4 · 上質 1日\nB 果樹\n水分0 / 5\n成長1 / 4 · 上質 2日\nC 果樹\n水分0 / 5\n成長0 / 4 · 普通の実\nD 果樹\n水分0 / 5\n成長2 / 4 · 上質 1日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n9日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 10,
+    "text": "日数\n11 / 12\n収穫 / 目標18\n12\nBEST\n0\n\n今日：晴れ 水−1 ／ 明日：くもり 変化なし\n\nA 果樹\n水分2 / 5\n成長0 / 4 · 普通の実\nB 果樹\n水分2 / 5\n成長2 / 4 · 上質 1日\nC 果樹\n水分2 / 5\n成長1 / 4 · 普通の実\nD 果樹\n水分2 / 5\n成長3 / 4 · 普通の実\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n10日目：A収穫+3。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 11,
+    "text": "日数\n12 / 12\n収穫 / 目標18\n12\nBEST\n0\n\n今日：くもり 変化なし ／ 明日：終了\n\nA 果樹\n水分1 / 5\n成長1 / 4 · 普通の実\nB 果樹\n水分1 / 5\n成長3 / 4 · 普通の実\nC 果樹\n水分1 / 5\n成長2 / 4 · 普通の実\nD 果樹\n水分1 / 5\n成長3 / 4 · 上質 2日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n11日目：収穫なし。水分0や5の木は成長を休みました。"
+  },
+  {
+    "game": "orchard-watch",
+    "day": 12,
+    "text": "日数\n12 / 12\n収穫 / 目標18\n15\nBEST\n15\n\n12日間の農園終了\n\nA 果樹\n水分1 / 5\n成長2 / 4 · 普通の実\nB 果樹\n水分1 / 5\n成長3 / 4 · 上質 2日\nC 果樹\n水分1 / 5\n成長2 / 4 · 上質 2日\nD 果樹\n水分1 / 5\n成長0 / 4 · 上質 1日\n\n水路：A → B → C → D → A\n\n水やり · 1\n剪定 · 2\n1作業休む\n\n計画 0 / 2：作業を選んで木を押してください\n\n計画を1つ戻す\n2作業で1日進める\nもう一度\n\n収穫15点。目標18点に向け、収穫直前に剪定して再挑戦。"
+  },
+  {
+    "game": "orchard-watch",
+    "retry": "計画 0 / 2：作業を選んで木を押してください"
+  },
+  {
+    "game": "signal-detective",
+    "initial": "事件\n1 / 5\n照会\n5 / 5\nBEST\n0\n\n事件解決！次の事件へ。\n\n1番目\n▲\n2番目\n✦\n3番目\n■\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n次の事件\n新しい事件で再挑戦\n\n信号一致！照会が少ないほど得点が高くなります。\n\n●●●\n1回目\n位置一致 0 ／ 記号だけ 0\n▲▲▲\n2回目\n位置一致 1 ／ 記号だけ 0\n■■■\n3回目\n位置一致 1 ／ 記号だけ 0\n▲■✦\n4回目\n位置一致 1 ／ 記号だけ 2\n▲✦■\n5回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n▲✦■"
+  },
+  {
+    "game": "museum-heist",
+    "initial": "ドラフト\n8 / 8\n予算\n2\n展示 / 目標30\n43\nBEST\n43\n\n展示ドラフト終了\n\nA 器\n♧\n価値 6点\n最低 3コイン\nB 像\n♜\n価値 3点\n最低 1コイン\nC 絵\n▧\n価値 5点\n最低 2コイン\n−\n2 コイン\n＋\n\nこの額で入札\n見送る\nもう一度\n\n展示成功！43点。像（価値2）を1コインで落札。\n\nあなたの展示品\n器 6点\n像 4点\n器 3点\n絵 3点\n絵 4点\n絵 2点\n像 2点"
+  },
+  {
+    "game": "museum-heist",
+    "failure": "展示0点。目標30点を目指して再挑戦。今回は見送り。予算を温存しました。"
+  },
+  {
+    "game": "air-traffic",
+    "initial": "ターン\n12 / 12\n着陸 / 目標6\n6 / 6\nBEST\n635\n\n管制終了\n\n1-1\n1-2\n1-3\n1-4\n1-5\n2-1\n2-2\n2-3\n2-4\n2-5\n3-1\n3-2\n3-3\n3-4\n3-5\n4-1\n4-2\n4-3\n4-4\n4-5\n5-1\n5-2\n5-3 滑走路\n5-4\n5-5\n↑\n←\n待機 · H\n→\n↓\n高度を切り替え\n\n機体がなくても次の登場へターンを進められます。\n\n全機を1ターン進める\nもう一度\n\n全6機が安全着陸！635点。12ターン終了：F 着陸。"
+  },
+  {
+    "game": "air-traffic",
+    "failure": "2ターン終了：A 衝突、B 衝突。"
+  },
+  {
+    "game": "dungeon-draft",
+    "initial": "探索\n8 / 8\n体力 / 8\n3\n鍵 / 防具\n0 / 4\n宝 / 目標22\n23\n\n遠征終了\n\n1部屋目\n戦闘\n2部屋目\n鍛冶\n3部屋目\n戦闘\n4部屋目\n鍛冶\n5部屋目\n戦闘\n6部屋目\n宝箱\n7部屋目\n野営\n8部屋目\n守護者\n\n現在：体力3・鍵0・防具4・宝23点\n\n最後の部屋を戻す\nもう一度\n\n遠征成功！宝23点を持ち帰りました。8部屋目 守護者：体力6→3、鍵0→0、宝15→23。\n\nクリア時の宝 BEST 23"
+  },
+  {
+    "game": "dungeon-draft",
+    "failure": "遠征終了。鍛冶に使う宝が足りません経路を組み直して再挑戦。2部屋目 鍛冶：体力6→6、鍵2→2、宝0→0。"
+  },
+  {
+    "game": "star-cartographer",
+    "initial": "ターン\n4 / 10\n燃料 / 14\n3\n契約達成\n2 / 2\nBEST\n26\n\n航海終了\n\n1 近郊の生命 · 5点 ✓\n観測：ファーン\n報告：アトラス\n2 鉱物の標本 · 6点 ✓\n観測：エンバー\n報告：アトラス\nもう一度\n2\n3\n2\n2\n3\n2\n3\n2\n2\n2\n3\n1 アトラス\n現在地\n2 ファーン\n観測済み\n3 エンバー\n観測済み\n4 リレー\n観測済み\n5 フロスト\n未観測\n6 ダスク\n未観測\n7 クラウン\n未観測\n\n帰還成功！2契約達成、26点。エンバー→アトラス：燃料−3。 契約達成：近郊の生命、鉱物の標本。"
+  },
+  {
+    "game": "star-cartographer",
+    "advanced": "帰還成功！2契約達成、32点。エンバー→アトラス：燃料−3。 契約達成：遠い星の記録。"
+  },
+  {
+    "game": "signal-detective",
+    "assistedCase": 1,
+    "text": "事件\n1 / 5\n照会\n3 / 5\nBEST\n0\n\n事件解決！次の事件へ。\n\n1番目\n✦\n2番目\n▲\n3番目\n▲\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n次の事件\n新しい事件で再挑戦\n\n信号一致！照会が少ないほど得点が高くなります。\n\n■▲●\n1回目\n位置一致 1 ／ 記号だけ 0\n✦✦●\n2回目\n位置一致 1 ／ 記号だけ 0\n✦▲▲\n3回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n✦▲▲"
+  },
+  {
+    "game": "signal-detective",
+    "assistedCase": 2,
+    "text": "事件\n2 / 5\n照会\n4 / 5\nBEST\n0\n\n事件解決！次の事件へ。\n\n1番目\n●\n2番目\n●\n3番目\n■\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n次の事件\n新しい事件で再挑戦\n\n信号一致！照会が少ないほど得点が高くなります。\n\n■▲●\n1回目\n位置一致 0 ／ 記号だけ 2\n✦●●\n2回目\n位置一致 1 ／ 記号だけ 1\n●●▲\n3回目\n位置一致 2 ／ 記号だけ 0\n●●■\n4回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n●●■"
+  },
+  {
+    "game": "signal-detective",
+    "assistedCase": 3,
+    "text": "事件\n3 / 5\n照会\n4 / 5\nBEST\n0\n\n事件解決！次の事件へ。\n\n1番目\n●\n2番目\n✦\n3番目\n✦\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n次の事件\n新しい事件で再挑戦\n\n信号一致！照会が少ないほど得点が高くなります。\n\n■▲●\n1回目\n位置一致 0 ／ 記号だけ 1\n✦■●\n2回目\n位置一致 0 ／ 記号だけ 2\n●●✦\n3回目\n位置一致 2 ／ 記号だけ 0\n●✦✦\n4回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n●✦✦"
+  },
+  {
+    "game": "signal-detective",
+    "assistedCase": 4,
+    "text": "事件\n4 / 5\n照会\n3 / 5\nBEST\n0\n\n事件解決！次の事件へ。\n\n1番目\n▲\n2番目\n✦\n3番目\n●\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n次の事件\n新しい事件で再挑戦\n\n信号一致！照会が少ないほど得点が高くなります。\n\n■▲●\n1回目\n位置一致 1 ／ 記号だけ 1\n✦▲●\n2回目\n位置一致 1 ／ 記号だけ 2\n▲✦●\n3回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n▲✦●"
+  },
+  {
+    "game": "signal-detective",
+    "assistedCase": 5,
+    "text": "事件\n5 / 5\n照会\n3 / 5\nBEST\n130\n\n捜査終了\n\n1番目\n■\n2番目\n■\n3番目\n▲\n●\n1\n▲\n2\n■\n3\n✦\n4\nこの信号を照会\n新しい事件で再挑戦\n\n5事件解決！130点。新しい事件にも挑戦しよう。\n\n■▲●\n1回目\n位置一致 1 ／ 記号だけ 1\n✦▲●\n2回目\n位置一致 0 ／ 記号だけ 1\n■■▲\n3回目\n位置一致 3 ／ 記号だけ 0\n候補一覧を調べる（推理の補助）\n■■▲"
+  },
+  {
+    "game": "signal-detective",
+    "failure": "5回の照会で信号が特定できず捜査終了。候補一覧も使って再挑戦。"
+  },
+  {
+    "game": "orchard-watch",
+    "assisted": "豊作！12日で24点。上質な果実を育てました。",
+    "route": [
+      [
+        {
+          "tool": "prune",
+          "index": 1
+        },
+        {
+          "tool": "prune",
+          "index": 2
+        }
+      ],
+      [
+        {
+          "tool": "prune",
+          "index": 0
+        },
+        {
+          "tool": "prune",
+          "index": 3
+        }
+      ],
+      [
+        {
+          "tool": "water",
+          "index": 0
+        },
+        {
+          "tool": "water",
+          "index": 1
+        }
+      ],
+      [
+        {
+          "tool": "water",
+          "index": 2
+        },
+        {
+          "tool": "prune",
+          "index": 2
+        }
+      ],
+      [
+        {
+          "tool": "water",
+          "index": 1
+        },
+        {
+          "tool": "prune",
+          "index": 0
+        }
+      ],
+      [
+        {
+          "tool": "water",
+          "index": 3
+        },
+        {
+          "tool": "prune",
+          "index": 2
+        }
+      ],
+      [
+        {
+          "tool": "prune",
+          "index": 0
+        },
+        {
+          "tool": "prune",
+          "index": 1
+        }
+      ],
+      [
+        {
+          "tool": "water",
+          "index": 3
+        },
+        {
+          "tool": "prune",
+          "index": 3
+        }
+      ],
+      [
+        {
+          "tool": "prune",
+          "index": 1
+        },
+        {
+          "tool": "prune",
+          "index": 2
+        }
+      ],
+      [
+        {
+          "tool": "prune",
+          "index": 0
+        },
+        {
+          "tool": "prune",
+          "index": 3
+        }
+      ],
+      [
+        {
+          "tool": "rest",
+          "index": 0
+        },
+        {
+          "tool": "prune",
+          "index": 2
+        }
+      ],
+      [
+        {
+          "tool": "rest",
+          "index": 0
+        },
+        {
+          "tool": "prune",
+          "index": 1
+        }
+      ]
+    ]
+  },
+  {
+    "game": "orchard-watch",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分で農園の作業終了。途中の収穫は保存しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "signal-detective",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分で捜査終了。未解決の捜査は記録しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "museum-heist",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分でドラフト終了。途中の展示点は保存しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "air-traffic",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分で管制終了。途中の着陸点は保存しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "dungeon-draft",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分で遠征終了。未帰還の宝は記録しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "star-cartographer",
+    "mobile": {
+      "width": 320,
+      "tap": true,
+      "changed": true,
+      "active": "active",
+      "expired": "expired",
+      "status": "30分で航海終了。未帰還の契約は記録しません。",
+      "storage": {
+        "reads": 1,
+        "writes": 0,
+        "scroll": 320
+      }
+    }
+  },
+  {
+    "game": "orchard-watch",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "もう一度"
+    ]
+  },
+  {
+    "game": "orchard-watch",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "signal-detective",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "次の事件",
+      "新しい事件で再挑戦"
+    ]
+  },
+  {
+    "game": "signal-detective",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "museum-heist",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "もう一度"
+    ]
+  },
+  {
+    "game": "museum-heist",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "air-traffic",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "もう一度"
+    ]
+  },
+  {
+    "game": "air-traffic",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "dungeon-draft",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "この経路で出発",
+      "次の部屋へ進む",
+      "もう一度"
+    ]
+  },
+  {
+    "game": "dungeon-draft",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "star-cartographer",
+    "expiryStable": true,
+    "enabledAfterExpiry": [
+      "もう一度"
+    ]
+  },
+  {
+    "game": "star-cartographer",
+    "expiryRetry": "idle"
+  },
+  {
+    "game": "star-cartographer",
+    "blockedSave": {
+      "status": "帰還成功！2契約達成、26点。エンバー→アトラス：燃料−3。 契約達成：近郊の生命、鉱物の標本。",
+      "writes": 1
+    }
+  },
+  {
+    "game": "star-cartographer",
+    "failure": "航海終了。10ターンになりました。契約1 / 2。帰り道まで計画して再挑戦。アトラスで補給：燃料10→14。"
+  },
+  {
+    "game": "orchard-watch",
+    "blockedSave": {
+      "status": "豊作！12日で24点。上質な果実を育てました。",
+      "writes": 1
+    }
+  },
+  {
+    "game": "museum-heist",
+    "baseline": "展示23点。目標30点を目指して再挑戦。絵（価値3）を2コインで落札。"
+  },
+  {
+    "game": "museum-heist",
+    "blockedSave": {
+      "status": "展示成功！43点。像（価値2）を1コインで落札。",
+      "writes": 1
+    }
+  },
+  {
+    "game": "dungeon-draft",
+    "blockedSave": {
+      "status": "遠征成功！宝23点を持ち帰りました。8部屋目 守護者：体力6→3、鍵0→0、宝15→23。",
+      "writes": 1
+    }
+  },
+  {
+    "game": "signal-detective",
+    "blockedSave": {
+      "status": "5事件解決！110点。新しい事件にも挑戦しよう。",
+      "writes": 1
+    }
+  },
+  {
+    "game": "air-traffic",
+    "blockedSave": {
+      "status": "全6機が安全着陸！635点。12ターン終了：F 着陸。",
+      "writes": 1
+    }
+  },
+  {
+    "hiddenProbe": {
+      "visibility": "visible",
+      "expiry": "expired"
+    }
+  },
+  {
+    "game": "air-traffic",
+    "naturalFailure": "管制終了。着陸0・失機6。予告を見て再挑戦。11ターン終了：E 空域外、F 空域外。",
+    "endDisabled": true
+  },
+  {
+    "game": "air-traffic",
+    "retry": "1 / 12"
+  }
+]

@@ -1,0 +1,86 @@
+[
+  {
+    "id": "grappling-garden",
+    "head": "991e9ec2e7ee0273f2a6206819313600d723f90c",
+    "branch": "codex/game-grappling-garden",
+    "pr": "https://github.com/Luft256/AI-Games/pull/37",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "dash-circuit",
+    "head": "5c2cac18e4fbda61c4a1cd40b81198c029ec82c6",
+    "branch": "codex/game-dash-circuit",
+    "pr": "https://github.com/Luft256/AI-Games/pull/49",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "paint-sprint",
+    "head": "7fddbdbf6beac697186ae356a015b6819740bd05",
+    "branch": "codex/game-paint-sprint",
+    "pr": "https://github.com/Luft256/AI-Games/pull/53",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "pinball-orbit",
+    "head": "c8a47eb4f2a048bb9823c308a354630cb5796a8b",
+    "branch": "codex/game-pinball-orbit",
+    "pr": "https://github.com/Luft256/AI-Games/pull/57",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "shadow-shift",
+    "head": "9400d3ba7e163d7f78c328704f186657bb1f83aa",
+    "branch": "codex/game-shadow-shift",
+    "pr": "https://github.com/Luft256/AI-Games/pull/58",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "rhythm-forge",
+    "head": "f49777425dd516e5d4700d42503b2425afe4c2d0",
+    "branch": "codex/game-rhythm-forge",
+    "pr": "https://github.com/Luft256/AI-Games/pull/64",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  },
+  {
+    "id": "wind-archer",
+    "head": "edf1cda672b8dc4c124272106e376d058d157e13",
+    "branch": "codex/game-wind-archer",
+    "pr": "https://github.com/Luft256/AI-Games/pull/65",
+    "checks": {
+      "index.html": true,
+      "game.js": true,
+      "purelogic.js": true,
+      "game.css": true
+    }
+  }
+]

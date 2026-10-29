@@ -1,0 +1,386 @@
+[
+  {
+    "game": "laser-lab",
+    "gameNumber": "19",
+    "baseRefName": "dev",
+    "headRefOid": "008ec41ab531c066f2efdac152eb38af6e8262f4",
+    "mergeCommit": {
+      "oid": "82ea279b2e4bc42b0fe15ecf1a9f4ac826d3f539"
+    },
+    "mergedAt": "2026-10-14T21:32:37Z",
+    "number": 35,
+    "url": "https://github.com/Luft256/AI-Games/pull/35"
+  },
+  {
+    "game": "pocket-sokoban",
+    "gameNumber": "20",
+    "baseRefName": "dev",
+    "headRefOid": "9e06d2da6ef7f1f7420d512a4417523444bd0b20",
+    "mergeCommit": {
+      "oid": "b7087f244c253efef429904196a454486aa0e04d"
+    },
+    "mergedAt": "2026-10-29T18:01:23Z",
+    "number": 38,
+    "url": "https://github.com/Luft256/AI-Games/pull/38"
+  },
+  {
+    "game": "bridge-weaver",
+    "gameNumber": "21",
+    "baseRefName": "dev",
+    "headRefOid": "d0aa960ee7a9fd5245d0c716db4c3421469b5975",
+    "mergeCommit": {
+      "oid": "0b6e2910acfa05e8dc1e189051b6da2f631a77c9"
+    },
+    "mergedAt": "2026-10-14T21:32:42Z",
+    "number": 40,
+    "url": "https://github.com/Luft256/AI-Games/pull/40"
+  },
+  {
+    "game": "loop-tracer",
+    "gameNumber": "22",
+    "baseRefName": "dev",
+    "headRefOid": "d2b3dd0567adb00cd1398cf627c7737fbca47a27",
+    "mergeCommit": {
+      "oid": "a4b3b1fecca254d13c51f6aa7bb2bcd27ef5dcbf"
+    },
+    "mergedAt": "2026-10-29T18:01:27Z",
+    "number": 46,
+    "url": "https://github.com/Luft256/AI-Games/pull/46"
+  },
+  {
+    "game": "magnet-maze",
+    "gameNumber": "23",
+    "baseRefName": "dev",
+    "headRefOid": "599f101a21b379194ce9086ae6737b823b2c9ef4",
+    "mergeCommit": {
+      "oid": "5f133a03de706d521df11aa53bacb18b603d9429"
+    },
+    "mergedAt": "2026-10-29T18:01:32Z",
+    "number": 48,
+    "url": "https://github.com/Luft256/AI-Games/pull/48"
+  },
+  {
+    "game": "number-cross",
+    "gameNumber": "24",
+    "baseRefName": "dev",
+    "headRefOid": "9b4433a54a8035abb2aad22af8d7b209d8342a2a",
+    "mergeCommit": {
+      "oid": "353574191906cc1ca6d819abfd647f530b34af7e"
+    },
+    "mergedAt": "2026-10-15T11:52:14Z",
+    "number": 51,
+    "url": "https://github.com/Luft256/AI-Games/pull/51"
+  },
+  {
+    "game": "gear-link",
+    "gameNumber": "25",
+    "baseRefName": "dev",
+    "headRefOid": "c296eaea13ec6f6655f3e163981fb0568d6a59cd",
+    "mergeCommit": {
+      "oid": "5134179d3e5f221892b0ade1ebd5bf9e473aae07"
+    },
+    "mergedAt": "2026-10-29T18:01:36Z",
+    "number": 54,
+    "url": "https://github.com/Luft256/AI-Games/pull/54"
+  },
+  {
+    "game": "tile-quilt",
+    "gameNumber": "26",
+    "baseRefName": "dev",
+    "headRefOid": "8514f41a66aa36d33e33abe0db62acb522d95e91",
+    "mergeCommit": {
+      "oid": "2c854221efda173543e606cbd7007eb1a81b6ad7"
+    },
+    "mergedAt": "2026-10-29T18:01:41Z",
+    "number": 59,
+    "url": "https://github.com/Luft256/AI-Games/pull/59"
+  },
+  {
+    "game": "crate-balance",
+    "gameNumber": "27",
+    "baseRefName": "dev",
+    "headRefOid": "d516fd912c2f2756608ea1a77b15e08665e8c795",
+    "mergeCommit": {
+      "oid": "84e2f7552f0567f3c6db4d57ba29723d4b3cb7ac"
+    },
+    "mergedAt": "2026-10-29T18:04:20Z",
+    "number": 60,
+    "url": "https://github.com/Luft256/AI-Games/pull/60"
+  },
+  {
+    "game": "constellation",
+    "gameNumber": "28",
+    "baseRefName": "dev",
+    "headRefOid": "9c0f93e73c733b4f9593036b265ef4436dbdcbf3",
+    "mergeCommit": {
+      "oid": "822eacc47e39ed1d4831b8100d83b21aeb73375a"
+    },
+    "mergedAt": "2026-10-29T18:01:46Z",
+    "number": 61,
+    "url": "https://github.com/Luft256/AI-Games/pull/61"
+  },
+  {
+    "game": "time-switch",
+    "gameNumber": "29",
+    "baseRefName": "dev",
+    "headRefOid": "3a2d51e39aa1c474fed65d41827776d0c8daed52",
+    "mergeCommit": {
+      "oid": "888aa221ed36345b4eb2f856ecd8976dce783926"
+    },
+    "mergedAt": "2026-10-29T18:01:50Z",
+    "number": 63,
+    "url": "https://github.com/Luft256/AI-Games/pull/63"
+  },
+  {
+    "game": "pulse-runner",
+    "gameNumber": "30",
+    "baseRefName": "dev",
+    "headRefOid": "50b6a6e38467233c882b1940dd8f7e6782672624",
+    "mergeCommit": {
+      "oid": "d52bad33cb3f2ef7f94d6e2016fc28cb4e4c5b6e"
+    },
+    "mergedAt": "2026-10-29T18:01:55Z",
+    "number": 34,
+    "url": "https://github.com/Luft256/AI-Games/pull/34"
+  },
+  {
+    "game": "grappling-garden",
+    "gameNumber": "31",
+    "baseRefName": "dev",
+    "headRefOid": "991e9ec2e7ee0273f2a6206819313600d723f90c",
+    "mergeCommit": {
+      "oid": "d1ae009848b53b9b2bdc6026257ae2579a53c47d"
+    },
+    "mergedAt": "2026-10-29T18:02:00Z",
+    "number": 37,
+    "url": "https://github.com/Luft256/AI-Games/pull/37"
+  },
+  {
+    "game": "comet-catcher",
+    "gameNumber": "32",
+    "baseRefName": "dev",
+    "headRefOid": "ecc1789d630912a1920002a51d220f98c45355db",
+    "mergeCommit": {
+      "oid": "0c599ae1102b6cb95d3d0035193f2b33a035d818"
+    },
+    "mergedAt": "2026-10-29T18:02:04Z",
+    "number": 39,
+    "url": "https://github.com/Luft256/AI-Games/pull/39"
+  },
+  {
+    "game": "bubble-current",
+    "gameNumber": "33",
+    "baseRefName": "dev",
+    "headRefOid": "24694b55cab30d2a1fe5e610f8c30018fdd71ae6",
+    "mergeCommit": {
+      "oid": "e36c5c6e06909636d212f484320c923f7601e2f7"
+    },
+    "mergedAt": "2026-10-29T18:02:08Z",
+    "number": 42,
+    "url": "https://github.com/Luft256/AI-Games/pull/42"
+  },
+  {
+    "game": "ember-flight",
+    "gameNumber": "34",
+    "baseRefName": "dev",
+    "headRefOid": "a2408a363f6f5faea9d175452497ef11d3776a55",
+    "mergeCommit": {
+      "oid": "2d64602cd708f5fe8abd8e6926a0e66dcb792038"
+    },
+    "mergedAt": "2026-10-29T18:02:13Z",
+    "number": 44,
+    "url": "https://github.com/Luft256/AI-Games/pull/44"
+  },
+  {
+    "game": "dash-circuit",
+    "gameNumber": "35",
+    "baseRefName": "dev",
+    "headRefOid": "6d27f3be8ca89e10c0aa85bd7c87e519a0532e68",
+    "mergeCommit": {
+      "oid": "e364e25b10c56de1e1b95073937d9fb86e038a72"
+    },
+    "mergedAt": "2026-10-29T18:05:13Z",
+    "number": 49,
+    "url": "https://github.com/Luft256/AI-Games/pull/49"
+  },
+  {
+    "game": "paint-sprint",
+    "gameNumber": "36",
+    "baseRefName": "dev",
+    "headRefOid": "e21569034212fe0a5a85ba4f3fc6a32a72b5a633",
+    "mergeCommit": {
+      "oid": "e3cc9bdf78d56d1d33939e64c2786a78abb197db"
+    },
+    "mergedAt": "2026-10-29T18:05:17Z",
+    "number": 53,
+    "url": "https://github.com/Luft256/AI-Games/pull/53"
+  },
+  {
+    "game": "pinball-orbit",
+    "gameNumber": "37",
+    "baseRefName": "dev",
+    "headRefOid": "c8a47eb4f2a048bb9823c308a354630cb5796a8b",
+    "mergeCommit": {
+      "oid": "ee99717efd07459587e57ace3cd4a5b78b217e2d"
+    },
+    "mergedAt": "2026-10-29T18:02:18Z",
+    "number": 57,
+    "url": "https://github.com/Luft256/AI-Games/pull/57"
+  },
+  {
+    "game": "shadow-shift",
+    "gameNumber": "38",
+    "baseRefName": "dev",
+    "headRefOid": "9400d3ba7e163d7f78c328704f186657bb1f83aa",
+    "mergeCommit": {
+      "oid": "86c18b177117956a53c977443084f00e2d75a5e0"
+    },
+    "mergedAt": "2026-10-29T18:02:22Z",
+    "number": 58,
+    "url": "https://github.com/Luft256/AI-Games/pull/58"
+  },
+  {
+    "game": "rhythm-forge",
+    "gameNumber": "39",
+    "baseRefName": "dev",
+    "headRefOid": "9b282e1944dc70b0de5cca4a22a37dbe0eb9714d",
+    "mergeCommit": {
+      "oid": "37f01e517bf0199e06f59086cf04115f981f2439"
+    },
+    "mergedAt": "2026-10-29T18:05:21Z",
+    "number": 64,
+    "url": "https://github.com/Luft256/AI-Games/pull/64"
+  },
+  {
+    "game": "wind-archer",
+    "gameNumber": "40",
+    "baseRefName": "dev",
+    "headRefOid": "edf1cda672b8dc4c124272106e376d058d157e13",
+    "mergeCommit": {
+      "oid": "e92b223251ba2c50d491ca26774bff75e584985d"
+    },
+    "mergedAt": "2026-10-29T18:02:26Z",
+    "number": 65,
+    "url": "https://github.com/Luft256/AI-Games/pull/65"
+  },
+  {
+    "game": "reef-rescue",
+    "gameNumber": "41",
+    "baseRefName": "dev",
+    "headRefOid": "df218872e7a67382a6279e49bc298c0bbc608470",
+    "mergeCommit": {
+      "oid": "ee899806fbd0b660a13f43a648c15c8fb570da6d"
+    },
+    "mergedAt": "2026-10-14T21:35:06Z",
+    "number": 36,
+    "url": "https://github.com/Luft256/AI-Games/pull/36"
+  },
+  {
+    "game": "tiny-tactics",
+    "gameNumber": "42",
+    "baseRefName": "dev",
+    "headRefOid": "258aa13d1b68bae41b5c3929b9e6051509c0be7c",
+    "mergeCommit": {
+      "oid": "c948f9d44a1bfde715fd511c560660308d8f35e0"
+    },
+    "mergedAt": "2026-10-29T18:02:31Z",
+    "number": 41,
+    "url": "https://github.com/Luft256/AI-Games/pull/41"
+  },
+  {
+    "game": "market-mosaic",
+    "gameNumber": "43",
+    "baseRefName": "dev",
+    "headRefOid": "edb30128147ea2abdbd4a43eeca46633354dc20a",
+    "mergeCommit": {
+      "oid": "de46f216a204d1ca8043af4afa3f8ff30e1166c0"
+    },
+    "mergedAt": "2026-10-29T18:02:35Z",
+    "number": 43,
+    "url": "https://github.com/Luft256/AI-Games/pull/43"
+  },
+  {
+    "game": "potion-atelier",
+    "gameNumber": "44",
+    "baseRefName": "dev",
+    "headRefOid": "8de6bd4052046a0c32858d158e6948d940b7de31",
+    "mergeCommit": {
+      "oid": "c52fcd42125fdaf6239f1c47160f44cd544c7c66"
+    },
+    "mergedAt": "2026-10-29T18:02:40Z",
+    "number": 45,
+    "url": "https://github.com/Luft256/AI-Games/pull/45"
+  },
+  {
+    "game": "orchard-watch",
+    "gameNumber": "45",
+    "baseRefName": "dev",
+    "headRefOid": "79f8c2f00aa65aeff2d338cecf43b6e93e186aac",
+    "mergeCommit": {
+      "oid": "bd1f30abf159ad5b794525807b1d7271af47e9b9"
+    },
+    "mergedAt": "2026-10-29T18:05:25Z",
+    "number": 47,
+    "url": "https://github.com/Luft256/AI-Games/pull/47"
+  },
+  {
+    "game": "signal-detective",
+    "gameNumber": "46",
+    "baseRefName": "dev",
+    "headRefOid": "fdba65ed422aa089d329c3eb2ef6fce66b5968a5",
+    "mergeCommit": {
+      "oid": "8ae20521c14ad7ee1e2d670691114176e6ebb5bb"
+    },
+    "mergedAt": "2026-10-29T18:02:44Z",
+    "number": 50,
+    "url": "https://github.com/Luft256/AI-Games/pull/50"
+  },
+  {
+    "game": "museum-heist",
+    "gameNumber": "47",
+    "baseRefName": "dev",
+    "headRefOid": "d95cb070e5f7f22b1016a825615d2c5e6e8cbbff",
+    "mergeCommit": {
+      "oid": "8da13aa5367af44540fb043e7fb98a73f0cc7f62"
+    },
+    "mergedAt": "2026-10-29T18:02:49Z",
+    "number": 52,
+    "url": "https://github.com/Luft256/AI-Games/pull/52"
+  },
+  {
+    "game": "air-traffic",
+    "gameNumber": "48",
+    "baseRefName": "dev",
+    "headRefOid": "a81569151799f301f06a59af751372d64e3e9343",
+    "mergeCommit": {
+      "oid": "71814fbdb27a406778c056f372070582cd15ee2a"
+    },
+    "mergedAt": "2026-10-29T18:02:54Z",
+    "number": 55,
+    "url": "https://github.com/Luft256/AI-Games/pull/55"
+  },
+  {
+    "game": "dungeon-draft",
+    "gameNumber": "49",
+    "baseRefName": "dev",
+    "headRefOid": "ce63e8274399a9194b1d9c2803e90fc0218e6a0e",
+    "mergeCommit": {
+      "oid": "fc18f191ea611028c568dbea8d20d08c299a7608"
+    },
+    "mergedAt": "2026-10-29T18:02:58Z",
+    "number": 56,
+    "url": "https://github.com/Luft256/AI-Games/pull/56"
+  },
+  {
+    "game": "star-cartographer",
+    "gameNumber": "50",
+    "baseRefName": "dev",
+    "headRefOid": "4d70ef01f273aaa8b017331cce9938bd76eb5f27",
+    "mergeCommit": {
+      "oid": "c3d777ceccbbd45eec07e661fb6cc7b8d91407cc"
+    },
+    "mergedAt": "2026-10-29T18:03:03Z",
+    "number": 62,
+    "url": "https://github.com/Luft256/AI-Games/pull/62"
+  }
+]

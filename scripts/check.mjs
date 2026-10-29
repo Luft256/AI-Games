@@ -1,3 +1,4 @@
+import {validateGameMetadata} from './game-metadata.mjs';
 import { readdir, readFile, stat } from 'node:fs/promises';
 import { resolve, dirname, sep, extname } from 'node:path';
 import { spawnSync } from 'node:child_process';
@@ -27,5 +28,19 @@ async function walk(path) {
 }
 await walk(root);
 for (const game of games) { try { await stat(resolve(root,'games',game.id,'index.html')); } catch { errors.push(`Missing game route: ${game.id}`); } }
+const effectiveGames = new Map(games.map(game=>[game.id,game]));
+for (const folder of await readdir(resolve(root,'games'),{withFileTypes:true})) {
+  if (!folder.isDirectory()) continue;
+  try {
+    const game=JSON.parse(await readFile(resolve(root,'games',folder.name,'metadata.json'),'utf8'));
+    validateGameMetadata(game,folder.name); effectiveGames.set(game.id,game);
+  } catch (error) { if (error.code !== 'ENOENT') errors.push(`${folder.name}: ${error.message}`); }
+}
+const numbers = new Map();
+for (const game of effectiveGames.values()) {
+  const number=Number(game.number);
+  if (numbers.has(number)) errors.push(`Duplicate game number ${number}: ${numbers.get(number)}, ${game.id}`);
+  numbers.set(number,game.id);
+}
 if (errors.length) { console.error(errors.join('\n')); process.exit(1); }
 console.log(`All JavaScript parses, all local references resolve, and ${games.length} game routes exist.`);
