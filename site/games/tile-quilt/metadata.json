@@ -1,0 +1,11 @@
+{
+  "id": "tile-quilt",
+  "title": "タイルキルト",
+  "english": "TILE QUILT",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "形を回して、布のようにぴったり敷き詰める。重なりも隙間もない5つのキルトを完成させよう。",
+  "color": "#e2acc6",
+  "time": "2–8 分",
+  "number": "26"
+}

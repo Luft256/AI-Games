@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {puzzle,shapes,rotate,place,covered,solved,solve} from './logic.js';
+test('all five handcrafted boards pack every polyomino',()=>{for(let n=0;n<5;n++){const p=puzzle(n),s=solve(p);assert.ok(s,`board ${n+1}`);assert.ok(solved(p,s));assert.equal(Object.keys(covered(p,s)).length,p.mask.filter(Boolean).length);}});
+test('four rotations preserve shape and placement cannot overlap or overflow',()=>{assert.deepEqual(rotate(shapes.L,4),rotate(shapes.L,0));const p=puzzle(0),s=place(p,{},0,0,0,0);assert.ok(s);assert.equal(place(p,s,1,0,0,0),null);assert.equal(place(p,s,1,3,2,0),null);assert.equal(Object.keys(s).length,1);});
+test('moving a placed piece frees its old cells but never permits cutout cells',()=>{const p=puzzle(0),s=place(p,{},0,0,0,0),n=place(p,s,0,2,0,0);assert.ok(n);assert.equal(covered(p,n)[0],undefined);assert.equal(place(puzzle(4),{},1,0,0,0),null);});
