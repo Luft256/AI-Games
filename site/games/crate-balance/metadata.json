@@ -1,0 +1,11 @@
+{
+  "id": "crate-balance",
+  "title": "クレートバランス",
+  "english": "CRATE BALANCE",
+  "genre": "puzzle",
+  "label": "パズル",
+  "description": "重さ×距離が傾きになる。途中も倒さず、全部の箱を置いて最後に釣り合う順番を探そう。",
+  "color": "#e9bd8d",
+  "time": "2–8 分",
+  "number": "27"
+}
