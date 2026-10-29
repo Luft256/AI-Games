@@ -1,0 +1,13 @@
+{
+  "head": "50b6a6e38467233c882b1940dd8f7e6782672624",
+  "first": "早押し：拍から3000ms（許容±170ms）",
+  "repeat": "入力済み：次の拍へ（1拍1回）",
+  "canvas": {
+    "top": 164.796875,
+    "bottom": 555.015625,
+    "width": 610.796875,
+    "height": 390.21875,
+    "viewport": 720
+  },
+  "expiry": "paused time-up keeps unfinishedbest0"
+}

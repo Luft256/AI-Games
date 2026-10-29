@@ -30,6 +30,8 @@ test('registered metadata, thumbnails, home counts and fallback routes stay sync
   assert.match(home, new RegExp(`<span class="count-badge">${games.length}</span>`));
   const fallback = home.match(/<noscript>([\s\S]*?)<\/noscript>/)?.[1];
   assert.ok(fallback, 'direct navigation is available without JavaScript');
+  const genres = new Set([...home.matchAll(/data-genre=\"([^\"]+)\"/g)].map(match=>match[1]));
+  for (const game of games) assert.ok(genres.has(game.genre), `${game.id} has a visible genre filter`);
   let previous = 0;
   for (const game of games) {
     assert.ok(Number(game.number) > previous, 'catalog remains in numeric order');

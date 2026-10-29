@@ -1,0 +1,22 @@
+{
+  "heads": {
+    "42": "258aa13d1b68bae41b5c3929b9e6051509c0be7c",
+    "43": "edb30128147ea2abdbd4a43eeca46633354dc20a",
+    "44": "8de6bd4052046a0c32858d158e6948d940b7de31"
+  },
+  "tactics": {
+    "turn": "3 / 6",
+    "hit": "A1 敵体力3→1。次の未行動の仲間へ。"
+  },
+  "marketPreview": "配置見込み：基礎3＋接辺2＋通り4＝9点。完成する通り：1行。",
+  "marketFinal": {
+    "result": "市場完成！74点で目標達成。別の配置でベストを狙おう。",
+    "last": "第12手：見送り。基礎0＋接辺0＋通り0＝0点。"
+  },
+  "potionSuccess": "営業成功！8 / 8人へ正しい薬。全注文に挑戦しよう。",
+  "potionLast": {
+    "result": "営業成功！7 / 8人へ正しい薬。全注文に挑戦しよう。",
+    "last": "第8注文：不正解。注文は色3 金・濃度8、渡した薬は色1 紅・濃度1。"
+  },
+  "mobile": "320px actual touch, acted ally danger visible; full8 new potion orders under blocked storage"
+}

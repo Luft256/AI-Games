@@ -70,7 +70,7 @@ tests/                  共通ロジックのテスト
 1. `site/games/<game-id>/` に `index.html`、`game.css`、`game.js` を作成します。HTMLから `../../shared/base.css` を読み込み、`#game-shell` とゲーム用の `main.game-layout` を置きます。
 2. ESモジュールの `game.js` から `../../shared/game-shell.js` の `mountShell` を呼びます。`title`、`english`、`description`、`accent`、`controls` を渡してください。記録には `loadBest` / `saveBest` が使えます。
 3. `mountShell` の後に `../../shared/session-limit.js` の `createGameSession` を呼び、開始・自然終了・リセット・時間切れの処理を接続します。上限は最大30分にしてください。
-4. ゲームのディレクトリに `metadata.json`（id、title、english、genre、label、description、color、time、number）と `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。numberは重複しない2桁以上の文字列、genreは action / puzzle / memory / reflex です。統合担当が `npm run catalog` でカタログ、ホーム件数、JavaScript無効時の直リンクを同期します。元の6ゲームの情報とイラストは既存のカタログ・home.jsに保持します。
+4. ゲームのディレクトリに `metadata.json`（id、title、english、genre、label、description、color、time、number）と `thumbnail.svg`（viewBox: `0 0 360 200`）を置きます。numberは重複しない2桁以上の文字列、genreは action / puzzle / memory / reflex / strategy です。統合担当が `npm run catalog` でカタログ、ホーム件数、JavaScript無効時の直リンクを同期します。元の6ゲームの情報とイラストは既存のカタログ・home.jsに保持します。
 5. ゲームルールのテストを `logic.test.js` に置き、`npm test`、`npm run check`、`npm run build` とPC・スマホの動作確認を行います。
 
 ## プレイ評価と改善
