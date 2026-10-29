@@ -67,9 +67,29 @@
 |対象|修正HEAD|作者の修正確認|統合担当の独立再確認|
 |---|---|---|---|
 |27 crate-balance / PR60|`d516fd912c2f2756608ea1a77b15e08665e8c795`|[失敗後の次手予告を終了表示へ](puzzle/crate-preview-author-verification.md)|[root-crate-fix.json](../regressions/root-crate-fix.json)|
-|35 dash-circuit / PR49|`6d27f3be8ca89e10c0aa85bd7c87e519a0532e68`|[終了時シールド0の表示](followups/2026-10-30-dash-circuit-display-followup.md)|最終表示の再確認は統合担当が[統合担当の独立再確認](../regressions/root-final-feedback.json)に保存済み。|
-|36 paint-sprint / PR53|`e21569034212fe0a5a85ba4f3fc6a32a72b5a633`|[現在面積と最大面積の区別](followups/2026-10-30-paint-sprint-display-followup.md)|最終表示の再確認は統合担当が[統合担当の独立再確認](../regressions/root-final-feedback.json)に保存済み。|
-|39 rhythm-forge / PR64|`9b282e1944dc70b0de5cca4a22a37dbe0eb9714d`|[品質0を含む採点終了の表示](followups/2026-10-30-rhythm-forge-display-followup.md)|最終表示の再確認は統合担当が[統合担当の独立再確認](../regressions/root-final-feedback.json)に保存済み。|
-|45 orchard-watch / PR47|`79f8c2f00aa65aeff2d338cecf43b6e93e186aac`|[実際に休んだ木のみを表示](followups/2026-10-30-orchard-watch-feedback.md) / [作者ブラウザQA](strategy/orchard-fix-browser.json)|統合担当が[統合担当の独立再確認](../regressions/root-final-feedback.json)に保存済み。|
+|35 dash-circuit / PR49|`6d27f3be8ca89e10c0aa85bd7c87e519a0532e68`|[終了時シールド0の表示](followups/2026-10-30-dash-circuit-display-followup.md)|[終了直後の表示を独立再確認](../regressions/root-final-feedback.json)。|
+|36 paint-sprint / PR53|`e21569034212fe0a5a85ba4f3fc6a32a72b5a633`|[現在面積と最大面積の区別](followups/2026-10-30-paint-sprint-display-followup.md)|[終了直後の表示を独立再確認](../regressions/root-final-feedback.json)。|
+|39 rhythm-forge / PR64|`9b282e1944dc70b0de5cca4a22a37dbe0eb9714d`|[品質0を含む採点終了の表示](followups/2026-10-30-rhythm-forge-display-followup.md)|[終了直後の表示を独立再確認](../regressions/root-final-feedback.json)。|
+|45 orchard-watch / PR47|`79f8c2f00aa65aeff2d338cecf43b6e93e186aac`|[実際に休んだ木のみを表示](followups/2026-10-30-orchard-watch-feedback.md) / [作者ブラウザQA](strategy/orchard-fix-browser.json)|[初日B剪定・C水やりの表示を独立再確認](../regressions/root-final-feedback.json)。|
 
 3つのarcade修正HEAD・チェック結果は [fix-heads.json](arcade/fix-heads.json) でも追跡できる。作者QAの[表示結果](arcade/display-fix-qa-results.json)と、独立旧HEAD評価の[exact-heads.json](arcade/exact-heads.json)を混ぜない。feature固有の修正文書はそのPRにも含まれ、ここには読めるように同内容の写しを置いた。回帰JSONの追加や統合完了は統合担当が更新する。
+
+## dev統合と残る改善
+
+32本のfeature PRはすべてdevへマージ済み。[評価対象HEADとマージ記録](integration.json)で対応を追跡できる。mainへの公開承認は受けていない。
+
+残る指摘は対象PRのマージを確認し、既存Issueと重複しないものを登録した。
+
+- [パズル：キーボード操作を始めるための盤面フォーカスを案内する](https://github.com/Luft256/AI-Games/issues/67)
+- [ギアリンク：端子と接続方向を連続した形で読みやすくする](https://github.com/Luft256/AI-Games/issues/68)
+- [マグネット迷路：横→縦の移動順を短い例で説明する](https://github.com/Luft256/AI-Games/issues/69)
+- [ポケット倉庫番：箱の詰みに気付ける任意ヒントを用意する](https://github.com/Luft256/AI-Games/issues/70)
+- [ループトレーサー：使わない辺へ任意の×メモを付けられるようにする](https://github.com/Luft256/AI-Games/issues/71)
+- [ピンボールオービット：フリッパー判断の効果を強めて見えるようにする](https://github.com/Luft256/AI-Games/issues/72)
+- [シャドウシフト：5ステージの切替判断に変化を付ける](https://github.com/Luft256/AI-Games/issues/73)
+- [コメットキャッチャー：資源の回復速度を1本単位で明記する](https://github.com/Luft256/AI-Games/issues/74)
+- [バブルカレント：泡が破裂した場所と最後の原因を残す](https://github.com/Luft256/AI-Games/issues/75)
+- [エンバーフライト：狭い画面でも上下ルートの加点を読めるようにする](https://github.com/Luft256/AI-Games/issues/76)
+- [エアトラフィック：320pxで便の現在高度と予測高度を読みやすくする](https://github.com/Luft256/AI-Games/issues/77)
+- [スターカートグラファー：320pxの長いタイトルの折り返しを整える](https://github.com/Luft256/AI-Games/issues/78)
+- [ミュージアムハイスト・ダンジョンドラフト：固定提示を覚えた後の再挑戦に変化を付ける](https://github.com/Luft256/AI-Games/issues/79)
