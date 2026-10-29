@@ -1,0 +1,4 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {puzzle,solved,singleLoop,toggle,around,counts} from './logic.js';
+test('all five region boundaries have exact clues and one simple loop',()=>{for(let n=0;n<5;n++){const p=puzzle(n);assert.ok(solved(p,p.solution),`room ${n+1}`);assert.ok(p.clues.every(n=>n>=0&&n<=3));}});
+test('one edge removal breaks a loop; toggling is immutable',()=>{const p=puzzle(0),old=[...p.solution],next=toggle(old,old[0]);assert.equal(solved(p,next),false);assert.deepEqual(old,p.solution);assert.ok(solved(p,toggle(next,old[0])));});
+test('two isolated loops are rejected even when each vertex has degree two',()=>{assert.equal(singleLoop([...around(0,0),...around(3,3)]),false);assert.equal(singleLoop(around(0,0)),true);assert.equal(singleLoop([]),false);});
