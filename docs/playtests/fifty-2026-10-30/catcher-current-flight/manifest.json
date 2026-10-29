@@ -1,0 +1,62 @@
+[
+  {
+    "baseRefName": "dev",
+    "headRefName": "codex/game-comet-catcher",
+    "headRefOid": "ecc1789d630912a1920002a51d220f98c45355db",
+    "number": 39,
+    "state": "OPEN",
+    "url": "https://github.com/Luft256/AI-Games/pull/39",
+    "id": "comet-catcher",
+    "metadata": {
+      "id": "comet-catcher",
+      "title": "コメットキャッチャー",
+      "english": "COMET CATCHER",
+      "genre": "action",
+      "label": "アクション",
+      "description": "短命のキャッチャー線を描き、3つの街を90秒守ろう。",
+      "color": "#9dd4f0",
+      "time": "1–3 分",
+      "number": "32"
+    }
+  },
+  {
+    "baseRefName": "dev",
+    "headRefName": "codex/game-bubble-current",
+    "headRefOid": "24694b55cab30d2a1fe5e610f8c30018fdd71ae6",
+    "number": 42,
+    "state": "OPEN",
+    "url": "https://github.com/Luft256/AI-Games/pull/42",
+    "id": "bubble-current",
+    "metadata": {
+      "id": "bubble-current",
+      "title": "バブルカレント",
+      "english": "BUBBLE CURRENT",
+      "genre": "action",
+      "label": "アクション",
+      "description": "泡ではなく水流を回し、慣性を読みながら5つの水路の輪をくぐろう。",
+      "color": "#91e2df",
+      "time": "1–3 分",
+      "number": "33"
+    }
+  },
+  {
+    "baseRefName": "dev",
+    "headRefName": "codex/game-ember-flight",
+    "headRefOid": "a2408a363f6f5faea9d175452497ef11d3776a55",
+    "number": 44,
+    "state": "OPEN",
+    "url": "https://github.com/Luft256/AI-Games/pull/44",
+    "id": "ember-flight",
+    "metadata": {
+      "id": "ember-flight",
+      "title": "エンバーフライト",
+      "english": "EMBER FLIGHT",
+      "genre": "action",
+      "label": "アクション",
+      "description": "上昇気流で高度を作り、高低2つの開口からルートを選んで谷を滑空しよう。",
+      "color": "#f2bb86",
+      "time": "1–3 分",
+      "number": "34"
+    }
+  }
+]

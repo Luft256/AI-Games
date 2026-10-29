@@ -1,0 +1,143 @@
+{
+  "reviewer": "independent AI browser reviewer",
+  "date": "2026-10-30",
+  "blockers": [],
+  "axes": [
+    "understanding",
+    "choices",
+    "learning",
+    "feedback",
+    "replay"
+  ],
+  "games": [
+    {
+      "id": "orchard-watch",
+      "pr": 47,
+      "head": "2a36cf33a80d8371026e87538a7cf7efd3141df9",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        4,
+        4,
+        3,
+        4
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    },
+    {
+      "id": "signal-detective",
+      "pr": 50,
+      "head": "fdba65ed422aa089d329c3eb2ef6fce66b5968a5",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    },
+    {
+      "id": "museum-heist",
+      "pr": 52,
+      "head": "d95cb070e5f7f22b1016a825615d2c5e6e8cbbff",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        4,
+        3,
+        4,
+        3
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    },
+    {
+      "id": "air-traffic",
+      "pr": 55,
+      "head": "a81569151799f301f06a59af751372d64e3e9343",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        5,
+        4,
+        4,
+        4
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    },
+    {
+      "id": "dungeon-draft",
+      "pr": 56,
+      "head": "ce63e8274399a9194b1d9c2803e90fc0218e6a0e",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        3
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    },
+    {
+      "id": "star-cartographer",
+      "pr": 62,
+      "head": "4d70ef01f273aaa8b017331cce9938bd76eb5f27",
+      "snapshotFilesMatchExactHead": true,
+      "scores": [
+        4,
+        5,
+        4,
+        4,
+        4
+      ],
+      "pcKeyboard": true,
+      "mobile320RealTap": true,
+      "mobileHorizontalOverflow": false,
+      "naturalEnd": true,
+      "failureAndRetry": true,
+      "unfinishedExpiryNoSave": true,
+      "storageDeniedWin": true
+    }
+  ],
+  "limits": [
+    "AI ratings are diagnostic, not human enjoyment evidence",
+    "Native hidden-tab suspension not demonstrated; wall-clock offset plus simulated visibility/input tested",
+    "Signal full campaign and Orchard success assisted; initial play separately reported",
+    "No physical-device test or exhaustive state-space coverage",
+    "Repository test/check/build handled by integration owner"
+  ],
+  "report": "artifacts/resume-strategy-review/report.md",
+  "log": "artifacts/resume-strategy-review/interaction-log.json"
+}

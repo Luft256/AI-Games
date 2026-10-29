@@ -1,0 +1,168 @@
+{
+  "date": "2026-10-30",
+  "purpose": "Local evidence archive; not a fresh playtest or integration approval",
+  "files": [
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/summary.json",
+      "archived": "puzzle/summary.json",
+      "sha256": "9f27c88fba468668429b9a622f5aa3b1dd1a806169adbb6b13817c86e62b2a41"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/supplemental.json",
+      "archived": "puzzle/supplemental.json",
+      "sha256": "3afdb431ae396179a23f36e3d67fd1f40b237e9c19d951f780acc5cd03140129"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/boundaries.json",
+      "archived": "puzzle/boundaries.json",
+      "sha256": "371be26950a416a6844ac8f9ded0d70fded58e0ef083810a24de913eebab5568"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/extra-checks.json",
+      "archived": "puzzle/extra-checks.json",
+      "sha256": "3f78a37f2abf7cc35d0245325ab9b1dc03f503aed84d3b5b9ba63f5614857caa"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/remaining-first-play.json",
+      "archived": "puzzle/remaining-first-play.json",
+      "sha256": "0f9ed5d1dbec4f1dc1c7143b97b3fe3d7a882987cce8ce8646b153f562076735"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/crate-fix-verification.json",
+      "archived": "puzzle/crate-fix-verification.json",
+      "sha256": "a06cf5c76046aefae9e3cc8106d47564ba91c3489400141153f5e415db6044ff"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-puzzle-review/report.md",
+      "archived": "puzzle/report.md",
+      "sourceSha256": "35dfae8226053c92f5bf5ce4521b3716feb0a879f3b815829851dc1a73cef18a",
+      "archiveSha256": "87c4a3e7bf6077792f601e932e04a606df66da0f3ce9ea37b1757fc5ce1f8f38",
+      "changes": "Relative artifact references normalized; archive and scope notes added. Observations preserved."
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/technical-corrected.json",
+      "archived": "arcade/technical-corrected.json",
+      "sha256": "19c2022d546cdc52c8ed5e9f00166d935c776f3835f13408655ed8de07672cac"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/summary.json",
+      "archived": "arcade/summary.json",
+      "sha256": "97d3cb6d8b6c95a52e1de9fc92f7f964d68522f7ab734e44d068c88aea5b5efa"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/exact-heads.json",
+      "archived": "arcade/exact-heads.json",
+      "sha256": "068fc78be27fd5ed857a1ab8deaae6c124d7717911369d2c02060d294b545dea"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/assisted-results.json",
+      "archived": "arcade/assisted-results.json",
+      "sha256": "acd8273cc7051a95f8fc322e455654266a50b88c3c95621392e56d12c9096e0c"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/supplement-results.json",
+      "archived": "arcade/supplement-results.json",
+      "sha256": "2a8c23b2e18562a3569ffcbad3318dd74c3b46ee55da8c529ed4a64228462b17"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/mobile-holds-results.json",
+      "archived": "arcade/mobile-holds-results.json",
+      "sha256": "92c26c37ea4866726b01e3135b9b97444d48271a5abc1b8aa987a3158fd6ec94"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/pinball-visual-results.json",
+      "archived": "arcade/pinball-visual-results.json",
+      "sha256": "595643f4bf7c60512f19c6d2496ed705a0c74f4ba7b4fc89a674730f19e9b9d0"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/display-fix-qa-results.json",
+      "archived": "arcade/display-fix-qa-results.json",
+      "sha256": "351b7aa240e3b37a229b7e7cfb2586310ec06fea3736194fb4ea6b1103ecb8c3"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/report.md",
+      "archived": "arcade/report.md",
+      "sourceSha256": "7aca9fbccf7c8e4579c9634af9015cc4338cc85925c953121060eafece6c4ee4",
+      "archiveSha256": "019b4ebe16ed1d938f170c3e208a7c0f9258aef64235498e9c5373f92659f3c0",
+      "changes": "Relative artifact references normalized; archive and scope notes added. Observations preserved."
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-strategy-review/results.json",
+      "archived": "strategy/results.json",
+      "sha256": "e9725048eea0a0fe168b6a5cf075868bac0ab1b01d24e168e30076e28acf4b13"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-strategy-review/interaction-log.json",
+      "archived": "strategy/interaction-log.json",
+      "sha256": "85f002652443406c5a376e2d23cef7a06eb8e3b803475dfe28dd5ed580c0e3b3"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-strategy-review/report.md",
+      "archived": "strategy/report.md",
+      "sourceSha256": "ced9d1e4db589e9e556ad5f139c541efe3f97643e0259346db6a5e7e39cae558",
+      "archiveSha256": "e20caa97f715094ff6b0d56a7f0ed602f4ae9fb73b5ca237d9b1017f85b2f8f0",
+      "changes": "Relative artifact references normalized; archive and scope notes added. Observations preserved."
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-catcher-current-flight/manifest.json",
+      "archived": "catcher-current-flight/manifest.json",
+      "sha256": "9c8e8b4ab65e07cff054ebaa35e6d18b31463f3b20ca6dde0e348075246b869d"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-catcher-current-flight/observations.json",
+      "archived": "catcher-current-flight/observations.json",
+      "sha256": "9aae481bb5d11d76ffc141457789405b716b604b7e15b1826fbb95e45275896d"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-catcher-current-flight/review.md",
+      "archived": "catcher-current-flight/review.md",
+      "sourceSha256": "00a292b1ee52425d9910d8086af9fc5a3ab4ff1768ff70d7d0d701a77d0133e8",
+      "archiveSha256": "8048ef14703aa613ac07c167f9da3aab3c5a0b4b16fc63d3d5ddcb038cc771cf",
+      "changes": "Relative artifact references normalized; archive and scope notes added. Observations preserved."
+    },
+    {
+      "source": "/Users/kamimurasora/.codex/worktrees/resume-crate-balance/AI-Games/docs/playtests/crate-balance-preview-fix-2026-10-30.md",
+      "archived": "puzzle/crate-preview-author-verification.md",
+      "sourceSha256": "705af828092868a69960d552c80307994fba6b44b8f9306e02f75f443cac53f4",
+      "archiveSha256": "e23bb69f908fefc94ecd32ec3c902eb63225ab631683f732f2cbaf95081a3b4f"
+    },
+    {
+      "source": "/Users/kamimurasora/.codex/worktrees/resume-dash-circuit/AI-Games/docs/playtests/2026-10-30-dash-circuit-display-followup.md",
+      "archived": "followups/2026-10-30-dash-circuit-display-followup.md",
+      "sourceSha256": "4d46a66ebdfc268d3a19f9e53cfa04c1523f2b637ff2711faecb56ca6b870374",
+      "archiveSha256": "14dccee01a8bbbff6bc813ce798cf5c235ae414525e3fa08b019c8bc5a590c55",
+      "changes": "Archive location and author-QA note added."
+    },
+    {
+      "source": "/Users/kamimurasora/.codex/worktrees/game-paint-sprint/AI-Games/docs/playtests/2026-10-30-paint-sprint-display-followup.md",
+      "archived": "followups/2026-10-30-paint-sprint-display-followup.md",
+      "sourceSha256": "b99b12ad96b586e83d64b59858d6cccf237b016b47ca9aaf906f9a5e2f8b7717",
+      "archiveSha256": "9220a892f36dd94c29e6509da7f65ae5225ab7e29ceb3ad88f770816fe5ca59a",
+      "changes": "Archive location and author-QA note added."
+    },
+    {
+      "source": "/Users/kamimurasora/.codex/worktrees/game-rhythm-forge/AI-Games/docs/playtests/2026-10-30-rhythm-forge-display-followup.md",
+      "archived": "followups/2026-10-30-rhythm-forge-display-followup.md",
+      "sourceSha256": "dc30a9be88129866c2cefc8910aff483ef269189ae0701fc90e7f8e6e57c6bc5",
+      "archiveSha256": "8788c9b1de7281864153ea06917c844de04d5687568278ecab3463058d17b355",
+      "changes": "Archive location and author-QA note added."
+    },
+    {
+      "source": "/Users/kamimurasora/.codex/worktrees/game-orchard-watch/AI-Games/docs/playtests/2026-10-30-orchard-watch-feedback.md",
+      "archived": "followups/2026-10-30-orchard-watch-feedback.md",
+      "sourceSha256": "098daeaec4497220f51c27402acdaa10e32730b5e57a2e4b7e92deaf7612ecb4",
+      "archiveSha256": "d33b7cea259b2cf9e54f567bc3be66346a66b3caa1185d16aeac1030e286a6e9",
+      "changes": "Archive location and author-QA note added."
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-arcade-review/fix-heads.json",
+      "archived": "arcade/fix-heads.json",
+      "sha256": "1d413881f2652b11a30f940b7e1c2aa825d5d299efee73318cd725db1d16450d"
+    },
+    {
+      "source": "/Users/kamimurasora/workspace/luft256/AI-Games/artifacts/resume-strategy-review/orchard-fix-browser.json",
+      "archived": "strategy/orchard-fix-browser.json",
+      "sha256": "a19c079f0b53e6232830426788d70ee3353e9759accef21e0ca967329d783a86"
+    }
+  ]
+}

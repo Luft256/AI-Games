@@ -1,0 +1,431 @@
+{
+  "reviewer": "Independent delegated browser reviewer (not implementer)",
+  "date": "2026-10-30",
+  "method": "Chrome via Playwright; first instructions-only attempts where stated, then source-assisted real browser keyboard/touch input. No hidden model mutation. All five scores are diagnostic AI observations, not evidence of human enjoyment.",
+  "axes": [
+    "理解",
+    "選択",
+    "上達",
+    "手応え",
+    "再挑戦"
+  ],
+  "exactGameFilesVerified": true,
+  "technical": "technical-corrected.json supersedes first technical-results.json for expiry. All 7: actual 320px taps, <=320 document width, >=44px controls, pause freeze, simulated hidden pause, paused/hidden 30-minute expiry, ignored post-expiry input, unchanged score/storage, restart, storage-blocked start/pause. Hidden state was simulated; 30 real minutes were not waited. Mobile whole-game wins were not evaluated.",
+  "limitations": [
+    "Dash and Paint purelogic was read before their first actual gameplay; neither has a source-blind initial-play claim.",
+    "All complete wins are source-assisted and most use accelerated Playwright clock. This verifies rules/control paths, not ordinary human success rate.",
+    "Pinball visual controller reads only rendered ball arc coordinates; grapple controller reads rendered DOM HUD.",
+    "No human enjoyment assessment, no real device testing, no actual OS tab-switch test; document.hidden event simulated.",
+    "Browser-only review; npm test/check/build and repository integration were not performed by this reviewer.",
+    "Game source/Git/Issues untouched. Reports and scripts only written beneath artifacts/resume-arcade-review/."
+  ],
+  "blockers": [],
+  "findings": [
+    {
+      "ids": [
+        "dash-circuit",
+        "paint-sprint"
+      ],
+      "priority": "P3",
+      "blocking": false,
+      "title": "終了メーターが直前のフレームを残す",
+      "reproduction": "DashをSpace3回で失敗、またはPaintで目標の輪を完成させる。",
+      "observed": "Dashの状態はシールド切れでもメーターは1。Paintの結果86/96に対しメーター85/96。",
+      "impact": "終了理由と数値がわずかに食い違う。",
+      "suggestion": "inputで終端化した際とstepのdone即return前にメーターを更新する。"
+    },
+    {
+      "ids": [
+        "shadow-shift"
+      ],
+      "priority": "P3",
+      "blocking": false,
+      "title": "5面の色順と経路が同じ",
+      "reproduction": "青→桃→青→桃→共通の同じジャンプ手順を5面で繰り返す。",
+      "observed": "5面を同じ移動・切替タイミングで落下ゼロでクリア。",
+      "impact": "色を読む判断が初回以降は記憶した入力の反復になりやすい。",
+      "suggestion": "後半の足場色順・横間隔・共通足場の配置を変え、可解性と初見での読みやすさを再プレイする。"
+    },
+    {
+      "ids": [
+        "rhythm-forge"
+      ],
+      "priority": "P3",
+      "blocking": false,
+      "title": "無入力品質0でも全作品完成と表示",
+      "reproduction": "開始後27秒入力しない。",
+      "observed": "作品5/5、5作品の鍛造完了、品質0/0/0/0/0。",
+      "impact": "品質スコアの練習としては成立するが、製作成功したという印象が目標とずれる。",
+      "suggestion": "終了を「鍛造練習終了」とし、品質0は未完成/失敗品として成功と区別する。"
+    },
+    {
+      "ids": [
+        "pinball-orbit"
+      ],
+      "priority": "P3",
+      "blocking": false,
+      "title": "無操作と狙った操作の得点差が小さい",
+      "reproduction": "同じ3球を発射し、フリッパー無操作と球の下降位置で押す試行を比較する。",
+      "observed": "無操作1010点、交互1000点、表示球位置反応1030点。",
+      "impact": "今回の試行ではフリッパー上達の報酬が弱く、受動的に点が入る印象が残る。",
+      "suggestion": "狙う場所や発射軌道、連続ターゲット報酬を調整し、意図したショットが無操作より有利になることを独立再確認する。"
+    }
+  ],
+  "games": [
+    {
+      "id": "grappling-garden",
+      "head": "991e9ec2e7ee0273f2a6206819313600d723f90c",
+      "branch": "codex/game-grappling-garden",
+      "pr": "https://github.com/Luft256/AI-Games/pull/37",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 31,
+      "scores": [
+        3,
+        4,
+        4,
+        4,
+        4
+      ],
+      "firstPlay": "説明だけで開始。右を押しSpaceを100msおきに5秒間連打すると、フック1/3・0点のまま、速度532/220となり接続できず、残り1回。旧連打攻略は通らない。",
+      "retry": "表示された方向へ押し、距離200px以内で離して減速し、接続可でSpace。3・4庭の往復も含め4庭を1080点・残3回で完走（実時間約13秒）。全クリアはソース確認後のHUDフィードバック操作。",
+      "axes": [
+        "方向・速度・距離・充填の説明が密で、初回は閾値の扱いに学習が必要。",
+        "押し続ける操作は失敗し、近づいたら離す判断で成功した。",
+        "失敗時に距離不足・速度超過・充填中の理由が示される。",
+        "接続可の文字・円の色と接続40点が入力結果を示す。",
+        "4庭の左右反転と往復で同じ調整を試せ、もう一度ですぐ開始。"
+      ],
+      "evidence": [
+        "grapple-spam.png",
+        "grapple-feedback.png"
+      ]
+    },
+    {
+      "id": "dash-circuit",
+      "head": "5c2cac18e4fbda61c4a1cd40b81198c029ec82c6",
+      "branch": "codex/game-dash-circuit",
+      "pr": "https://github.com/Luft256/AI-Games/pull/49",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 35,
+      "scores": [
+        4,
+        3,
+        4,
+        4,
+        3
+      ],
+      "firstPlay": "操作説明を読み、初回実操作の前にpurelogicも読んだため、ソース非参照の初回評価ではない。充填750msおきにSpaceを3回押しシールド切れ・0点。",
+      "retry": "壁を避ける上下・横ノード選択と緑の安全窓を使い、6部屋2040点・シールド3を維持して完走。待機時間はソース由来の位相で計算した補助プレイ。",
+      "axes": [
+        "緑のみ安全とノード選択が明示され、接触理由も具体的。",
+        "経路は壁によりほぼ決まり、主な判断は緑の瞬間を待つこと。",
+        "無造作な連打失敗と安全窓成功の差が明確。",
+        "赤黄緑とDASH表示、到着40点が分かりやすい。",
+        "部屋ごとに壁が反転するが、同じ経路が繰り返される。"
+      ],
+      "evidence": [
+        "dash-assisted.png"
+      ]
+    },
+    {
+      "id": "paint-sprint",
+      "head": "7fddbdbf6beac697186ae356a015b6819740bd05",
+      "branch": "codex/game-paint-sprint",
+      "pr": "https://github.com/Luft256/AI-Games/pull/53",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 36,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "firstPlay": "初回実操作の前にpurelogicも読んだ。20秒無移動では敵に当たり残2回・現在0/96。",
+      "retry": "左550ms・上450・右1200・下900・左1350・上900の輪で最大68点/現在63へ。敵による消去を観察。再試行は左700・上560・右1470・下980・左1470・上980の外周で70%達成、86点・残3回（約5秒）。",
+      "axes": [
+        "新しい8マス以上から戻る輪と70%目標が文章で明確。",
+        "敵の予告行を避けることと大きな囲いを狙う経路判断がある。",
+        "無移動で被弾し、輪を広げることで65%→70%超へ改善。",
+        "LOOP表示と面の一括塗り、敵の消去が盤面に現れる。",
+        "短い成功と90秒上限、囲み方を変える余地がある。"
+      ],
+      "evidence": [
+        "paint-loop.png",
+        "paint-natural.png"
+      ],
+      "result": {
+        "meter": "塗った面積 85/96 (88%) / インク 100 / 残り 3回 / 85秒",
+        "status": "70%達成！ 86/96マス。",
+        "score": "86",
+        "best": "86"
+      }
+    },
+    {
+      "id": "pinball-orbit",
+      "head": "c8a47eb4f2a048bb9823c308a354630cb5796a8b",
+      "branch": "codex/game-pinball-orbit",
+      "pr": "https://github.com/Luft256/AI-Games/pull/57",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 37,
+      "scores": [
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "firstPlay": "説明だけでSpace発射。2.5秒待って左右を180msおきに交互30回操作、目標2/3で停止。",
+      "retry": "交互入力を続けた3球自然終了1000点。発射だけでフリッパー無操作でも1010点/約43秒。描画された球の座標だけを読み、落下中y>285の側のフリッパーを押す補助操作42回で1030点/約28秒。上達の差は小さい。",
+      "axes": [
+        "3球・Space発射・左右フリッパー・光る順ターゲットは分かりやすい。",
+        "入力で反射・球の寿命は変わるが、無操作でも高得点になった。",
+        "球位置を読む試行で+20点。狙った軌道へ上達した強い証拠は得られなかった。",
+        "球・バンパー・フリッパーの反応と100点加点は見える。",
+        "3球で自然に終わり即再開可能。明示的なショット課題があると再挑戦動機が強まる。"
+      ],
+      "evidence": [
+        "pinball-firstplay.png",
+        "pinball-natural.png",
+        "pinball-visual.png"
+      ],
+      "result": {
+        "meter": "残り 0球 / 目標 1/3 / Spaceで発射 / 152秒",
+        "status": "3球の結果 1030点。打つ瞬間を変えて再挑戦。",
+        "score": "1030",
+        "best": "1030",
+        "flips": 42,
+        "scope": "Actual keyboard triggered using rendered ball arc coordinates; no hidden model access. Source-assisted controller and accelerated clock."
+      }
+    },
+    {
+      "id": "shadow-shift",
+      "head": "9400d3ba7e163d7f78c328704f186657bb1f83aa",
+      "branch": "codex/game-shadow-shift",
+      "pr": "https://github.com/Luft256/AI-Games/pull/58",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 38,
+      "scores": [
+        4,
+        3,
+        3,
+        4,
+        3
+      ],
+      "firstPlay": "説明だけで右を押し、Space→300ms→X→350msを繰り返すとステージ1で5落下・終了。",
+      "retry": "ソースを読み、足場の色に合わせるジャンプ間隔へ変更。青・桃・青・桃・共通の足場を渡る同じ手順で5面1200点・残5回。割当時の新配置は存在せず、親担当確認により9400dを対象とした。",
+      "axes": [
+        "実線と点線、青/桃の現実という説明で目標を理解できる。",
+        "空中切替と着地位置の判断は機能する。",
+        "無計画な切替は落下し、着地待ちで改善した。",
+        "足場の実線化と色、落下メッセージが結果を示す。",
+        "5面とも同じ色順・x配置で、高さだけ小さく変わるため攻略の反復が中心。"
+      ],
+      "evidence": [
+        "shadow-firstplay.png",
+        "shadow-assisted.png"
+      ],
+      "result": {
+        "meter": "ステージ 5/5 / 現実 桃 / 残り 5回 / 接地 / 151秒",
+        "status": "5つの現実を渡り切りました！",
+        "score": "1200",
+        "best": "1200"
+      }
+    },
+    {
+      "id": "rhythm-forge",
+      "head": "f49777425dd516e5d4700d42503b2425afe4c2d0",
+      "branch": "codex/game-rhythm-forge",
+      "pr": "https://github.com/Luft256/AI-Games/pull/64",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 39,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "firstPlay": "説明だけで開始し1.2秒でSpace、0.5秒後600ms長押し。早すぎる入力は得点にならず停止。",
+      "retry": "27秒無入力は品質0/0/0/0/0・0点。再開し30打刻を3秒開始・800ms間隔、長押し450〜570msで押し離すと3354点（672/672/674/668/668）。全30打刻の時刻はソースから取得し、Playwright時計で補助。",
+      "axes": [
+        "線とTAP/HOLD、押す・離すが文章で示される。",
+        "単打と長押し終端の違いで操作結果が変わる。",
+        "早い/遅いと誤差msが出て、0点から3354点へ改善した。",
+        "JUST/HOLD/RELEASEと品質の加点が即応する。",
+        "27秒で自然終了し、補正±20msと品質スコアを狙い直せる。"
+      ],
+      "evidence": [
+        "rhythm-firstplay.png",
+        "rhythm-assisted.png"
+      ],
+      "result": {
+        "meter": "作品 5/5 / 入力補正 0ms / 打刻待ち / 0秒",
+        "status": "5作品の鍛造完了。品質 672 / 672 / 674 / 668 / 668。合計3354点。",
+        "score": "3354",
+        "best": "3354"
+      }
+    },
+    {
+      "id": "wind-archer",
+      "head": "edf1cda672b8dc4c124272106e376d058d157e13",
+      "branch": "codex/game-wind-archer",
+      "pr": "https://github.com/Luft256/AI-Games/pull/65",
+      "checks": {
+        "index.html": true,
+        "game.js": true,
+        "purelogic.js": true,
+        "game.css": true
+      },
+      "number": 40,
+      "scores": [
+        4,
+        4,
+        4,
+        4,
+        4
+      ],
+      "firstPlay": "説明だけで45度・力50で発射。飛行中に角度/力を押しても「飛行中」となり飛行中は照準を変更できないと分かった。",
+      "retry": "45度・力50の発射から途中53度へ変更して6ラウンド3/6・400点。ソースの弾道と動く的を使う照準補助後、35/85、47/50、29/80、53/55、53/45、39/55で1射ずつ6/6・900点。実際のキーボード入力で射撃し隠し状態は変更していない。",
+      "axes": [
+        "角度・力・風と3射/的が明示され、点線軌道もある。",
+        "射る時刻・角度・力で当たり方が変わる。",
+        "外れた弾道を見直す試行と、照準補助で命中差を確認。",
+        "矢の軌跡・命中・残弾・加点が見える。",
+        "6ラウンド後すぐ再開でき、少ない矢で得点を上げる目標がある。"
+      ],
+      "evidence": [
+        "wind-firstplay.png",
+        "wind-natural.png",
+        "wind-aimed.png"
+      ],
+      "result": {
+        "meter": "的 6/6 / 残り 3射 / 角度 39° / 力 55 / 風 →8 / 命中 6",
+        "status": "6ラウンド終了。命中 6/6・900点。",
+        "score": "900",
+        "best": "900"
+      }
+    }
+  ],
+  "mobileAdditional": {
+    "grappleBefore": "庭 1/4 / フック 1/3 / 次 → / 揺れ 0.30 / 距離 370px / 速度 72/220 / 準備中 / 充填 0.0 / 残り 3回",
+    "grappleAfter": "庭 1/4 / フック 1/3 / 次 → / 揺れ 1.72 / 距離 299px / 速度 412/220 / 準備中 / 充填 0.0 / 残り 3回",
+    "rhythmAfterHold": {
+      "score": "135",
+      "status": "RELEASE! -26ms / +135"
+    },
+    "rhythmNaturalEnd": "5作品の鍛造完了。品質 135 / 0 / 0 / 0 / 0。合計135点。",
+    "blockedStoragePositiveFinish": {
+      "score": "99",
+      "status": "5作品の鍛造完了。品質 99 / 0 / 0 / 0 / 0。合計99点。",
+      "errors": []
+    }
+  },
+  "technicalEvidence": [
+    "technical-corrected.json",
+    "technical-results.json (layout/storage-blocked start only; expiry superseded)",
+    "mobile-holds-results.json"
+  ],
+  "authorFixFollowup": {
+    "heads": [
+      {
+        "id": "dash-circuit",
+        "pr": 49,
+        "head": "6d27f3be8ca89e10c0aa85bd7c87e519a0532e68",
+        "root": "/Users/kamimurasora/.codex/worktrees/resume-dash-circuit/AI-Games",
+        "testPass": 137,
+        "check": true,
+        "build": true
+      },
+      {
+        "id": "paint-sprint",
+        "pr": 53,
+        "head": "e21569034212fe0a5a85ba4f3fc6a32a72b5a633",
+        "root": "/Users/kamimurasora/.codex/worktrees/game-paint-sprint/AI-Games",
+        "testPass": 137,
+        "check": true,
+        "build": true
+      },
+      {
+        "id": "rhythm-forge",
+        "pr": 64,
+        "head": "9b282e1944dc70b0de5cca4a22a37dbe0eb9714d",
+        "root": "/Users/kamimurasora/.codex/worktrees/game-rhythm-forge/AI-Games",
+        "testPass": 144,
+        "check": true,
+        "build": true
+      }
+    ],
+    "qa": {
+      "dash": {
+        "meter": "部屋 1/6 / ノード 1 → 3 / 充填 0.7秒 / シールド 0",
+        "status": "シールド切れ。赤→黄→緑の順を読んで再挑戦。",
+        "score": "0",
+        "best": "0"
+      },
+      "paintImmediate": {
+        "meter": "塗った面積 2/96 (2%) / インク 100 / 残り 3回 / 90秒",
+        "status": "点線の予告を避けて、空白へ踏み出そう。",
+        "score": "2",
+        "best": "0"
+      },
+      "paint": {
+        "meter": "塗った面積 85/96 (88%) / インク 100 / 残り 3回 / 85秒",
+        "status": "70%達成！ 現在 85/96マス・最大 86/96マス。",
+        "score": "86",
+        "best": "86"
+      },
+      "rhythmMid": {
+        "meter": "作品 1/5 / 入力補正 0ms / 打刻待ち / 20秒",
+        "status": "作品 1 採点：品質 0/680",
+        "score": "0",
+        "best": "0"
+      },
+      "rhythmIdle": {
+        "meter": "作品 5/5 / 入力補正 0ms / 打刻待ち / 0秒",
+        "status": "5作品の採点終了。品質 0 / 0 / 0 / 0 / 0。合計0点。入力を振り返り、次の拍で再挑戦。",
+        "score": "0",
+        "best": "0"
+      },
+      "rhythmPlayed": {
+        "meter": "作品 5/5 / 入力補正 0ms / 打刻待ち / 0秒",
+        "status": "5作品の採点終了。品質 672 / 672 / 674 / 668 / 668。合計3354点。入力を振り返り、次の拍で再挑戦。",
+        "score": "3354",
+        "best": "3354"
+      },
+      "errors": []
+    },
+    "independentRecheckPending": true,
+    "note": "Initial review findings preserved at originalheads. Paint current85/peak86 was not a stale terminalmeter; status was ambiguous and now explicitlylabels both. ExistingPRs updated, nomerges/noissues."
+  }
+}

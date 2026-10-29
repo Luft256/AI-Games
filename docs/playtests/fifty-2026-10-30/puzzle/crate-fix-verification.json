@@ -1,0 +1,26 @@
+{
+  "authorVerification": true,
+  "independentReview": false,
+  "checks": [
+    {
+      "case": "C2 left3",
+      "status": "倒れてしまいました。トルク -6、許容 ±2。やり直しで置く順番を変えよう。",
+      "preview": "現在トルク -6 · 終了。全手の許容 2 → 3 → 3 → 0。重さ×距離で変化します。",
+      "width": 320
+    },
+    {
+      "case": "natural win",
+      "status": "クリア！ 4手で部屋1を解きました。次の部屋へ進めます。",
+      "preview": "現在トルク 0 · 終了。全手の許容 2 → 3 → 3 → 0。重さ×距離で変化します。",
+      "cleared": "1"
+    },
+    {
+      "case": "paused expiry",
+      "status": "時間切れ。30分になったため終了しました。やり直して再挑戦できます。",
+      "preview": "現在トルク -1 · 終了。全手の許容 2 → 3 → 3 → 0。重さ×距離で変化します。",
+      "moves": "1",
+      "cleared": "1"
+    }
+  ],
+  "errors": []
+}
