@@ -1,0 +1,5 @@
+export const WEATHER=[0,1,2,0,3,2,1,0,2,1,0,3];export const WEATHER_NAMES=['晴れ 水−1','雨 水+2','猛暑 水−2','くもり 変化なし'];
+export function createState(){return{turn:0,trees:[1,2,0,1].map(growth=>({water:2,growth,quality:0})),score:0,ended:false,last:[]};}
+export function advance(s,plan){if(s.ended||!Array.isArray(plan)||plan.length!==2||plan.some(a=>!['water','prune','rest'].includes(a.tool)||!Number.isInteger(a.index)||a.index<0||a.index>3))return s;const n={...s,trees:s.trees.map(t=>({...t})),last:[],turn:s.turn+1};for(const a of plan){let t=n.trees[a.index];if(a.tool==='water'){t.water=Math.min(5,t.water+2);let next=n.trees[(a.index+1)%4];next.water=Math.min(5,next.water+1);}if(a.tool==='prune'){t.growth=Math.max(0,t.growth-1);t.quality=3;}}
+ const delta=[-1,2,-2,0][WEATHER[s.turn]];n.trees.forEach((t,i)=>{t.water=Math.max(0,Math.min(5,t.water+delta));if(t.water>=1&&t.water<=4)t.growth++;if(t.growth>=4){const value=t.quality>0?3:1;n.score+=value;n.last.push(`${'ABCD'[i]}収穫+${value}`);t.growth=0;}t.quality=Math.max(0,t.quality-1);});n.ended=n.turn===12;return n;}
+export const won=s=>s.ended&&s.score>=18;
