@@ -1,0 +1,4210 @@
+{
+  "root": "/Users/kamimurasora/.codex/worktrees/fifty-resume/AI-Games",
+  "sourceRoot": "/Users/kamimurasora/.codex/worktrees/fifty-resume/AI-Games",
+  "startedAt": "2026-10-29T18:09:35.219Z",
+  "gitHead": "eef66b82dbf0c36b403200e7abe511ae76e064a9",
+  "catalogHash": "f0e51c1f045adf66e4b0f38ad5185413380f853220a109eb4dfc166fc7801b99",
+  "metadataCount": 50,
+  "checks": [
+    {
+      "name": "Catalog metadata has 50 games",
+      "passed": true,
+      "actual": 50
+    },
+    {
+      "name": "Catalog IDs are unique",
+      "passed": true
+    },
+    {
+      "name": "desktop: home has 50 cards",
+      "passed": true,
+      "actual": 50
+    },
+    {
+      "name": "desktop: all catalog IDs appear once",
+      "passed": true,
+      "actual": [
+        "snake",
+        "merge-2048",
+        "memory",
+        "breakout",
+        "minesweeper",
+        "reaction",
+        "stack-tower",
+        "sky-hop",
+        "orbit-dodge",
+        "lights-out",
+        "slide-puzzle",
+        "simon",
+        "dice-expedition",
+        "gravity-golf",
+        "echo-vault",
+        "color-cascade",
+        "cargo-switch",
+        "ricochet-relay",
+        "laser-lab",
+        "pocket-sokoban",
+        "bridge-weaver",
+        "loop-tracer",
+        "magnet-maze",
+        "number-cross",
+        "gear-link",
+        "tile-quilt",
+        "crate-balance",
+        "constellation",
+        "time-switch",
+        "pulse-runner",
+        "grappling-garden",
+        "comet-catcher",
+        "bubble-current",
+        "ember-flight",
+        "dash-circuit",
+        "paint-sprint",
+        "pinball-orbit",
+        "shadow-shift",
+        "rhythm-forge",
+        "wind-archer",
+        "reef-rescue",
+        "tiny-tactics",
+        "market-mosaic",
+        "potion-atelier",
+        "orchard-watch",
+        "signal-detective",
+        "museum-heist",
+        "air-traffic",
+        "dungeon-draft",
+        "star-cartographer"
+      ]
+    },
+    {
+      "name": "desktop: visible counts are 50",
+      "passed": true,
+      "actual": {
+        "badge": "50",
+        "all": "50",
+        "header": "50 GAMES & COUNTING"
+      }
+    },
+    {
+      "name": "desktop: 44 external SVG thumbnails",
+      "passed": true,
+      "actual": 44
+    },
+    {
+      "name": "desktop: all 44 SVG image resources loaded",
+      "passed": true,
+      "requested": 44,
+      "statuses": {
+        "http://fifty-review.test/AI-Games/games/stack-tower/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/sky-hop/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/simon/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/slide-puzzle/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/orbit-dodge/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/lights-out/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/gravity-golf/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dice-expedition/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/echo-vault/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/color-cascade/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/laser-lab/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/ricochet-relay/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pocket-sokoban/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/cargo-switch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/bridge-weaver/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/number-cross/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/loop-tracer/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/magnet-maze/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/gear-link/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/tile-quilt/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/constellation/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/crate-balance/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/time-switch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pulse-runner/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/grappling-garden/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/comet-catcher/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/bubble-current/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/ember-flight/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dash-circuit/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/paint-sprint/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pinball-orbit/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/shadow-shift/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/rhythm-forge/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/wind-archer/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/reef-rescue/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/tiny-tactics/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/market-mosaic/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/potion-atelier/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/orchard-watch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/signal-detective/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/museum-heist/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dungeon-draft/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/star-cartographer/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/air-traffic/thumbnail.svg": 200
+      }
+    },
+    {
+      "name": "desktop: home has no horizontal overflow",
+      "passed": true,
+      "actual": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      }
+    },
+    {
+      "name": "desktop: action filter matches catalog metadata",
+      "passed": true,
+      "genre": "action",
+      "expectedCount": 18,
+      "actualCount": 18,
+      "status": "18 件のゲーム"
+    },
+    {
+      "name": "desktop: puzzle filter matches catalog metadata",
+      "passed": true,
+      "genre": "puzzle",
+      "expectedCount": 21,
+      "actualCount": 21,
+      "status": "21 件のゲーム"
+    },
+    {
+      "name": "desktop: strategy filter matches catalog metadata",
+      "passed": true,
+      "genre": "strategy",
+      "expectedCount": 7,
+      "actualCount": 7,
+      "status": "7 件のゲーム"
+    },
+    {
+      "name": "desktop: memory filter matches catalog metadata",
+      "passed": true,
+      "genre": "memory",
+      "expectedCount": 2,
+      "actualCount": 2,
+      "status": "2 件のゲーム"
+    },
+    {
+      "name": "desktop: reflex filter matches catalog metadata",
+      "passed": true,
+      "genre": "reflex",
+      "expectedCount": 2,
+      "actualCount": 2,
+      "status": "2 件のゲーム"
+    },
+    {
+      "name": "desktop: full-width search ＮＥＯＮ",
+      "passed": true,
+      "query": "ＮＥＯＮ",
+      "expected": [
+        "snake"
+      ],
+      "actual": [
+        "snake"
+      ]
+    },
+    {
+      "name": "desktop: full-width search ２０４８",
+      "passed": true,
+      "query": "２０４８",
+      "expected": [
+        "merge-2048"
+      ],
+      "actual": [
+        "merge-2048"
+      ]
+    },
+    {
+      "name": "desktop: full-width search ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+      "passed": true,
+      "query": "ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+      "expected": [
+        "rhythm-forge"
+      ],
+      "actual": [
+        "rhythm-forge"
+      ]
+    },
+    {
+      "name": "desktop: favorite button does not navigate",
+      "passed": true,
+      "before": "http://fifty-review.test/AI-Games/",
+      "after": "http://fifty-review.test/AI-Games/"
+    },
+    {
+      "name": "desktop: favorite toggles on",
+      "passed": true
+    },
+    {
+      "name": "desktop: favorite survives reload",
+      "passed": true
+    },
+    {
+      "name": "desktop: favorite filter shows saved game only",
+      "passed": true
+    },
+    {
+      "name": "desktop: remove favorite does not navigate",
+      "passed": true
+    },
+    {
+      "name": "desktop: removing last favorite shows empty state",
+      "passed": true
+    },
+    {
+      "name": "desktop: favorite filter reset restores all cards",
+      "passed": true
+    },
+    {
+      "name": "desktop: favorite removal survives reload",
+      "passed": true
+    },
+    {
+      "name": "desktop: snake description navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "desktop: browser Back after snake description",
+      "passed": true
+    },
+    {
+      "name": "desktop: snake whitespace navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "desktop: browser Back after snake whitespace",
+      "passed": true
+    },
+    {
+      "name": "desktop: snake image navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "desktop: browser Back after snake image",
+      "passed": true
+    },
+    {
+      "name": "desktop: star-cartographer description navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "desktop: browser Back after star-cartographer description",
+      "passed": true
+    },
+    {
+      "name": "desktop: star-cartographer whitespace navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "desktop: browser Back after star-cartographer whitespace",
+      "passed": true
+    },
+    {
+      "name": "desktop: star-cartographer image navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "desktop: browser Back after star-cartographer image",
+      "passed": true
+    },
+    {
+      "name": "desktop: game Back link returns to catalog",
+      "passed": true
+    },
+    {
+      "name": "desktop: route snake",
+      "passed": true,
+      "id": "snake",
+      "expectedTitle": "ネオンスネーク",
+      "title": "ネオンスネーク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route merge-2048",
+      "passed": true,
+      "id": "merge-2048",
+      "expectedTitle": "マージ2048",
+      "title": "マージ2048",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route memory",
+      "passed": true,
+      "id": "memory",
+      "expectedTitle": "メモリーマッチ",
+      "title": "メモリーマッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route breakout",
+      "passed": true,
+      "id": "breakout",
+      "expectedTitle": "ブロックブレイカー",
+      "title": "ブロックブレイカー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route minesweeper",
+      "passed": true,
+      "id": "minesweeper",
+      "expectedTitle": "マインフィールド",
+      "title": "マインフィールド",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route reaction",
+      "passed": true,
+      "id": "reaction",
+      "expectedTitle": "リアクションラボ",
+      "title": "リアクションラボ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route stack-tower",
+      "passed": true,
+      "id": "stack-tower",
+      "expectedTitle": "スタックタワー",
+      "title": "スタックタワー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route sky-hop",
+      "passed": true,
+      "id": "sky-hop",
+      "expectedTitle": "スカイホップ",
+      "title": "スカイホップ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route orbit-dodge",
+      "passed": true,
+      "id": "orbit-dodge",
+      "expectedTitle": "オービットドッジ",
+      "title": "オービットドッジ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route lights-out",
+      "passed": true,
+      "id": "lights-out",
+      "expectedTitle": "ライツアウト",
+      "title": "ライツアウト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route slide-puzzle",
+      "passed": true,
+      "id": "slide-puzzle",
+      "expectedTitle": "スライド15",
+      "title": "スライド15",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route simon",
+      "passed": true,
+      "id": "simon",
+      "expectedTitle": "シーケンスメモリー",
+      "title": "シーケンスメモリー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route dice-expedition",
+      "passed": true,
+      "id": "dice-expedition",
+      "expectedTitle": "ダイス探検",
+      "title": "ダイス探検",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route gravity-golf",
+      "passed": true,
+      "id": "gravity-golf",
+      "expectedTitle": "グラビティゴルフ",
+      "title": "グラビティゴルフ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route echo-vault",
+      "passed": true,
+      "id": "echo-vault",
+      "expectedTitle": "エコーヴォールト",
+      "title": "エコーヴォールト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route color-cascade",
+      "passed": true,
+      "id": "color-cascade",
+      "expectedTitle": "カラーカスケード",
+      "title": "カラーカスケード",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route cargo-switch",
+      "passed": true,
+      "id": "cargo-switch",
+      "expectedTitle": "カーゴスイッチ",
+      "title": "カーゴスイッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route ricochet-relay",
+      "passed": true,
+      "id": "ricochet-relay",
+      "expectedTitle": "リコシェリレー",
+      "title": "リコシェリレー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route laser-lab",
+      "passed": true,
+      "id": "laser-lab",
+      "expectedTitle": "レーザーラボ",
+      "title": "レーザーラボ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route pocket-sokoban",
+      "passed": true,
+      "id": "pocket-sokoban",
+      "expectedTitle": "ポケット倉庫",
+      "title": "ポケット倉庫",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route bridge-weaver",
+      "passed": true,
+      "id": "bridge-weaver",
+      "expectedTitle": "橋のアトリエ",
+      "title": "橋のアトリエ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route loop-tracer",
+      "passed": true,
+      "id": "loop-tracer",
+      "expectedTitle": "ループトレーサー",
+      "title": "ループトレーサー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route magnet-maze",
+      "passed": true,
+      "id": "magnet-maze",
+      "expectedTitle": "マグネット迷路",
+      "title": "マグネット迷路",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route number-cross",
+      "passed": true,
+      "id": "number-cross",
+      "expectedTitle": "ナンバークロス",
+      "title": "ナンバークロス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route gear-link",
+      "passed": true,
+      "id": "gear-link",
+      "expectedTitle": "ギアリンク",
+      "title": "ギアリンク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route tile-quilt",
+      "passed": true,
+      "id": "tile-quilt",
+      "expectedTitle": "タイルキルト",
+      "title": "タイルキルト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route crate-balance",
+      "passed": true,
+      "id": "crate-balance",
+      "expectedTitle": "クレートバランス",
+      "title": "クレートバランス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route constellation",
+      "passed": true,
+      "id": "constellation",
+      "expectedTitle": "コンステレーション",
+      "title": "コンステレーション",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route time-switch",
+      "passed": true,
+      "id": "time-switch",
+      "expectedTitle": "タイムスイッチ",
+      "title": "タイムスイッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route pulse-runner",
+      "passed": true,
+      "id": "pulse-runner",
+      "expectedTitle": "パルスランナー",
+      "title": "パルスランナー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route grappling-garden",
+      "passed": true,
+      "id": "grappling-garden",
+      "expectedTitle": "グラップルガーデン",
+      "title": "グラップルガーデン",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route comet-catcher",
+      "passed": true,
+      "id": "comet-catcher",
+      "expectedTitle": "コメットキャッチャー",
+      "title": "コメットキャッチャー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route bubble-current",
+      "passed": true,
+      "id": "bubble-current",
+      "expectedTitle": "バブルカレント",
+      "title": "バブルカレント",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route ember-flight",
+      "passed": true,
+      "id": "ember-flight",
+      "expectedTitle": "エンバーフライト",
+      "title": "エンバーフライト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route dash-circuit",
+      "passed": true,
+      "id": "dash-circuit",
+      "expectedTitle": "ダッシュサーキット",
+      "title": "ダッシュサーキット",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route paint-sprint",
+      "passed": true,
+      "id": "paint-sprint",
+      "expectedTitle": "ペイントスプリント",
+      "title": "ペイントスプリント",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route pinball-orbit",
+      "passed": true,
+      "id": "pinball-orbit",
+      "expectedTitle": "ピンボールオービット",
+      "title": "ピンボールオービット",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route shadow-shift",
+      "passed": true,
+      "id": "shadow-shift",
+      "expectedTitle": "シャドウシフト",
+      "title": "シャドウシフト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route rhythm-forge",
+      "passed": true,
+      "id": "rhythm-forge",
+      "expectedTitle": "リズムフォージ",
+      "title": "リズムフォージ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route wind-archer",
+      "passed": true,
+      "id": "wind-archer",
+      "expectedTitle": "ウィンドアーチャー",
+      "title": "ウィンドアーチャー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route reef-rescue",
+      "passed": true,
+      "id": "reef-rescue",
+      "expectedTitle": "リーフレスキュー",
+      "title": "リーフレスキュー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route tiny-tactics",
+      "passed": true,
+      "id": "tiny-tactics",
+      "expectedTitle": "タイニータクティクス",
+      "title": "タイニータクティクス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route market-mosaic",
+      "passed": true,
+      "id": "market-mosaic",
+      "expectedTitle": "マーケットモザイク",
+      "title": "マーケットモザイク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route potion-atelier",
+      "passed": true,
+      "id": "potion-atelier",
+      "expectedTitle": "ポーションアトリエ",
+      "title": "ポーションアトリエ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route orchard-watch",
+      "passed": true,
+      "id": "orchard-watch",
+      "expectedTitle": "オーチャードウォッチ",
+      "title": "オーチャードウォッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route signal-detective",
+      "passed": true,
+      "id": "signal-detective",
+      "expectedTitle": "シグナル探偵",
+      "title": "シグナル探偵",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route museum-heist",
+      "passed": true,
+      "id": "museum-heist",
+      "expectedTitle": "ミュージアムハイスト",
+      "title": "ミュージアムハイスト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route air-traffic",
+      "passed": true,
+      "id": "air-traffic",
+      "expectedTitle": "エアトラフィック",
+      "title": "エアトラフィック",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route dungeon-draft",
+      "passed": true,
+      "id": "dungeon-draft",
+      "expectedTitle": "ダンジョンドラフト",
+      "title": "ダンジョンドラフト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: route star-cartographer",
+      "passed": true,
+      "id": "star-cartographer",
+      "expectedTitle": "スターカートグラファー",
+      "title": "スターカートグラファー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 1280,
+        "document": 1280,
+        "body": 1280
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "desktop: no page errors or missing resources",
+      "passed": true,
+      "resourceErrors": [],
+      "browserErrors": []
+    },
+    {
+      "name": "JavaScript disabled: 50 direct noscript links",
+      "passed": true,
+      "actual": [
+        {
+          "href": "./games/snake/",
+          "title": "ネオンスネーク"
+        },
+        {
+          "href": "./games/merge-2048/",
+          "title": "マージ2048"
+        },
+        {
+          "href": "./games/memory/",
+          "title": "メモリーマッチ"
+        },
+        {
+          "href": "./games/breakout/",
+          "title": "ブロックブレイカー"
+        },
+        {
+          "href": "./games/minesweeper/",
+          "title": "マインフィールド"
+        },
+        {
+          "href": "./games/reaction/",
+          "title": "リアクションラボ"
+        },
+        {
+          "href": "./games/stack-tower/",
+          "title": "スタックタワー"
+        },
+        {
+          "href": "./games/sky-hop/",
+          "title": "スカイホップ"
+        },
+        {
+          "href": "./games/orbit-dodge/",
+          "title": "オービットドッジ"
+        },
+        {
+          "href": "./games/lights-out/",
+          "title": "ライツアウト"
+        },
+        {
+          "href": "./games/slide-puzzle/",
+          "title": "スライド15"
+        },
+        {
+          "href": "./games/simon/",
+          "title": "シーケンスメモリー"
+        },
+        {
+          "href": "./games/dice-expedition/",
+          "title": "ダイス探検"
+        },
+        {
+          "href": "./games/gravity-golf/",
+          "title": "グラビティゴルフ"
+        },
+        {
+          "href": "./games/echo-vault/",
+          "title": "エコーヴォールト"
+        },
+        {
+          "href": "./games/color-cascade/",
+          "title": "カラーカスケード"
+        },
+        {
+          "href": "./games/cargo-switch/",
+          "title": "カーゴスイッチ"
+        },
+        {
+          "href": "./games/ricochet-relay/",
+          "title": "リコシェリレー"
+        },
+        {
+          "href": "./games/laser-lab/",
+          "title": "レーザーラボ"
+        },
+        {
+          "href": "./games/pocket-sokoban/",
+          "title": "ポケット倉庫"
+        },
+        {
+          "href": "./games/bridge-weaver/",
+          "title": "橋のアトリエ"
+        },
+        {
+          "href": "./games/loop-tracer/",
+          "title": "ループトレーサー"
+        },
+        {
+          "href": "./games/magnet-maze/",
+          "title": "マグネット迷路"
+        },
+        {
+          "href": "./games/number-cross/",
+          "title": "ナンバークロス"
+        },
+        {
+          "href": "./games/gear-link/",
+          "title": "ギアリンク"
+        },
+        {
+          "href": "./games/tile-quilt/",
+          "title": "タイルキルト"
+        },
+        {
+          "href": "./games/crate-balance/",
+          "title": "クレートバランス"
+        },
+        {
+          "href": "./games/constellation/",
+          "title": "コンステレーション"
+        },
+        {
+          "href": "./games/time-switch/",
+          "title": "タイムスイッチ"
+        },
+        {
+          "href": "./games/pulse-runner/",
+          "title": "パルスランナー"
+        },
+        {
+          "href": "./games/grappling-garden/",
+          "title": "グラップルガーデン"
+        },
+        {
+          "href": "./games/comet-catcher/",
+          "title": "コメットキャッチャー"
+        },
+        {
+          "href": "./games/bubble-current/",
+          "title": "バブルカレント"
+        },
+        {
+          "href": "./games/ember-flight/",
+          "title": "エンバーフライト"
+        },
+        {
+          "href": "./games/dash-circuit/",
+          "title": "ダッシュサーキット"
+        },
+        {
+          "href": "./games/paint-sprint/",
+          "title": "ペイントスプリント"
+        },
+        {
+          "href": "./games/pinball-orbit/",
+          "title": "ピンボールオービット"
+        },
+        {
+          "href": "./games/shadow-shift/",
+          "title": "シャドウシフト"
+        },
+        {
+          "href": "./games/rhythm-forge/",
+          "title": "リズムフォージ"
+        },
+        {
+          "href": "./games/wind-archer/",
+          "title": "ウィンドアーチャー"
+        },
+        {
+          "href": "./games/reef-rescue/",
+          "title": "リーフレスキュー"
+        },
+        {
+          "href": "./games/tiny-tactics/",
+          "title": "タイニータクティクス"
+        },
+        {
+          "href": "./games/market-mosaic/",
+          "title": "マーケットモザイク"
+        },
+        {
+          "href": "./games/potion-atelier/",
+          "title": "ポーションアトリエ"
+        },
+        {
+          "href": "./games/orchard-watch/",
+          "title": "オーチャードウォッチ"
+        },
+        {
+          "href": "./games/signal-detective/",
+          "title": "シグナル探偵"
+        },
+        {
+          "href": "./games/museum-heist/",
+          "title": "ミュージアムハイスト"
+        },
+        {
+          "href": "./games/air-traffic/",
+          "title": "エアトラフィック"
+        },
+        {
+          "href": "./games/dungeon-draft/",
+          "title": "ダンジョンドラフト"
+        },
+        {
+          "href": "./games/star-cartographer/",
+          "title": "スターカートグラファー"
+        }
+      ]
+    },
+    {
+      "name": "JavaScript disabled: dynamic cards do not render",
+      "passed": true
+    },
+    {
+      "name": "JavaScript disabled: direct link navigates",
+      "passed": true
+    },
+    {
+      "name": "JavaScript disabled: no missing resources/errors",
+      "passed": true,
+      "errors": []
+    },
+    {
+      "name": "mobile: home has 50 cards",
+      "passed": true,
+      "actual": 50
+    },
+    {
+      "name": "mobile: all catalog IDs appear once",
+      "passed": true,
+      "actual": [
+        "snake",
+        "merge-2048",
+        "memory",
+        "breakout",
+        "minesweeper",
+        "reaction",
+        "stack-tower",
+        "sky-hop",
+        "orbit-dodge",
+        "lights-out",
+        "slide-puzzle",
+        "simon",
+        "dice-expedition",
+        "gravity-golf",
+        "echo-vault",
+        "color-cascade",
+        "cargo-switch",
+        "ricochet-relay",
+        "laser-lab",
+        "pocket-sokoban",
+        "bridge-weaver",
+        "loop-tracer",
+        "magnet-maze",
+        "number-cross",
+        "gear-link",
+        "tile-quilt",
+        "crate-balance",
+        "constellation",
+        "time-switch",
+        "pulse-runner",
+        "grappling-garden",
+        "comet-catcher",
+        "bubble-current",
+        "ember-flight",
+        "dash-circuit",
+        "paint-sprint",
+        "pinball-orbit",
+        "shadow-shift",
+        "rhythm-forge",
+        "wind-archer",
+        "reef-rescue",
+        "tiny-tactics",
+        "market-mosaic",
+        "potion-atelier",
+        "orchard-watch",
+        "signal-detective",
+        "museum-heist",
+        "air-traffic",
+        "dungeon-draft",
+        "star-cartographer"
+      ]
+    },
+    {
+      "name": "mobile: visible counts are 50",
+      "passed": true,
+      "actual": {
+        "badge": "50",
+        "all": "50",
+        "header": "50 GAMES & COUNTING"
+      }
+    },
+    {
+      "name": "mobile: 44 external SVG thumbnails",
+      "passed": true,
+      "actual": 44
+    },
+    {
+      "name": "mobile: all 44 SVG image resources loaded",
+      "passed": true,
+      "requested": 44,
+      "statuses": {
+        "http://fifty-review.test/AI-Games/games/sky-hop/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/stack-tower/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/orbit-dodge/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/lights-out/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/slide-puzzle/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/simon/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dice-expedition/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/gravity-golf/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/echo-vault/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/color-cascade/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/ricochet-relay/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/cargo-switch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/laser-lab/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pocket-sokoban/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/bridge-weaver/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/loop-tracer/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/magnet-maze/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/number-cross/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/gear-link/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/tile-quilt/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/crate-balance/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/constellation/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/time-switch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pulse-runner/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/grappling-garden/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/comet-catcher/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/bubble-current/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/ember-flight/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dash-circuit/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/paint-sprint/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/shadow-shift/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/rhythm-forge/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/wind-archer/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/pinball-orbit/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/tiny-tactics/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/market-mosaic/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/reef-rescue/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/potion-atelier/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/orchard-watch/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/signal-detective/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/museum-heist/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/air-traffic/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/dungeon-draft/thumbnail.svg": 200,
+        "http://fifty-review.test/AI-Games/games/star-cartographer/thumbnail.svg": 200
+      }
+    },
+    {
+      "name": "mobile: home has no horizontal overflow",
+      "passed": true,
+      "actual": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      }
+    },
+    {
+      "name": "mobile: action filter matches catalog metadata",
+      "passed": true,
+      "genre": "action",
+      "expectedCount": 18,
+      "actualCount": 18,
+      "status": "18 件のゲーム"
+    },
+    {
+      "name": "mobile: puzzle filter matches catalog metadata",
+      "passed": true,
+      "genre": "puzzle",
+      "expectedCount": 21,
+      "actualCount": 21,
+      "status": "21 件のゲーム"
+    },
+    {
+      "name": "mobile: strategy filter matches catalog metadata",
+      "passed": true,
+      "genre": "strategy",
+      "expectedCount": 7,
+      "actualCount": 7,
+      "status": "7 件のゲーム"
+    },
+    {
+      "name": "mobile: memory filter matches catalog metadata",
+      "passed": true,
+      "genre": "memory",
+      "expectedCount": 2,
+      "actualCount": 2,
+      "status": "2 件のゲーム"
+    },
+    {
+      "name": "mobile: reflex filter matches catalog metadata",
+      "passed": true,
+      "genre": "reflex",
+      "expectedCount": 2,
+      "actualCount": 2,
+      "status": "2 件のゲーム"
+    },
+    {
+      "name": "mobile: full-width search ＮＥＯＮ",
+      "passed": true,
+      "query": "ＮＥＯＮ",
+      "expected": [
+        "snake"
+      ],
+      "actual": [
+        "snake"
+      ]
+    },
+    {
+      "name": "mobile: full-width search ２０４８",
+      "passed": true,
+      "query": "２０４８",
+      "expected": [
+        "merge-2048"
+      ],
+      "actual": [
+        "merge-2048"
+      ]
+    },
+    {
+      "name": "mobile: full-width search ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+      "passed": true,
+      "query": "ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+      "expected": [
+        "rhythm-forge"
+      ],
+      "actual": [
+        "rhythm-forge"
+      ]
+    },
+    {
+      "name": "mobile: favorite button does not navigate",
+      "passed": true,
+      "before": "http://fifty-review.test/AI-Games/",
+      "after": "http://fifty-review.test/AI-Games/"
+    },
+    {
+      "name": "mobile: favorite toggles on",
+      "passed": true
+    },
+    {
+      "name": "mobile: favorite survives reload",
+      "passed": true
+    },
+    {
+      "name": "mobile: favorite filter shows saved game only",
+      "passed": true
+    },
+    {
+      "name": "mobile: remove favorite does not navigate",
+      "passed": true
+    },
+    {
+      "name": "mobile: removing last favorite shows empty state",
+      "passed": true
+    },
+    {
+      "name": "mobile: favorite filter reset restores all cards",
+      "passed": true
+    },
+    {
+      "name": "mobile: favorite removal survives reload",
+      "passed": true
+    },
+    {
+      "name": "mobile: snake description navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "mobile: browser Back after snake description",
+      "passed": true
+    },
+    {
+      "name": "mobile: snake whitespace navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "mobile: browser Back after snake whitespace",
+      "passed": true
+    },
+    {
+      "name": "mobile: snake image navigates to game",
+      "passed": true,
+      "actual": "ネオンスネーク",
+      "expected": "ネオンスネーク"
+    },
+    {
+      "name": "mobile: browser Back after snake image",
+      "passed": true
+    },
+    {
+      "name": "mobile: star-cartographer description navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "mobile: browser Back after star-cartographer description",
+      "passed": true
+    },
+    {
+      "name": "mobile: star-cartographer whitespace navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "mobile: browser Back after star-cartographer whitespace",
+      "passed": true
+    },
+    {
+      "name": "mobile: star-cartographer image navigates to game",
+      "passed": true,
+      "actual": "スターカートグラファー",
+      "expected": "スターカートグラファー"
+    },
+    {
+      "name": "mobile: browser Back after star-cartographer image",
+      "passed": true
+    },
+    {
+      "name": "mobile: game Back link returns to catalog",
+      "passed": true
+    },
+    {
+      "name": "mobile: route snake",
+      "passed": true,
+      "id": "snake",
+      "expectedTitle": "ネオンスネーク",
+      "title": "ネオンスネーク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route merge-2048",
+      "passed": true,
+      "id": "merge-2048",
+      "expectedTitle": "マージ2048",
+      "title": "マージ2048",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route memory",
+      "passed": true,
+      "id": "memory",
+      "expectedTitle": "メモリーマッチ",
+      "title": "メモリーマッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route breakout",
+      "passed": true,
+      "id": "breakout",
+      "expectedTitle": "ブロックブレイカー",
+      "title": "ブロックブレイカー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route minesweeper",
+      "passed": true,
+      "id": "minesweeper",
+      "expectedTitle": "マインフィールド",
+      "title": "マインフィールド",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route reaction",
+      "passed": true,
+      "id": "reaction",
+      "expectedTitle": "リアクションラボ",
+      "title": "リアクションラボ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route stack-tower",
+      "passed": true,
+      "id": "stack-tower",
+      "expectedTitle": "スタックタワー",
+      "title": "スタックタワー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route sky-hop",
+      "passed": true,
+      "id": "sky-hop",
+      "expectedTitle": "スカイホップ",
+      "title": "スカイホップ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route orbit-dodge",
+      "passed": true,
+      "id": "orbit-dodge",
+      "expectedTitle": "オービットドッジ",
+      "title": "オービットドッジ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route lights-out",
+      "passed": true,
+      "id": "lights-out",
+      "expectedTitle": "ライツアウト",
+      "title": "ライツアウト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route slide-puzzle",
+      "passed": true,
+      "id": "slide-puzzle",
+      "expectedTitle": "スライド15",
+      "title": "スライド15",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route simon",
+      "passed": true,
+      "id": "simon",
+      "expectedTitle": "シーケンスメモリー",
+      "title": "シーケンスメモリー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route dice-expedition",
+      "passed": true,
+      "id": "dice-expedition",
+      "expectedTitle": "ダイス探検",
+      "title": "ダイス探検",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route gravity-golf",
+      "passed": true,
+      "id": "gravity-golf",
+      "expectedTitle": "グラビティゴルフ",
+      "title": "グラビティゴルフ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route echo-vault",
+      "passed": true,
+      "id": "echo-vault",
+      "expectedTitle": "エコーヴォールト",
+      "title": "エコーヴォールト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route color-cascade",
+      "passed": true,
+      "id": "color-cascade",
+      "expectedTitle": "カラーカスケード",
+      "title": "カラーカスケード",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route cargo-switch",
+      "passed": true,
+      "id": "cargo-switch",
+      "expectedTitle": "カーゴスイッチ",
+      "title": "カーゴスイッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route ricochet-relay",
+      "passed": true,
+      "id": "ricochet-relay",
+      "expectedTitle": "リコシェリレー",
+      "title": "リコシェリレー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route laser-lab",
+      "passed": true,
+      "id": "laser-lab",
+      "expectedTitle": "レーザーラボ",
+      "title": "レーザーラボ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route pocket-sokoban",
+      "passed": true,
+      "id": "pocket-sokoban",
+      "expectedTitle": "ポケット倉庫",
+      "title": "ポケット倉庫",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route bridge-weaver",
+      "passed": true,
+      "id": "bridge-weaver",
+      "expectedTitle": "橋のアトリエ",
+      "title": "橋のアトリエ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route loop-tracer",
+      "passed": true,
+      "id": "loop-tracer",
+      "expectedTitle": "ループトレーサー",
+      "title": "ループトレーサー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route magnet-maze",
+      "passed": true,
+      "id": "magnet-maze",
+      "expectedTitle": "マグネット迷路",
+      "title": "マグネット迷路",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route number-cross",
+      "passed": true,
+      "id": "number-cross",
+      "expectedTitle": "ナンバークロス",
+      "title": "ナンバークロス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route gear-link",
+      "passed": true,
+      "id": "gear-link",
+      "expectedTitle": "ギアリンク",
+      "title": "ギアリンク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route tile-quilt",
+      "passed": true,
+      "id": "tile-quilt",
+      "expectedTitle": "タイルキルト",
+      "title": "タイルキルト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route crate-balance",
+      "passed": true,
+      "id": "crate-balance",
+      "expectedTitle": "クレートバランス",
+      "title": "クレートバランス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route constellation",
+      "passed": true,
+      "id": "constellation",
+      "expectedTitle": "コンステレーション",
+      "title": "コンステレーション",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route time-switch",
+      "passed": true,
+      "id": "time-switch",
+      "expectedTitle": "タイムスイッチ",
+      "title": "タイムスイッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route pulse-runner",
+      "passed": true,
+      "id": "pulse-runner",
+      "expectedTitle": "パルスランナー",
+      "title": "パルスランナー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route grappling-garden",
+      "passed": true,
+      "id": "grappling-garden",
+      "expectedTitle": "グラップルガーデン",
+      "title": "グラップルガーデン",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route comet-catcher",
+      "passed": true,
+      "id": "comet-catcher",
+      "expectedTitle": "コメットキャッチャー",
+      "title": "コメットキャッチャー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route bubble-current",
+      "passed": true,
+      "id": "bubble-current",
+      "expectedTitle": "バブルカレント",
+      "title": "バブルカレント",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route ember-flight",
+      "passed": true,
+      "id": "ember-flight",
+      "expectedTitle": "エンバーフライト",
+      "title": "エンバーフライト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route dash-circuit",
+      "passed": true,
+      "id": "dash-circuit",
+      "expectedTitle": "ダッシュサーキット",
+      "title": "ダッシュサーキット",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route paint-sprint",
+      "passed": true,
+      "id": "paint-sprint",
+      "expectedTitle": "ペイントスプリント",
+      "title": "ペイントスプリント",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route pinball-orbit",
+      "passed": true,
+      "id": "pinball-orbit",
+      "expectedTitle": "ピンボールオービット",
+      "title": "ピンボールオービット",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route shadow-shift",
+      "passed": true,
+      "id": "shadow-shift",
+      "expectedTitle": "シャドウシフト",
+      "title": "シャドウシフト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route rhythm-forge",
+      "passed": true,
+      "id": "rhythm-forge",
+      "expectedTitle": "リズムフォージ",
+      "title": "リズムフォージ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route wind-archer",
+      "passed": true,
+      "id": "wind-archer",
+      "expectedTitle": "ウィンドアーチャー",
+      "title": "ウィンドアーチャー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route reef-rescue",
+      "passed": true,
+      "id": "reef-rescue",
+      "expectedTitle": "リーフレスキュー",
+      "title": "リーフレスキュー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route tiny-tactics",
+      "passed": true,
+      "id": "tiny-tactics",
+      "expectedTitle": "タイニータクティクス",
+      "title": "タイニータクティクス",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route market-mosaic",
+      "passed": true,
+      "id": "market-mosaic",
+      "expectedTitle": "マーケットモザイク",
+      "title": "マーケットモザイク",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route potion-atelier",
+      "passed": true,
+      "id": "potion-atelier",
+      "expectedTitle": "ポーションアトリエ",
+      "title": "ポーションアトリエ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route orchard-watch",
+      "passed": true,
+      "id": "orchard-watch",
+      "expectedTitle": "オーチャードウォッチ",
+      "title": "オーチャードウォッチ",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route signal-detective",
+      "passed": true,
+      "id": "signal-detective",
+      "expectedTitle": "シグナル探偵",
+      "title": "シグナル探偵",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route museum-heist",
+      "passed": true,
+      "id": "museum-heist",
+      "expectedTitle": "ミュージアムハイスト",
+      "title": "ミュージアムハイスト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route air-traffic",
+      "passed": true,
+      "id": "air-traffic",
+      "expectedTitle": "エアトラフィック",
+      "title": "エアトラフィック",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route dungeon-draft",
+      "passed": true,
+      "id": "dungeon-draft",
+      "expectedTitle": "ダンジョンドラフト",
+      "title": "ダンジョンドラフト",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: route star-cartographer",
+      "passed": true,
+      "id": "star-cartographer",
+      "expectedTitle": "スターカートグラファー",
+      "title": "スターカートグラファー",
+      "headingCount": 1,
+      "sessionLimits": 1,
+      "overflow": {
+        "viewport": 320,
+        "document": 320,
+        "body": 320
+      },
+      "relativeHomeLinks": 3
+    },
+    {
+      "name": "mobile: no page errors or missing resources",
+      "passed": true,
+      "resourceErrors": [],
+      "browserErrors": []
+    }
+  ],
+  "surfaces": [
+    {
+      "name": "desktop",
+      "home": {
+        "cardCount": 50,
+        "countBadge": "50",
+        "allCount": "50",
+        "headerCount": "50 GAMES & COUNTING",
+        "externalSvgImages": 44,
+        "overflow": {
+          "viewport": 1280,
+          "document": 1280,
+          "body": 1280
+        },
+        "genres": [
+          {
+            "genre": "action",
+            "expectedCount": 18,
+            "actualCount": 18,
+            "status": "18 件のゲーム"
+          },
+          {
+            "genre": "puzzle",
+            "expectedCount": 21,
+            "actualCount": 21,
+            "status": "21 件のゲーム"
+          },
+          {
+            "genre": "strategy",
+            "expectedCount": 7,
+            "actualCount": 7,
+            "status": "7 件のゲーム"
+          },
+          {
+            "genre": "memory",
+            "expectedCount": 2,
+            "actualCount": 2,
+            "status": "2 件のゲーム"
+          },
+          {
+            "genre": "reflex",
+            "expectedCount": 2,
+            "actualCount": 2,
+            "status": "2 件のゲーム"
+          }
+        ],
+        "fullWidthSearch": [
+          {
+            "query": "ＮＥＯＮ",
+            "expected": [
+              "snake"
+            ],
+            "actual": [
+              "snake"
+            ]
+          },
+          {
+            "query": "２０４８",
+            "expected": [
+              "merge-2048"
+            ],
+            "actual": [
+              "merge-2048"
+            ]
+          },
+          {
+            "query": "ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+            "expected": [
+              "rhythm-forge"
+            ],
+            "actual": [
+              "rhythm-forge"
+            ]
+          }
+        ],
+        "cardNavigation": [
+          {
+            "id": "snake",
+            "region": "description",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "snake",
+            "region": "whitespace",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "snake",
+            "region": "image",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "description",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "whitespace",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "image",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          }
+        ]
+      },
+      "routes": [
+        {
+          "id": "snake",
+          "expectedTitle": "ネオンスネーク",
+          "title": "ネオンスネーク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "merge-2048",
+          "expectedTitle": "マージ2048",
+          "title": "マージ2048",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "memory",
+          "expectedTitle": "メモリーマッチ",
+          "title": "メモリーマッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "breakout",
+          "expectedTitle": "ブロックブレイカー",
+          "title": "ブロックブレイカー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "minesweeper",
+          "expectedTitle": "マインフィールド",
+          "title": "マインフィールド",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "reaction",
+          "expectedTitle": "リアクションラボ",
+          "title": "リアクションラボ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "stack-tower",
+          "expectedTitle": "スタックタワー",
+          "title": "スタックタワー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "sky-hop",
+          "expectedTitle": "スカイホップ",
+          "title": "スカイホップ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "orbit-dodge",
+          "expectedTitle": "オービットドッジ",
+          "title": "オービットドッジ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "lights-out",
+          "expectedTitle": "ライツアウト",
+          "title": "ライツアウト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "slide-puzzle",
+          "expectedTitle": "スライド15",
+          "title": "スライド15",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "simon",
+          "expectedTitle": "シーケンスメモリー",
+          "title": "シーケンスメモリー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dice-expedition",
+          "expectedTitle": "ダイス探検",
+          "title": "ダイス探検",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "gravity-golf",
+          "expectedTitle": "グラビティゴルフ",
+          "title": "グラビティゴルフ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "echo-vault",
+          "expectedTitle": "エコーヴォールト",
+          "title": "エコーヴォールト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "color-cascade",
+          "expectedTitle": "カラーカスケード",
+          "title": "カラーカスケード",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "cargo-switch",
+          "expectedTitle": "カーゴスイッチ",
+          "title": "カーゴスイッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "ricochet-relay",
+          "expectedTitle": "リコシェリレー",
+          "title": "リコシェリレー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "laser-lab",
+          "expectedTitle": "レーザーラボ",
+          "title": "レーザーラボ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pocket-sokoban",
+          "expectedTitle": "ポケット倉庫",
+          "title": "ポケット倉庫",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "bridge-weaver",
+          "expectedTitle": "橋のアトリエ",
+          "title": "橋のアトリエ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "loop-tracer",
+          "expectedTitle": "ループトレーサー",
+          "title": "ループトレーサー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "magnet-maze",
+          "expectedTitle": "マグネット迷路",
+          "title": "マグネット迷路",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "number-cross",
+          "expectedTitle": "ナンバークロス",
+          "title": "ナンバークロス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "gear-link",
+          "expectedTitle": "ギアリンク",
+          "title": "ギアリンク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "tile-quilt",
+          "expectedTitle": "タイルキルト",
+          "title": "タイルキルト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "crate-balance",
+          "expectedTitle": "クレートバランス",
+          "title": "クレートバランス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "constellation",
+          "expectedTitle": "コンステレーション",
+          "title": "コンステレーション",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "time-switch",
+          "expectedTitle": "タイムスイッチ",
+          "title": "タイムスイッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pulse-runner",
+          "expectedTitle": "パルスランナー",
+          "title": "パルスランナー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "grappling-garden",
+          "expectedTitle": "グラップルガーデン",
+          "title": "グラップルガーデン",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "comet-catcher",
+          "expectedTitle": "コメットキャッチャー",
+          "title": "コメットキャッチャー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "bubble-current",
+          "expectedTitle": "バブルカレント",
+          "title": "バブルカレント",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "ember-flight",
+          "expectedTitle": "エンバーフライト",
+          "title": "エンバーフライト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dash-circuit",
+          "expectedTitle": "ダッシュサーキット",
+          "title": "ダッシュサーキット",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "paint-sprint",
+          "expectedTitle": "ペイントスプリント",
+          "title": "ペイントスプリント",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pinball-orbit",
+          "expectedTitle": "ピンボールオービット",
+          "title": "ピンボールオービット",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "shadow-shift",
+          "expectedTitle": "シャドウシフト",
+          "title": "シャドウシフト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "rhythm-forge",
+          "expectedTitle": "リズムフォージ",
+          "title": "リズムフォージ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "wind-archer",
+          "expectedTitle": "ウィンドアーチャー",
+          "title": "ウィンドアーチャー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "reef-rescue",
+          "expectedTitle": "リーフレスキュー",
+          "title": "リーフレスキュー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "tiny-tactics",
+          "expectedTitle": "タイニータクティクス",
+          "title": "タイニータクティクス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "market-mosaic",
+          "expectedTitle": "マーケットモザイク",
+          "title": "マーケットモザイク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "potion-atelier",
+          "expectedTitle": "ポーションアトリエ",
+          "title": "ポーションアトリエ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "orchard-watch",
+          "expectedTitle": "オーチャードウォッチ",
+          "title": "オーチャードウォッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "signal-detective",
+          "expectedTitle": "シグナル探偵",
+          "title": "シグナル探偵",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "museum-heist",
+          "expectedTitle": "ミュージアムハイスト",
+          "title": "ミュージアムハイスト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "air-traffic",
+          "expectedTitle": "エアトラフィック",
+          "title": "エアトラフィック",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dungeon-draft",
+          "expectedTitle": "ダンジョンドラフト",
+          "title": "ダンジョンドラフト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "star-cartographer",
+          "expectedTitle": "スターカートグラファー",
+          "title": "スターカートグラファー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 1280,
+            "document": 1280,
+            "body": 1280
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        }
+      ],
+      "browserErrors": [],
+      "resourceErrors": []
+    },
+    {
+      "name": "mobile",
+      "home": {
+        "cardCount": 50,
+        "countBadge": "50",
+        "allCount": "50",
+        "headerCount": "50 GAMES & COUNTING",
+        "externalSvgImages": 44,
+        "overflow": {
+          "viewport": 320,
+          "document": 320,
+          "body": 320
+        },
+        "genres": [
+          {
+            "genre": "action",
+            "expectedCount": 18,
+            "actualCount": 18,
+            "status": "18 件のゲーム"
+          },
+          {
+            "genre": "puzzle",
+            "expectedCount": 21,
+            "actualCount": 21,
+            "status": "21 件のゲーム"
+          },
+          {
+            "genre": "strategy",
+            "expectedCount": 7,
+            "actualCount": 7,
+            "status": "7 件のゲーム"
+          },
+          {
+            "genre": "memory",
+            "expectedCount": 2,
+            "actualCount": 2,
+            "status": "2 件のゲーム"
+          },
+          {
+            "genre": "reflex",
+            "expectedCount": 2,
+            "actualCount": 2,
+            "status": "2 件のゲーム"
+          }
+        ],
+        "fullWidthSearch": [
+          {
+            "query": "ＮＥＯＮ",
+            "expected": [
+              "snake"
+            ],
+            "actual": [
+              "snake"
+            ]
+          },
+          {
+            "query": "２０４８",
+            "expected": [
+              "merge-2048"
+            ],
+            "actual": [
+              "merge-2048"
+            ]
+          },
+          {
+            "query": "ＲＨＹＴＨＭ　ＦＯＲＧＥ",
+            "expected": [
+              "rhythm-forge"
+            ],
+            "actual": [
+              "rhythm-forge"
+            ]
+          }
+        ],
+        "cardNavigation": [
+          {
+            "id": "snake",
+            "region": "description",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "snake",
+            "region": "whitespace",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "snake",
+            "region": "image",
+            "title": "ネオンスネーク",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "description",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "whitespace",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          },
+          {
+            "id": "star-cartographer",
+            "region": "image",
+            "title": "スターカートグラファー",
+            "browserBack": true
+          }
+        ]
+      },
+      "routes": [
+        {
+          "id": "snake",
+          "expectedTitle": "ネオンスネーク",
+          "title": "ネオンスネーク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "merge-2048",
+          "expectedTitle": "マージ2048",
+          "title": "マージ2048",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "memory",
+          "expectedTitle": "メモリーマッチ",
+          "title": "メモリーマッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "breakout",
+          "expectedTitle": "ブロックブレイカー",
+          "title": "ブロックブレイカー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "minesweeper",
+          "expectedTitle": "マインフィールド",
+          "title": "マインフィールド",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "reaction",
+          "expectedTitle": "リアクションラボ",
+          "title": "リアクションラボ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "stack-tower",
+          "expectedTitle": "スタックタワー",
+          "title": "スタックタワー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "sky-hop",
+          "expectedTitle": "スカイホップ",
+          "title": "スカイホップ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "orbit-dodge",
+          "expectedTitle": "オービットドッジ",
+          "title": "オービットドッジ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "lights-out",
+          "expectedTitle": "ライツアウト",
+          "title": "ライツアウト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "slide-puzzle",
+          "expectedTitle": "スライド15",
+          "title": "スライド15",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "simon",
+          "expectedTitle": "シーケンスメモリー",
+          "title": "シーケンスメモリー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dice-expedition",
+          "expectedTitle": "ダイス探検",
+          "title": "ダイス探検",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "gravity-golf",
+          "expectedTitle": "グラビティゴルフ",
+          "title": "グラビティゴルフ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "echo-vault",
+          "expectedTitle": "エコーヴォールト",
+          "title": "エコーヴォールト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "color-cascade",
+          "expectedTitle": "カラーカスケード",
+          "title": "カラーカスケード",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "cargo-switch",
+          "expectedTitle": "カーゴスイッチ",
+          "title": "カーゴスイッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "ricochet-relay",
+          "expectedTitle": "リコシェリレー",
+          "title": "リコシェリレー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "laser-lab",
+          "expectedTitle": "レーザーラボ",
+          "title": "レーザーラボ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pocket-sokoban",
+          "expectedTitle": "ポケット倉庫",
+          "title": "ポケット倉庫",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "bridge-weaver",
+          "expectedTitle": "橋のアトリエ",
+          "title": "橋のアトリエ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "loop-tracer",
+          "expectedTitle": "ループトレーサー",
+          "title": "ループトレーサー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "magnet-maze",
+          "expectedTitle": "マグネット迷路",
+          "title": "マグネット迷路",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "number-cross",
+          "expectedTitle": "ナンバークロス",
+          "title": "ナンバークロス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "gear-link",
+          "expectedTitle": "ギアリンク",
+          "title": "ギアリンク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "tile-quilt",
+          "expectedTitle": "タイルキルト",
+          "title": "タイルキルト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "crate-balance",
+          "expectedTitle": "クレートバランス",
+          "title": "クレートバランス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "constellation",
+          "expectedTitle": "コンステレーション",
+          "title": "コンステレーション",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "time-switch",
+          "expectedTitle": "タイムスイッチ",
+          "title": "タイムスイッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pulse-runner",
+          "expectedTitle": "パルスランナー",
+          "title": "パルスランナー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "grappling-garden",
+          "expectedTitle": "グラップルガーデン",
+          "title": "グラップルガーデン",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "comet-catcher",
+          "expectedTitle": "コメットキャッチャー",
+          "title": "コメットキャッチャー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "bubble-current",
+          "expectedTitle": "バブルカレント",
+          "title": "バブルカレント",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "ember-flight",
+          "expectedTitle": "エンバーフライト",
+          "title": "エンバーフライト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dash-circuit",
+          "expectedTitle": "ダッシュサーキット",
+          "title": "ダッシュサーキット",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "paint-sprint",
+          "expectedTitle": "ペイントスプリント",
+          "title": "ペイントスプリント",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "pinball-orbit",
+          "expectedTitle": "ピンボールオービット",
+          "title": "ピンボールオービット",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "shadow-shift",
+          "expectedTitle": "シャドウシフト",
+          "title": "シャドウシフト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "rhythm-forge",
+          "expectedTitle": "リズムフォージ",
+          "title": "リズムフォージ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "wind-archer",
+          "expectedTitle": "ウィンドアーチャー",
+          "title": "ウィンドアーチャー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "reef-rescue",
+          "expectedTitle": "リーフレスキュー",
+          "title": "リーフレスキュー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "tiny-tactics",
+          "expectedTitle": "タイニータクティクス",
+          "title": "タイニータクティクス",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "market-mosaic",
+          "expectedTitle": "マーケットモザイク",
+          "title": "マーケットモザイク",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "potion-atelier",
+          "expectedTitle": "ポーションアトリエ",
+          "title": "ポーションアトリエ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "orchard-watch",
+          "expectedTitle": "オーチャードウォッチ",
+          "title": "オーチャードウォッチ",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "signal-detective",
+          "expectedTitle": "シグナル探偵",
+          "title": "シグナル探偵",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "museum-heist",
+          "expectedTitle": "ミュージアムハイスト",
+          "title": "ミュージアムハイスト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "air-traffic",
+          "expectedTitle": "エアトラフィック",
+          "title": "エアトラフィック",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "dungeon-draft",
+          "expectedTitle": "ダンジョンドラフト",
+          "title": "ダンジョンドラフト",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        },
+        {
+          "id": "star-cartographer",
+          "expectedTitle": "スターカートグラファー",
+          "title": "スターカートグラファー",
+          "headingCount": 1,
+          "sessionLimits": 1,
+          "overflow": {
+            "viewport": 320,
+            "document": 320,
+            "body": 320
+          },
+          "relativeHomeLinks": 3,
+          "passed": true
+        }
+      ],
+      "browserErrors": [],
+      "resourceErrors": []
+    }
+  ],
+  "noJavaScript": {
+    "links": [
+      {
+        "href": "./games/snake/",
+        "title": "ネオンスネーク"
+      },
+      {
+        "href": "./games/merge-2048/",
+        "title": "マージ2048"
+      },
+      {
+        "href": "./games/memory/",
+        "title": "メモリーマッチ"
+      },
+      {
+        "href": "./games/breakout/",
+        "title": "ブロックブレイカー"
+      },
+      {
+        "href": "./games/minesweeper/",
+        "title": "マインフィールド"
+      },
+      {
+        "href": "./games/reaction/",
+        "title": "リアクションラボ"
+      },
+      {
+        "href": "./games/stack-tower/",
+        "title": "スタックタワー"
+      },
+      {
+        "href": "./games/sky-hop/",
+        "title": "スカイホップ"
+      },
+      {
+        "href": "./games/orbit-dodge/",
+        "title": "オービットドッジ"
+      },
+      {
+        "href": "./games/lights-out/",
+        "title": "ライツアウト"
+      },
+      {
+        "href": "./games/slide-puzzle/",
+        "title": "スライド15"
+      },
+      {
+        "href": "./games/simon/",
+        "title": "シーケンスメモリー"
+      },
+      {
+        "href": "./games/dice-expedition/",
+        "title": "ダイス探検"
+      },
+      {
+        "href": "./games/gravity-golf/",
+        "title": "グラビティゴルフ"
+      },
+      {
+        "href": "./games/echo-vault/",
+        "title": "エコーヴォールト"
+      },
+      {
+        "href": "./games/color-cascade/",
+        "title": "カラーカスケード"
+      },
+      {
+        "href": "./games/cargo-switch/",
+        "title": "カーゴスイッチ"
+      },
+      {
+        "href": "./games/ricochet-relay/",
+        "title": "リコシェリレー"
+      },
+      {
+        "href": "./games/laser-lab/",
+        "title": "レーザーラボ"
+      },
+      {
+        "href": "./games/pocket-sokoban/",
+        "title": "ポケット倉庫"
+      },
+      {
+        "href": "./games/bridge-weaver/",
+        "title": "橋のアトリエ"
+      },
+      {
+        "href": "./games/loop-tracer/",
+        "title": "ループトレーサー"
+      },
+      {
+        "href": "./games/magnet-maze/",
+        "title": "マグネット迷路"
+      },
+      {
+        "href": "./games/number-cross/",
+        "title": "ナンバークロス"
+      },
+      {
+        "href": "./games/gear-link/",
+        "title": "ギアリンク"
+      },
+      {
+        "href": "./games/tile-quilt/",
+        "title": "タイルキルト"
+      },
+      {
+        "href": "./games/crate-balance/",
+        "title": "クレートバランス"
+      },
+      {
+        "href": "./games/constellation/",
+        "title": "コンステレーション"
+      },
+      {
+        "href": "./games/time-switch/",
+        "title": "タイムスイッチ"
+      },
+      {
+        "href": "./games/pulse-runner/",
+        "title": "パルスランナー"
+      },
+      {
+        "href": "./games/grappling-garden/",
+        "title": "グラップルガーデン"
+      },
+      {
+        "href": "./games/comet-catcher/",
+        "title": "コメットキャッチャー"
+      },
+      {
+        "href": "./games/bubble-current/",
+        "title": "バブルカレント"
+      },
+      {
+        "href": "./games/ember-flight/",
+        "title": "エンバーフライト"
+      },
+      {
+        "href": "./games/dash-circuit/",
+        "title": "ダッシュサーキット"
+      },
+      {
+        "href": "./games/paint-sprint/",
+        "title": "ペイントスプリント"
+      },
+      {
+        "href": "./games/pinball-orbit/",
+        "title": "ピンボールオービット"
+      },
+      {
+        "href": "./games/shadow-shift/",
+        "title": "シャドウシフト"
+      },
+      {
+        "href": "./games/rhythm-forge/",
+        "title": "リズムフォージ"
+      },
+      {
+        "href": "./games/wind-archer/",
+        "title": "ウィンドアーチャー"
+      },
+      {
+        "href": "./games/reef-rescue/",
+        "title": "リーフレスキュー"
+      },
+      {
+        "href": "./games/tiny-tactics/",
+        "title": "タイニータクティクス"
+      },
+      {
+        "href": "./games/market-mosaic/",
+        "title": "マーケットモザイク"
+      },
+      {
+        "href": "./games/potion-atelier/",
+        "title": "ポーションアトリエ"
+      },
+      {
+        "href": "./games/orchard-watch/",
+        "title": "オーチャードウォッチ"
+      },
+      {
+        "href": "./games/signal-detective/",
+        "title": "シグナル探偵"
+      },
+      {
+        "href": "./games/museum-heist/",
+        "title": "ミュージアムハイスト"
+      },
+      {
+        "href": "./games/air-traffic/",
+        "title": "エアトラフィック"
+      },
+      {
+        "href": "./games/dungeon-draft/",
+        "title": "ダンジョンドラフト"
+      },
+      {
+        "href": "./games/star-cartographer/",
+        "title": "スターカートグラファー"
+      }
+    ],
+    "errors": []
+  },
+  "failures": [],
+  "scope": "Static/catalog acceptance only. Chrome browser via Playwright at a GitHub Pages project subpath. No gameplay, expiry, source edits, or manifest edits.",
+  "finishedAt": "2026-10-29T18:09:45.575Z",
+  "passed": true,
+  "totalChecks": 178
+}

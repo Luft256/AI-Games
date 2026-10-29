@@ -93,3 +93,5 @@
 - [エアトラフィック：320pxで便の現在高度と予測高度を読みやすくする](https://github.com/Luft256/AI-Games/issues/77)
 - [スターカートグラファー：320pxの長いタイトルの折り返しを整える](https://github.com/Luft256/AI-Games/issues/78)
 - [ミュージアムハイスト・ダンジョンドラフト：固定提示を覚えた後の再挑戦に変化を付ける](https://github.com/Luft256/AI-Games/issues/79)
+
+最終共有変更は [静的サイト受入](acceptance.md) で248テスト・178ブラウザ項目と全50ルートを確認した。READMEの新32本の操作表も、各ゲームの実際のcontrols/help/keysと照合した。
