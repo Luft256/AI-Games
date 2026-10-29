@@ -1,0 +1,3 @@
+import test from 'node:test';import assert from 'node:assert/strict';import {create,input,step,enclosed} from './purelogic.js';
+test('loop inclusion is geometric and movement paints without teleporting',()=>{assert.equal(enclosed(2,2,[{x:0,y:0},{x:4,y:0},{x:4,y:4},{x:0,y:4}]),true);const s=create();input(s,'pointer',650,50);assert.equal(s.x,5);step(s,.01);assert.equal(s.x,6);assert.equal(s.score,2);});
+test('enclosing new cells grants interior and natural deadline ends',()=>{const s=create();const route=[1,1,1,3,3,3,0,0,0,2,2,2];for(const a of route){s.cool=0;input(s,a);}assert.ok(s.paint.size>=16);s.t=90;step(s,0);assert.equal(s.done,true);});
